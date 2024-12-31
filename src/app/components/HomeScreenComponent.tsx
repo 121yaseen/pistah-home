@@ -1,5 +1,7 @@
+import HeroComponent from "./HeroComponent";
+
 const HomeScreenComponent = () => {
-  return <div></div>;
+  return (<HeroComponent />);
 };
 
 export default HomeScreenComponent;
