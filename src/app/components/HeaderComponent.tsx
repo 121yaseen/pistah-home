@@ -1,3 +1,4 @@
+import Link from "next/link";
 import PistahIcon from "./icons/pistahIcon";
 
 const HeaderComponent = () => {
@@ -17,9 +18,9 @@ const HeaderComponent = () => {
         zIndex: 1000,
       }}
     >
-      <a href="/">
+      <Link href="/" onClick={() => window.location.reload()}>
         <PistahIcon />
-      </a>
+      </Link>
 
       {/* Right Button: Contact Us */}
       <button
