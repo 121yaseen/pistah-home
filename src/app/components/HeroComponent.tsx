@@ -19,7 +19,7 @@ const HeroComponent = () => {
         bottom: 0,
         width: 900,
         height: 700,
-        backgroundImage: "url('https://pistah-s3-1.s3.us-east-2.amazonaws.com/assets/hero-background.jpeg')",
+        backgroundImage: "url('/assets/hero-background.jpeg')",
         backgroundSize: "cover",  // Ensures the image covers the entire area
         backgroundPosition: "center",
         zIndex: -1,  // Places the image behind the content
