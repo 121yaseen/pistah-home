@@ -51,7 +51,7 @@ const HeroComponent = () => {
           fontWeight: "bold",
           margin: 0
         }}>
-          Connect with Your Audience <span style={{ color: "#002ad4", textShadow: "0 0 10px #002ad4" }}>Outdoor</span> - Simplified in One Click.
+          Connect with Your Audience <span style={{ color: "#002ad4", textShadow: "0 0 20px #002ad4", animation: "blink 1.5s infinite" }}>Outdoor</span> - Simplified in One Click.
         </h1>
         <p style={{
           color: "#C6C6D6",
@@ -71,6 +71,20 @@ const HeroComponent = () => {
           Media
         </button>
       </div>
+      {/* Style for blinking effect */}
+      <style>{`
+        @keyframes blink {
+          0% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0.85;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+      `}</style>
     </div>
   );
 };

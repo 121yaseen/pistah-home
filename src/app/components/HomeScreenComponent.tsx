@@ -1,6 +1,6 @@
 import HeroComponent from "./HeroComponent";
-
 import DSPFeaturesSectionComponent from "./DSPFeaturesSectionComponent";
+import SSPFeaturesSectionComponent from "./SSPFeaturesSectionComponent";
 
 const HomeScreenComponent = () => {
   return (
@@ -10,6 +10,9 @@ const HomeScreenComponent = () => {
       </section>
       <section className="h-screen snap-start">
         <DSPFeaturesSectionComponent />
+      </section>
+      <section className="h-screen snap-start">
+        <SSPFeaturesSectionComponent />
       </section>
     </div>
   );
