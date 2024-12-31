@@ -26,7 +26,7 @@ const HeaderComponent = () => {
         style={{
           position: "relative",
           right: "50px",
-          top: "8px",
+          top: "7px",
           padding: "10px 20px",
           backgroundColor: "transparent",
           color: "white",
