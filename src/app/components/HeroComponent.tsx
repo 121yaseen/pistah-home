@@ -64,10 +64,10 @@ const HeroComponent = () => {
         </p>
       </div>
       <div style={{ display: "flex", gap: "30px", transform: "translateY(60%)" }}>
-        <button className="border-2 border-[#0b57d0] text-[#0b57d0] bg-transparent px-8 py-3 rounded-full font-bold hover:bg-[#0b57d0] hover:text-white transition-colors duration-200">
+        <button className="px-8 py-3 rounded-full font-bold bg-[#0b57d0] text-white hover:bg-[#0044A5] transition-colors duration-200">
           Brands
         </button>
-        <button className="border-2 border-[#0b57d0] text-[#0b57d0] bg-transparent px-8 py-3 rounded-full font-bold hover:bg-[#0b57d0] hover:text-white transition-colors duration-200">
+        <button className="px-8 py-3 rounded-full font-bold bg-[#0b57d0] text-white hover:bg-[#0044A5] transition-colors duration-200">
           Media
         </button>
       </div>
