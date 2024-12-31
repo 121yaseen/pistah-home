@@ -2,6 +2,7 @@ import HeaderComponent from "./HeaderComponent";
 import HeroComponent from "./HeroComponent";
 import DSPFeaturesSectionComponent from "./DSPFeaturesSectionComponent";
 import SSPFeaturesSectionComponent from "./SSPFeaturesSectionComponent";
+import FooterComponent from "./FooterComponent";
 
 const HomeScreenComponent = () => {
   return (
@@ -18,6 +19,11 @@ const HomeScreenComponent = () => {
       </section>
       <section className="h-screen snap-start">
         <SSPFeaturesSectionComponent />
+      </section>
+
+      {/* Footer */}
+      <section className="snap-start">
+        <FooterComponent />
       </section>
     </div>
   );
