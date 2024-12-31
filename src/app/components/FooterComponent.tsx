@@ -7,7 +7,7 @@ const FooterComponent = () => {
         </button>
       </div>
       <div className="flex justify-center text-white text-xl font-bold">
-        <p>Built in <span style={{ textShadow: "0 0 3px white", animation: "blink 1.5s infinite" }} className="font-extrabold">Kochi</span>, with Love.</p>
+        <p>Built in <span style={{ textShadow: "0 0 3px white", animation: "blink 1.5s infinite" }} className="font-semibold">Kochi</span>, with Love.</p>
       </div>
       <div className="flex justify-center p-2 text-[#BABABA] text-xs">
         <p>&#169; 2025 PISTAH. All rights reserved.</p>
@@ -20,7 +20,7 @@ const FooterComponent = () => {
             opacity: 1;
           }
           50% {
-            opacity: 0.7;
+            opacity: 0.8;
           }
           100% {
             opacity: 1;
