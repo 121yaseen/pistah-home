@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 
 const HeroComponent = () => {
+  const handleMediaButtonClick = () => {
+    window.location.href = 'https://portal.pistah.bluebucket.in/';
+  };
+
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     // Update the `isMobile` state based on the window width
@@ -111,10 +115,10 @@ const HeroComponent = () => {
           transform: "translateY(60%)",
         }}
       >
-        <button className="px-8 py-3 rounded-full font-bold bg-[#0b57d0] text-white hover:bg-[#0044A5] transition-colors duration-200">
+        <button onClick={handleMediaButtonClick} className="px-8 py-3 rounded-full font-bold bg-[#0b57d0] text-white hover:bg-[#0044A5] transition-colors duration-200">
           Brands
         </button>
-        <button className="px-8 py-3 rounded-full font-bold bg-[#0b57d0] text-white hover:bg-[#0044A5] transition-colors duration-200">
+        <button onClick={handleMediaButtonClick} className="px-8 py-3 rounded-full font-bold bg-[#0b57d0] text-white hover:bg-[#0044A5] transition-colors duration-200">
           Media
         </button>
       </div>

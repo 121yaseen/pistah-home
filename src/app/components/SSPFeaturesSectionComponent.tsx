@@ -6,6 +6,10 @@ const SSPFeaturesSectionComponent = () => {
   const [isMobile, setIsMobile] = useState(false); // Initialize as false
   const sectionRef = useRef(null);
 
+  const handleMediaButtonClick = () => {
+    window.location.href = 'https://portal.pistah.bluebucket.in/';
+  };
+
   // Check if the screen is mobile-sized only in the browser (client-side)
   useEffect(() => {
     const handleResize = () => {
@@ -80,7 +84,7 @@ const SSPFeaturesSectionComponent = () => {
         <p className="text-gray-300 mb-6">
           We provide a seamless solution that maximizes the value of your screens without the hassle of contacting advertisers or media agencies. When a brand&apos;s needs align with your inventory, we&apos;ll take care of showing the right ads, helping you earn effortlessly while building a trusted partnership.
         </p>
-        <button className="px-8 py-3 rounded-full font-bold bg-[#0b57d0] text-white hover:bg-[#0044A5] transition-colors duration-200">
+        <button onClick={handleMediaButtonClick} className="px-8 py-3 rounded-full font-bold bg-[#0b57d0] text-white hover:bg-[#0044A5] transition-colors duration-200">
           Media
         </button>
       </div>
