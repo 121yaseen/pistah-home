@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 
-const ContactPageComponent = () => {
+interface ContactPageProps {
+  onClose: () => void;
+}
+
+const ContactPageComponent: React.FC<ContactPageProps> = ({ onClose }) => {
   const [buttonHover, setButtonHover] = useState<boolean>(false);
 
   const [formData, setFormData] = useState({
@@ -37,7 +41,6 @@ const ContactPageComponent = () => {
     let formIsValid = true;
     const tempErrors = { ...errors };
 
-    // Validate required fields
     if (!formData.firstName) {
       tempErrors.firstName = "First name is required";
       formIsValid = false;
@@ -63,7 +66,7 @@ const ContactPageComponent = () => {
     }
 
     if (!formData.content) {
-      tempErrors.content = "Content is required";
+      tempErrors.content = "Message is required";
       formIsValid = false;
     } else {
       tempErrors.content = "";
@@ -72,7 +75,6 @@ const ContactPageComponent = () => {
     setErrors(tempErrors);
 
     if (formIsValid) {
-      // Handle form submission logic here
       fetch("/api/contact", {
         method: "POST",
         headers: {
@@ -101,145 +103,169 @@ const ContactPageComponent = () => {
   };
 
   return (
-    <div style={styles.container}>
-      <form onSubmit={handleSubmit} style={styles.form}>
-        <h1 style={styles.heading}>We are all ears</h1>
-        <div style={styles.inputRow}>
-          <div style={styles.halfInputContainer}>
-            <input
-              type="text"
-              name="firstName"
-              value={formData.firstName}
-              onChange={handleChange}
-              style={styles.input}
-              placeholder='Your first name'
-            />
-            {errors.firstName && <p style={styles.error}>{errors.firstName}</p>}
+    <div style={styles.overlay}>
+      <div style={styles.modal}>
+        <button style={styles.closeButton} onClick={onClose}>
+          &times;
+        </button>
+        <form onSubmit={handleSubmit} style={styles.form}>
+          <h1 style={styles.heading}>We are all ears</h1>
+          <div style={styles.inputRow}>
+            <div style={styles.halfInputContainer}>
+              <input
+                type="text"
+                name="firstName"
+                value={formData.firstName}
+                onChange={handleChange}
+                style={styles.input}
+                placeholder="Your first name"
+              />
+              {errors.firstName && <p style={styles.error}>{errors.firstName}</p>}
+            </div>
+
+            <div style={styles.halfInputContainer}>
+              <input
+                type="text"
+                name="lastName"
+                value={formData.lastName}
+                onChange={handleChange}
+                style={styles.input}
+                placeholder="Your last name"
+              />
+              {errors.lastName && <p style={styles.error}>{errors.lastName}</p>}
+            </div>
           </div>
 
-          <div style={styles.halfInputContainer}>
+          <div style={styles.inputContainer}>
             <input
-              type="text"
-              name="lastName"
-              value={formData.lastName}
+              type="email"
+              name="email"
+              value={formData.email}
               onChange={handleChange}
-              style={styles.input}
-              placeholder='Your last name'
+              style={styles.emailInput}
+              placeholder="Your email address"
             />
-            {errors.lastName && <p style={styles.error}>{errors.lastName}</p>}
+            {errors.email && <p style={styles.error}>{errors.email}</p>}
           </div>
-        </div>
 
-        <div style={styles.inputContainer}>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            style={styles.emailInput}
-            placeholder='Your email address'
-          />
-          {errors.email && <p style={styles.error}>{errors.email}</p>}
-        </div>
+          <div style={styles.inputContainer}>
+            <textarea
+              name="content"
+              value={formData.content}
+              onChange={handleChange}
+              style={styles.textarea}
+              placeholder="Your message for us"
+            />
+            {errors.content && <p style={styles.error}>{errors.content}</p>}
+          </div>
 
-        <div style={styles.inputContainer}>
-          <textarea
-            name="content"
-            value={formData.content}
-            onChange={handleChange}
-            style={styles.textarea}
-            placeholder='Your message for us'
-          />
-          {errors.content && <p style={styles.error}>{errors.content}</p>}
-        </div>
-
-        <div style={styles.buttonWrapper}>
-          <button
-            type="submit"
-            style={{
-              ...styles.button,
-              backgroundColor: buttonHover ? '#001464' : '#0b57d0',  // Change color based on hover state
-            }}
-            onMouseEnter={() => setButtonHover(true)}
-            onMouseLeave={() => setButtonHover(false)}
-          >
-            Send
-          </button>
-        </div>
-      </form>
+          <div style={styles.buttonWrapper}>
+            <button
+              type="submit"
+              style={{
+                ...styles.button,
+                backgroundColor: buttonHover ? "#001464" : "#0b57d0",
+              }}
+              onMouseEnter={() => setButtonHover(true)}
+              onMouseLeave={() => setButtonHover(false)}
+            >
+              Send
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
 
 const styles = {
-  container: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '100vh',
-    backgroundColor: '#001464',
+  overlay: {
+    position: "fixed" as const,
+    top: 0,
+    left: 0,
+    width: "100vw",
+    height: "100vh",
+    backgroundColor: "rgba(0, 0, 0, 0.7)",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    zIndex: 1000,
+  },
+  modal: {
+    backgroundColor: "#fff",
+    padding: "30px",
+    borderRadius: "8px",
+    width: "90%",
+    maxWidth: "760px",
+    position: "relative" as const,
+  },
+  closeButton: {
+    position: "absolute" as const,
+    top: "10px",
+    right: "10px",
+    background: "none",
+    border: "none",
+    fontSize: "24px",
+    cursor: "pointer",
   },
   form: {
-    backgroundColor: '#fff',  // Transparent background
-    padding: '30px',
-    width: '700px',  // Increased width by 25%
-    color: '#001464'
+    color: "#001464",
   },
   heading: {
-    marginBottom: '20px',  // Add some space below the heading
-    fontSize: '30px',
-    fontWeight: 'bold',
+    marginBottom: "20px",
+    fontSize: "24px",
+    fontWeight: "bold",
   },
   inputContainer: {
-    marginBottom: '30px', // Equal spacing between rows
+    marginBottom: "20px",
   },
   inputRow: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    marginBottom: '30px', // Equal spacing between rows
+    display: "flex",
+    flexWrap: "wrap" as const,
+    justifyContent: "space-between",
+    gap: "10px",
+    marginBottom: "20px"
   },
   halfInputContainer: {
-    width: '48%', // Each column takes nearly half the row with some space in between
+    flex: "1 1 calc(50% - 10px)",
   },
   input: {
-    width: '100%', // Ensure input fields take up the full width of their container
-    padding: '10px',
-    border: '1px solid #ccc',
-    backgroundColor: '#F3F4F6',
-    color: 'black',
+    width: "100%",
+    padding: "10px",
+    border: "1px solid #ccc",
+    borderRadius: "4px",
   },
   emailInput: {
-    width: '100%',  // Ensure email input takes full width
-    padding: '10px',
-    border: '1px solid #ccc',
-    backgroundColor: '#F3F4F6',
-    color: 'black',
+    width: "100%",
+    padding: "10px",
+    border: "1px solid #ccc",
+    borderRadius: "4px",
   },
   textarea: {
-    width: '100%',
-    padding: '10px',
-    border: '1px solid #ccc',
-    backgroundColor: '#F3F4F6',
-    color: 'black',
-    minHeight: '150px',
+    width: "100%",
+    padding: "10px",
+    border: "1px solid #ccc",
+    borderRadius: "4px",
+    minHeight: "100px",
   },
   buttonWrapper: {
-    display: 'flex',
-    justifyContent: 'right', // Center the button horizontally
+    display: "flex",
+    justifyContent: "flex-end",
   },
   button: {
-    padding: '12px 32px',
-    fontWeight: 'bold',
-    backgroundColor: '#0b57d0',
-    color: '#fff',
-    border: 'none',
-    cursor: 'pointer',
-    transition: 'background-color 0.2s ease-in-out',
-    fontSize: '16px',
+    padding: "12px 32px",
+    fontWeight: "bold",
+    color: "#fff",
+    border: "none",
+    cursor: "pointer",
+    transition: "background-color 0.2s ease-in-out",
+    fontSize: "16px",
+    borderRadius: "4px",
   },
   error: {
-    color: 'red',
-    fontSize: '12px',
+    color: "red",
+    fontSize: "12px",
+    marginTop: "5px",
   },
 };
 

@@ -6,6 +6,10 @@ const DSPFeaturesSectionComponent = () => {
   const [isMobile, setIsMobile] = useState(false); // Initialize as false
   const sectionRef = useRef(null);
 
+  const handleMediaButtonClick = () => {
+    window.location.href = 'https://portal.pistah.bluebucket.in/';
+  };
+
   // Check if the screen is mobile-sized only in the browser (client-side)
   useEffect(() => {
     const handleResize = () => {
@@ -80,7 +84,7 @@ const DSPFeaturesSectionComponent = () => {
         <p className="text-gray-300 mb-6">
           We offer a wide range of digital screens to display your campaigns exactly when you want. Whether you&apos;re aiming for high visibility or targeting specific times, we&apos;ve got the perfect solution to elevate your brand.
         </p>
-        <button className="px-8 py-3 rounded-full font-bold bg-[#0b57d0] text-white hover:bg-[#0044A5] transition-colors duration-200">
+        <button onClick={handleMediaButtonClick} className="px-8 py-3 rounded-full font-bold bg-[#0b57d0] text-white hover:bg-[#0044A5] transition-colors duration-200">
           Brands
         </button>
       </div>

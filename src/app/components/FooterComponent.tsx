@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import ContactPageComponent from "./ContactPageComponent";
 
 const FooterComponent = () => {
   const [isMobile, setIsMobile] = useState(false); // Initialize as false
+  const [showContactPopup, setShowContactPopup] = useState(false);
 
   useEffect(() => {
     // Ensure this runs only in the browser (client-side)
@@ -21,8 +23,8 @@ const FooterComponent = () => {
   return (
     <footer className="w-full bg-[#001464]">
       <div className={`flex ${isMobile ? "justify-center py-4" : "justify-end"} px-16`}>
-        <button className="font-bold px-6 py-2 bg-white text-[#002ad4] rounded-full hover:bg-[#002ad4] hover:text-white transition-colors duration-200 mt-9">
-          Contact Us
+        <button onClick={() => setShowContactPopup(true)} className="font-bold px-6 py-2 bg-white text-[#002ad4] rounded-full hover:bg-[#002ad4] hover:text-white transition-colors duration-200 mt-9">
+          Message Us
         </button>
       </div>
       <div className="flex justify-center text-white text-xl font-bold">
@@ -32,6 +34,10 @@ const FooterComponent = () => {
         <p>&#169; 2025 PISTAH. All rights reserved.</p>
       </div>
 
+      {showContactPopup && (
+        <ContactPageComponent onClose={() => setShowContactPopup(false)} />
+      )}
+      
       {/* Style for blinking effect */}
       <style>{`
         @keyframes blink {
