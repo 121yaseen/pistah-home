@@ -6,14 +6,13 @@ interface ContactPageProps {
 
 const ContactPageComponent: React.FC<ContactPageProps> = ({ onClose }) => {
   const [buttonHover, setButtonHover] = useState<boolean>(false);
-
+  const [submissionStatus, setSubmissionStatus] = useState<"idle" | "sending" | "success" | "failure">("idle");
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
     content: "",
   });
-
   const [errors, setErrors] = useState({
     firstName: "",
     lastName: "",
@@ -21,9 +20,7 @@ const ContactPageComponent: React.FC<ContactPageProps> = ({ onClose }) => {
     content: "",
   });
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -37,6 +34,7 @@ const ContactPageComponent: React.FC<ContactPageProps> = ({ onClose }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setSubmissionStatus("sending");
 
     let formIsValid = true;
     const tempErrors = { ...errors };
@@ -84,7 +82,7 @@ const ContactPageComponent: React.FC<ContactPageProps> = ({ onClose }) => {
       })
         .then((response) => {
           if (response.ok) {
-            alert("Message sent successfully");
+            setSubmissionStatus("success");
             setFormData({
               firstName: "",
               lastName: "",
@@ -92,14 +90,51 @@ const ContactPageComponent: React.FC<ContactPageProps> = ({ onClose }) => {
               content: "",
             });
           } else {
-            alert("Error sending message");
+            setSubmissionStatus("failure");
           }
         })
         .catch((error) => {
           console.error("Error:", error);
-          alert("Error sending message");
+          setSubmissionStatus("failure");
         });
+    } else {
+      setSubmissionStatus("failure");
     }
+  };
+
+  const renderStatusIcon = () => {
+    if (submissionStatus === "sending") {
+      return (
+        <div style={styles.statusContainer}>
+          <div style={styles.loadingCircle}></div>
+          <span style={{ color: "#1e90ff" }}>Sending...</span>
+        </div>
+      );
+    }
+
+    if (submissionStatus === "success") {
+      return (
+        <div style={styles.statusContainer}>
+          <div style={styles.successCircle}>
+            <span style={styles.successIcon}>&#x2714;</span>
+          </div>
+          <span style={{ color: "green" }}>Sent</span>
+        </div>
+      );
+    }
+
+    if (submissionStatus === "failure") {
+      return (
+        <div style={styles.statusContainer}>
+          <div style={styles.failureCircle}>
+            <span style={styles.failureIcon}>X</span>
+          </div>
+          <span style={{ color: "red" }}>Failed</span>
+        </div>
+      );
+    }
+
+    return null;
   };
 
   return (
@@ -160,6 +195,7 @@ const ContactPageComponent: React.FC<ContactPageProps> = ({ onClose }) => {
           </div>
 
           <div style={styles.buttonWrapper}>
+            {renderStatusIcon()}
             <button
               type="submit"
               style={{
@@ -224,7 +260,7 @@ const styles = {
     flexWrap: "wrap" as const,
     justifyContent: "space-between",
     gap: "10px",
-    marginBottom: "20px"
+    marginBottom: "20px",
   },
   halfInputContainer: {
     flex: "1 1 calc(50% - 10px)",
@@ -251,6 +287,7 @@ const styles = {
   buttonWrapper: {
     display: "flex",
     justifyContent: "flex-end",
+    alignItems: "center",
   },
   button: {
     padding: "12px 32px",
@@ -261,11 +298,56 @@ const styles = {
     transition: "background-color 0.2s ease-in-out",
     fontSize: "16px",
     borderRadius: "4px",
+    marginLeft: "10px",
   },
   error: {
     color: "red",
     fontSize: "12px",
     marginTop: "5px",
+  },
+  statusContainer: {
+    display: "flex",
+    alignItems: "center",
+    marginRight: "10px",
+  },
+  loadingCircle: {
+    border: "3px solid #ccc",
+    borderTop: "3px solid #1e90ff",
+    borderRadius: "50%",
+    width: "20px",
+    height: "20px",
+    animation: "spin 1s linear infinite",
+    marginRight: "8px",
+  },
+  successCircle: {
+    border: "3px solid green",
+    borderRadius: "50%",
+    width: "20px",
+    height: "20px",
+    backgroundColor: "green",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    marginRight: "8px",
+  },
+  successIcon: {
+    color: "#fff",
+    fontSize: "14px",
+  },
+  failureCircle: {
+    border: "3px solid red",
+    borderRadius: "50%",
+    width: "20px",
+    height: "20px",
+    backgroundColor: "red",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    marginRight: "8px",
+  },
+  failureIcon: {
+    color: "white",
+    fontSize: "14px",
   },
 };
 

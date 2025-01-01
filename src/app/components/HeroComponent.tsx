@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 
 const HeroComponent = () => {
-  const handleMediaButtonClick = () => {
+  const handleBrandButtonClick = () => {
     window.location.href = 'https://portal.pistah.bluebucket.in/';
+  };
+
+  const handleMediaButtonClick = () => {
+    window.location.href = 'https://inventory.pistah.bluebucket.in/';
   };
 
   const [isMobile, setIsMobile] = useState(false);
@@ -115,7 +119,7 @@ const HeroComponent = () => {
           transform: "translateY(60%)",
         }}
       >
-        <button onClick={handleMediaButtonClick} className="px-8 py-3 rounded-full font-bold bg-[#0b57d0] text-white hover:bg-[#0044A5] transition-colors duration-200">
+        <button onClick={handleBrandButtonClick} className="px-8 py-3 rounded-full font-bold bg-[#0b57d0] text-white hover:bg-[#0044A5] transition-colors duration-200">
           Brands
         </button>
         <button onClick={handleMediaButtonClick} className="px-8 py-3 rounded-full font-bold bg-[#0b57d0] text-white hover:bg-[#0044A5] transition-colors duration-200">

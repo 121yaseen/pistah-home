@@ -7,7 +7,7 @@ const SSPFeaturesSectionComponent = () => {
   const sectionRef = useRef(null);
 
   const handleMediaButtonClick = () => {
-    window.location.href = 'https://portal.pistah.bluebucket.in/';
+    window.location.href = 'https://inventory.pistah.bluebucket.in/';
   };
 
   // Check if the screen is mobile-sized only in the browser (client-side)
