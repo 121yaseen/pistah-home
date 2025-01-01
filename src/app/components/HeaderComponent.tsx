@@ -8,6 +8,14 @@ const HeaderComponent = () => {
     // Ensure this runs only in the browser
     setIsBrowser(true);
   }, []);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 912);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 912);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div
       style={{
@@ -32,6 +40,10 @@ const HeaderComponent = () => {
             window.location.reload();
           }
         }}
+        style={{
+          transform: isMobile ? "translateX(-45%)" : "translateX(0)",
+          transition: "transform 0.2s ease",
+        }}
       >
         <PistahIcon />
       </Link>
@@ -40,7 +52,7 @@ const HeaderComponent = () => {
       <button
         style={{
           position: "relative",
-          right: "50px",
+          right: isMobile ? "-10%" : "50px",
           top: "9px",
           padding: "10px 20px",
           backgroundColor: "transparent",
