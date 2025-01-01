@@ -2,7 +2,7 @@ const RealtimeAnalyticsIcon = () => {
   return (
     <svg
       width="746"
-      height="535"
+      height="450"
       viewBox="0 0 746 535"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
