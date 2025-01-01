@@ -201,6 +201,7 @@ const ContactPageComponent: React.FC<ContactPageProps> = ({ onClose }) => {
               style={{
                 ...styles.button,
                 backgroundColor: buttonHover ? "#001464" : "#0b57d0",
+                cursor: submissionStatus === "sending" ? "not-allowed" : "pointer",
               }}
               onMouseEnter={() => setButtonHover(true)}
               onMouseLeave={() => setButtonHover(false)}
