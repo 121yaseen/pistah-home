@@ -1,7 +1,13 @@
 import Link from "next/link";
 import PistahIcon from "./icons/pistahIcon";
+import { useEffect, useState } from "react";
 
 const HeaderComponent = () => {
+  const [isBrowser, setIsBrowser] = useState(false);
+  useEffect(() => {
+    // Ensure this runs only in the browser
+    setIsBrowser(true);
+  }, []);
   return (
     <div
       style={{
@@ -18,7 +24,15 @@ const HeaderComponent = () => {
         zIndex: 1000,
       }}
     >
-      <Link href="/" onClick={() => window.location.reload()}>
+      <Link
+        href="/"
+        onClick={(e) => {
+          e.preventDefault();
+          if (isBrowser) {
+            window.location.reload();
+          }
+        }}
+      >
         <PistahIcon />
       </Link>
 
