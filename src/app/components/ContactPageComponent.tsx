@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
 const ContactPageComponent = () => {
+  const [buttonHover, setButtonHover] = useState<boolean>(false);
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -33,7 +35,7 @@ const ContactPageComponent = () => {
     e.preventDefault();
 
     let formIsValid = true;
-    const tempErrors = { ...errors }; // Use const here as tempErrors is not reassigned
+    const tempErrors = { ...errors };
 
     // Validate required fields
     if (!formData.firstName) {
@@ -101,58 +103,69 @@ const ContactPageComponent = () => {
   return (
     <div style={styles.container}>
       <form onSubmit={handleSubmit} style={styles.form}>
+        <h1 style={styles.heading}>We are all ears</h1>
         <div style={styles.inputRow}>
-          <div style={styles.inputContainer}>
-            <label style={styles.label}>First Name</label>
+          <div style={styles.halfInputContainer}>
             <input
               type="text"
               name="firstName"
               value={formData.firstName}
               onChange={handleChange}
               style={styles.input}
+              placeholder='Your first name'
             />
             {errors.firstName && <p style={styles.error}>{errors.firstName}</p>}
           </div>
 
-          <div style={styles.inputContainer}>
-            <label style={styles.label}>Last Name</label>
+          <div style={styles.halfInputContainer}>
             <input
               type="text"
               name="lastName"
               value={formData.lastName}
               onChange={handleChange}
               style={styles.input}
+              placeholder='Your last name'
             />
             {errors.lastName && <p style={styles.error}>{errors.lastName}</p>}
           </div>
         </div>
 
         <div style={styles.inputContainer}>
-          <label style={styles.label}>Email Address</label>
           <input
             type="email"
             name="email"
             value={formData.email}
             onChange={handleChange}
             style={styles.emailInput}
+            placeholder='Your email address'
           />
           {errors.email && <p style={styles.error}>{errors.email}</p>}
         </div>
 
         <div style={styles.inputContainer}>
-          <label style={styles.label}>Content</label>
           <textarea
             name="content"
             value={formData.content}
             onChange={handleChange}
             style={styles.textarea}
+            placeholder='Your message for us'
           />
           {errors.content && <p style={styles.error}>{errors.content}</p>}
         </div>
 
-        <button type="submit" style={styles.button}>
-          Send
-        </button>
+        <div style={styles.buttonWrapper}>
+          <button
+            type="submit"
+            style={{
+              ...styles.button,
+              backgroundColor: buttonHover ? '#001464' : '#0b57d0',  // Change color based on hover state
+            }}
+            onMouseEnter={() => setButtonHover(true)}
+            onMouseLeave={() => setButtonHover(false)}
+          >
+            Send
+          </button>
+        </div>
       </form>
     </div>
   );
@@ -160,68 +173,73 @@ const ContactPageComponent = () => {
 
 const styles = {
   container: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    height: "100vh",
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100vh',
+    backgroundColor: '#001464',
   },
   form: {
-    backgroundColor: "rgba(0, 20, 100, 0.7)", // Transparent background
-    padding: "20px",
-    borderRadius: "20px", // Round borders
-    width: "700px", // Increased width by 25%
-    color: "#fff",
-    opacity: 0.9,
+    backgroundColor: '#fff',  // Transparent background
+    padding: '30px',
+    width: '700px',  // Increased width by 25%
+    color: '#001464'
+  },
+  heading: {
+    marginBottom: '20px',  // Add some space below the heading
+    fontSize: '30px',
+    fontWeight: 'bold',
   },
   inputContainer: {
-    marginBottom: "15px",
-  },
-  label: {
-    display: "block",
-    marginBottom: "5px",
-    fontSize: "14px",
+    marginBottom: '30px', // Equal spacing between rows
   },
   inputRow: {
-    display: "flex",
-    justifyContent: "space-between", // Adjust space between first name and last name
+    display: 'flex',
+    justifyContent: 'space-between',
+    marginBottom: '30px', // Equal spacing between rows
+  },
+  halfInputContainer: {
+    width: '48%', // Each column takes nearly half the row with some space in between
   },
   input: {
-    padding: "10px",
-    border: "1px solid #ccc",
-    borderRadius: "4px",
-    backgroundColor: "#222",
-    color: "#fff",
+    width: '100%', // Ensure input fields take up the full width of their container
+    padding: '10px',
+    border: '1px solid #ccc',
+    backgroundColor: '#F3F4F6',
+    color: 'black',
   },
   emailInput: {
-    width: "100%", // Ensure email input takes full width
-    padding: "10px",
-    border: "1px solid #ccc",
-    borderRadius: "4px",
-    backgroundColor: "#222",
-    color: "#fff",
+    width: '100%',  // Ensure email input takes full width
+    padding: '10px',
+    border: '1px solid #ccc',
+    backgroundColor: '#F3F4F6',
+    color: 'black',
   },
   textarea: {
-    width: "100%",
-    padding: "10px",
-    border: "1px solid #ccc",
-    borderRadius: "4px",
-    backgroundColor: "#222",
-    color: "#fff",
-    minHeight: "100px",
+    width: '100%',
+    padding: '10px',
+    border: '1px solid #ccc',
+    backgroundColor: '#F3F4F6',
+    color: 'black',
+    minHeight: '150px',
+  },
+  buttonWrapper: {
+    display: 'flex',
+    justifyContent: 'right', // Center the button horizontally
   },
   button: {
-    width: "100%",
-    padding: "10px",
-    backgroundColor: "#007bff",
-    border: "none",
-    borderRadius: "4px",
-    color: "#fff",
-    fontSize: "16px",
-    cursor: "pointer",
+    padding: '12px 32px',
+    fontWeight: 'bold',
+    backgroundColor: '#0b57d0',
+    color: '#fff',
+    border: 'none',
+    cursor: 'pointer',
+    transition: 'background-color 0.2s ease-in-out',
+    fontSize: '16px',
   },
   error: {
-    color: "red",
-    fontSize: "12px",
+    color: 'red',
+    fontSize: '12px',
   },
 };
 
