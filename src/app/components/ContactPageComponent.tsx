@@ -15,7 +15,7 @@ const ContactPageComponent = () => {
     content: ''
   });
 
-  const handleChange = (e: { target: { name: any; value: any; }; }) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -27,11 +27,11 @@ const ContactPageComponent = () => {
     return emailPattern.test(email);
   };
 
-  const handleSubmit = (e: { preventDefault: () => void; }) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     let formIsValid = true;
-    let tempErrors = { ...errors };
+    const tempErrors = { ...errors }; // Use const here as tempErrors is not reassigned
 
     // Validate required fields
     if (!formData.firstName) {

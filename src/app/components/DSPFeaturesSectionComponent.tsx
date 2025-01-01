@@ -68,7 +68,7 @@ const DSPFeaturesSectionComponent = () => {
       >
         <h2 className="text-3xl font-bold mb-4">Ready to skip the search?</h2>
         <p className="text-gray-300 mb-6">
-          We offer a wide range of digital screens to display your campaigns exactly when you want. Whether you're aiming for high visibility or targeting specific times, we've got the perfect solution to elevate your brand.
+          We offer a wide range of digital screens to display your campaigns exactly when you want. Whether you&apos;re aiming for high visibility or targeting specific times, we&apos;ve got the perfect solution to elevate your brand.
         </p>
         <button className="px-8 py-3 rounded-full font-bold bg-[#0b57d0] text-white hover:bg-[#0044A5] transition-colors duration-200">
           Brands
