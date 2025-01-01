@@ -1,24 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const ContactPageComponent = () => {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    content: ''
+    firstName: "",
+    lastName: "",
+    email: "",
+    content: "",
   });
 
   const [errors, setErrors] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    content: ''
+    firstName: "",
+    lastName: "",
+    email: "",
+    content: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -35,41 +37,64 @@ const ContactPageComponent = () => {
 
     // Validate required fields
     if (!formData.firstName) {
-      tempErrors.firstName = 'First name is required';
+      tempErrors.firstName = "First name is required";
       formIsValid = false;
     } else {
-      tempErrors.firstName = '';
+      tempErrors.firstName = "";
     }
 
     if (!formData.lastName) {
-      tempErrors.lastName = 'Last name is required';
+      tempErrors.lastName = "Last name is required";
       formIsValid = false;
     } else {
-      tempErrors.lastName = '';
+      tempErrors.lastName = "";
     }
 
     if (!formData.email) {
-      tempErrors.email = 'Email address is required';
+      tempErrors.email = "Email address is required";
       formIsValid = false;
     } else if (!validateEmail(formData.email)) {
-      tempErrors.email = 'Please enter a valid email address';
+      tempErrors.email = "Please enter a valid email address";
       formIsValid = false;
     } else {
-      tempErrors.email = '';
+      tempErrors.email = "";
     }
 
     if (!formData.content) {
-      tempErrors.content = 'Content is required';
+      tempErrors.content = "Content is required";
       formIsValid = false;
     } else {
-      tempErrors.content = '';
+      tempErrors.content = "";
     }
 
     setErrors(tempErrors);
 
     if (formIsValid) {
       // Handle form submission logic here
-      console.log('Form submitted:', formData);
+      fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+        .then((response) => {
+          if (response.ok) {
+            alert("Message sent successfully");
+            setFormData({
+              firstName: "",
+              lastName: "",
+              email: "",
+              content: "",
+            });
+          } else {
+            alert("Error sending message");
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          alert("Error sending message");
+        });
     }
   };
 
@@ -125,7 +150,9 @@ const ContactPageComponent = () => {
           {errors.content && <p style={styles.error}>{errors.content}</p>}
         </div>
 
-        <button type="submit" style={styles.button}>Send</button>
+        <button type="submit" style={styles.button}>
+          Send
+        </button>
       </form>
     </div>
   );
@@ -133,69 +160,69 @@ const ContactPageComponent = () => {
 
 const styles = {
   container: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '100vh',
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "100vh",
   },
   form: {
-    backgroundColor: 'rgba(0, 20, 100, 0.7)',  // Transparent background
-    padding: '20px',
-    borderRadius: '20px',  // Round borders
-    width: '700px',  // Increased width by 25%
-    color: '#fff',
-    opacity: 0.9
+    backgroundColor: "rgba(0, 20, 100, 0.7)", // Transparent background
+    padding: "20px",
+    borderRadius: "20px", // Round borders
+    width: "700px", // Increased width by 25%
+    color: "#fff",
+    opacity: 0.9,
   },
   inputContainer: {
-    marginBottom: '15px',
+    marginBottom: "15px",
   },
   label: {
-    display: 'block',
-    marginBottom: '5px',
-    fontSize: '14px',
+    display: "block",
+    marginBottom: "5px",
+    fontSize: "14px",
   },
   inputRow: {
-    display: 'flex',
-    justifyContent: 'space-between',  // Adjust space between first name and last name
+    display: "flex",
+    justifyContent: "space-between", // Adjust space between first name and last name
   },
   input: {
-    padding: '10px',
-    border: '1px solid #ccc',
-    borderRadius: '4px',
-    backgroundColor: '#222',
-    color: '#fff',
+    padding: "10px",
+    border: "1px solid #ccc",
+    borderRadius: "4px",
+    backgroundColor: "#222",
+    color: "#fff",
   },
   emailInput: {
-    width: '100%',  // Ensure email input takes full width
-    padding: '10px',
-    border: '1px solid #ccc',
-    borderRadius: '4px',
-    backgroundColor: '#222',
-    color: '#fff',
+    width: "100%", // Ensure email input takes full width
+    padding: "10px",
+    border: "1px solid #ccc",
+    borderRadius: "4px",
+    backgroundColor: "#222",
+    color: "#fff",
   },
   textarea: {
-    width: '100%',
-    padding: '10px',
-    border: '1px solid #ccc',
-    borderRadius: '4px',
-    backgroundColor: '#222',
-    color: '#fff',
-    minHeight: '100px',
+    width: "100%",
+    padding: "10px",
+    border: "1px solid #ccc",
+    borderRadius: "4px",
+    backgroundColor: "#222",
+    color: "#fff",
+    minHeight: "100px",
   },
   button: {
-    width: '100%',
-    padding: '10px',
-    backgroundColor: '#007bff',
-    border: 'none',
-    borderRadius: '4px',
-    color: '#fff',
-    fontSize: '16px',
-    cursor: 'pointer',
+    width: "100%",
+    padding: "10px",
+    backgroundColor: "#007bff",
+    border: "none",
+    borderRadius: "4px",
+    color: "#fff",
+    fontSize: "16px",
+    cursor: "pointer",
   },
   error: {
-    color: 'red',
-    fontSize: '12px',
-  }
+    color: "red",
+    fontSize: "12px",
+  },
 };
 
 export default ContactPageComponent;
