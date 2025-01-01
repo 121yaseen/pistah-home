@@ -2,10 +2,11 @@
 import Link from "next/link";
 import PistahIcon from "../icons/pistahIcon";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 const HeaderComponent = () => {
   const router = useRouter();
+  const pathname = usePathname(); // Get the current route pathname
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -51,7 +52,7 @@ const HeaderComponent = () => {
             top: "9px",
             padding: "10px 20px",
             backgroundColor: "transparent",
-            color: "white",
+            color: pathname === "/contact" ? "#0b57d0" : "white", // Dynamic color
             border: "none",
             fontWeight: "bold",
             fontSize: "14px",
@@ -61,11 +62,15 @@ const HeaderComponent = () => {
           }}
           onMouseEnter={(e) => {
             const target = e.target as HTMLElement;
-            target.style.color = "#0b57d0";
+            if (pathname !== "/contact") {
+              target.style.color = "#0b57d0";
+            }
           }}
           onMouseLeave={(e) => {
             const target = e.target as HTMLElement;
-            target.style.color = "white";
+            if (pathname !== "/contact") {
+              target.style.color = "white";
+            }
           }}
         >
           Contact Us

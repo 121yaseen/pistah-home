@@ -44,7 +44,7 @@ const SSPFeaturesSectionComponent = () => {
       ref={sectionRef}
       className={`w-full h-full bg-black text-white flex 
         ${isMobile ? "flex-col" : "flex-col md:flex-row"} 
-        items-center justify-center p-8 md:p-20 font-rubik transition-all duration-[1000ms] 
+        items-center justify-center md:p-20 font-rubik transition-all duration-[1000ms] 
         ${inView ? "opacity-100" : "opacity-0"} overflow-x-hidden`}
     >
       {/* Left side: The inventory graphic */}
