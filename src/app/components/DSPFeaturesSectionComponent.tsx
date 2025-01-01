@@ -3,17 +3,27 @@ import RealtimeAnalyticsIcon from "../icons/RealtimeAnalyticsIcon";
 
 const DSPFeaturesSectionComponent = () => {
   const [inView, setInView] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 912);
+  const [isMobile, setIsMobile] = useState(false); // Initialize as false
   const sectionRef = useRef(null);
 
-  // Check if the screen is mobile-sized
+  // Check if the screen is mobile-sized only in the browser (client-side)
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 912);
     };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+
+    // Set initial state when the component is mounted on the client-side
+    if (typeof window !== "undefined") {
+      setIsMobile(window.innerWidth <= 912);
+      window.addEventListener("resize", handleResize);
+    }
+
+    return () => {
+      if (typeof window !== "undefined") {
+        window.removeEventListener("resize", handleResize);
+      }
+    };
+  }, []); // Empty dependency array ensures this runs only once after mount
 
   // Intersection Observer for animations
   useEffect(() => {

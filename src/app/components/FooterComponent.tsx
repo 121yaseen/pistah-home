@@ -1,13 +1,22 @@
 import { useEffect, useState } from "react";
 
 const FooterComponent = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 912);
+  const [isMobile, setIsMobile] = useState(false); // Initialize as false
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 912);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+    // Ensure this runs only in the browser (client-side)
+    if (typeof window !== "undefined") {
+      const handleResize = () => setIsMobile(window.innerWidth <= 912);
+      
+      // Set initial state
+      setIsMobile(window.innerWidth <= 912);
+      
+      window.addEventListener("resize", handleResize);
+      
+      // Clean up the event listener
+      return () => window.removeEventListener("resize", handleResize);
+    }
+  }, []); // Empty dependency array ensures this runs only once after mount
 
   return (
     <footer className="w-full bg-[#001464]">
