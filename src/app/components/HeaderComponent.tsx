@@ -49,32 +49,34 @@ const HeaderComponent = () => {
       </Link>
 
       {/* Right Button: Contact Us */}
-      <button
-        style={{
-          position: "relative",
-          right: isMobile ? "-10%" : "50px",
-          top: "9px",
-          padding: "10px 20px",
-          backgroundColor: "transparent",
-          color: "white",
-          border: "none",
-          fontWeight: "bold",
-          fontSize: "14px",
-          cursor: "pointer",
-          transition: "all 0.2s ease",
-          textDecoration: "none",
-        }}
-        onMouseEnter={(e) => {
-          const target = e.target as HTMLElement;
-          target.style.color = "#0b57d0";
-        }}
-        onMouseLeave={(e) => {
-          const target = e.target as HTMLElement;
-          target.style.color = "white";
-        }}
-      >
-        Contact Us
-      </button>
+      <Link href="/contact">
+        <button
+          style={{
+            position: "relative",
+            right: isMobile ? "-10%" : "50px",
+            top: "9px",
+            padding: "10px 20px",
+            backgroundColor: "transparent",
+            color: "white",
+            border: "none",
+            fontWeight: "bold",
+            fontSize: "14px",
+            cursor: "pointer",
+            transition: "all 0.2s ease",
+            textDecoration: "none",
+          }}
+          onMouseEnter={(e) => {
+            const target = e.target as HTMLElement;
+            target.style.color = "#0b57d0";
+          }}
+          onMouseLeave={(e) => {
+            const target = e.target as HTMLElement;
+            target.style.color = "white";
+          }}
+        >
+          Contact Us
+        </button>
+      </Link>
     </div>
   );
 };
