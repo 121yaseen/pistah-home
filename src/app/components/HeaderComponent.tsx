@@ -1,5 +1,5 @@
 import Link from "next/link";
-import PistahIcon from "./icons/pistahIcon";
+import PistahIcon from "../icons/pistahIcon";
 import { useEffect, useState } from "react";
 
 const HeaderComponent = () => {

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
-import RealtimeAnalyticsIcon from "./icons/RealtimeAnalyticsIcon";
-import InventoryIcon from "./icons/InventoryIcon";
+import RealtimeAnalyticsIcon from "../icons/RealtimeAnalyticsIcon";
+import InventoryIcon from "../icons/InventoryIcon";
 
 const SSPFeaturesSectionComponent = () => {
   const [inView, setInView] = useState(false);

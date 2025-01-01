@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import RealtimeAnalyticsIcon from "./icons/RealtimeAnalyticsIcon";
+import RealtimeAnalyticsIcon from "../icons/RealtimeAnalyticsIcon";
 
 const DSPFeaturesSectionComponent = () => {
   const [inView, setInView] = useState(false);
