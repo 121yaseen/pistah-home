@@ -3,8 +3,19 @@ import RealtimeAnalyticsIcon from "./icons/RealtimeAnalyticsIcon";
 
 const SSPFeaturesSectionComponent = () => {
   const [inView, setInView] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 912);
   const sectionRef = useRef(null);
 
+  // Check if the screen is mobile-sized
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 912);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Intersection Observer for animations
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -21,28 +32,39 @@ const SSPFeaturesSectionComponent = () => {
   return (
     <div
       ref={sectionRef}
-      className={`w-full h-full bg-black text-white flex flex-col md:flex-row items-center justify-center p-20 font-rubik transition-all duration-[1000ms] ${
-        inView ? "opacity-100" : "opacity-0"
-      } overflow-x-hidden`}
+      className={`w-full h-full bg-black text-white flex 
+        ${isMobile ? "flex-col" : "flex-col md:flex-row"} 
+        items-center justify-center p-8 md:p-20 font-rubik transition-all duration-[1000ms] 
+        ${inView ? "opacity-100" : "opacity-0"} overflow-x-hidden`}
     >
       {/* Left side: The analytics graphic */}
       <div
-        className={`md:w-1/2 flex items-center justify-center mb-6 md:mb-0 transition-transform duration-[1000ms] ${
-          inView
+        className={`flex ${isMobile ? "w-full mb-4" : "md:w-1/2 mb-6"} 
+          items-center justify-center transition-transform duration-[1000ms] 
+          ${inView
             ? "transform translate-x-0 opacity-100"
             : "transform -translate-x-[50%] opacity-0"
-        }`}
+          }`}
+          style={{ marginTop: isMobile ? "-20%" : "0" }}
       >
-        <RealtimeAnalyticsIcon />
+        <div
+          className={`transform transition-transform duration-500 ${isMobile ? "scale-50" : "scale-100"
+            }`}
+          style={{ transformOrigin: "center" }}
+        >
+          <RealtimeAnalyticsIcon />
+        </div>
       </div>
 
       {/* Right side: Text content */}
       <div
-        className={`md:w-1/2 text-center md:text-left md:pl-12 transition-transform duration-[1000ms] ${
-          inView
+        className={`text-center md:text-left ${isMobile ? "w-full" : "md:w-1/2 md:pl-12"}
+          transition-transform duration-[1000ms] 
+          ${inView
             ? "transform translate-x-0 opacity-100"
-            : "transform translate-x-[50%] opacity-0"
-        }`}
+            : `transform ${isMobile ? "translate-y-[50%]" : "translate-x-[50%]"} opacity-0`
+          }`}
+        style={{ marginTop: isMobile ? "-15%" : "0" }} // Reduce vertical distance in mobile view
       >
         <h2 className="text-3xl font-bold mb-4">Real-time Analytics</h2>
         <p className="text-gray-300 mb-6">
