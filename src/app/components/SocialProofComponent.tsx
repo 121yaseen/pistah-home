@@ -1,8 +1,20 @@
 import { useEffect, useState } from 'react';
-import PistahIcon from '../icons/pistahIcon';
+import SwiggyIcon from '../icons/brandIcons/swiggy';
+import LuluIcon from '../icons/brandIcons/lulu';
+import RoyalEnfieldIcon from '../icons/brandIcons/royalenfield';
+import SonyIcon from '../icons/brandIcons/sony';
+import BmwIcon from '../icons/brandIcons/bmw';
+import SotiIcon from '../icons/brandIcons/soti';
+import OnRoadIcon from '../icons/mediaIcons/onRoad';
+import BlindSpotIcon from '../icons/mediaIcons/blindspot';
+import CaasieIcon from '../icons/mediaIcons/caasie';
+import VioohIcon from '../icons/mediaIcons/viooh';
+import BroadSignIcon from '../icons/mediaIcons/broadsign';
+import VistarIcon from '../icons/mediaIcons/vistar';
 
 const SocialProofComponent = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [hoveredMediaIndex, setHoveredMediaIndex] = useState<number | null>(null);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -20,11 +32,14 @@ const SocialProofComponent = () => {
   };
 
   const brands = [
-    PistahIcon, PistahIcon, PistahIcon, PistahIcon,
-    PistahIcon, PistahIcon, PistahIcon, PistahIcon,
-    // Duplicate icons to create seamless loop
-    PistahIcon, PistahIcon, PistahIcon, PistahIcon,
-    PistahIcon, PistahIcon, PistahIcon, PistahIcon
+    SotiIcon, BmwIcon, SonyIcon,
+    LuluIcon, SwiggyIcon, RoyalEnfieldIcon,
+    SotiIcon, SonyIcon
+  ];
+
+  const media = [
+    CaasieIcon, BlindSpotIcon,VistarIcon, BroadSignIcon,
+    VioohIcon, OnRoadIcon, BlindSpotIcon
   ];
 
   return (
@@ -37,20 +52,6 @@ const SocialProofComponent = () => {
       textAlign: 'center'
     }}>
       <h2 style={{
-        fontSize: '2.5rem',
-        color: 'white',
-        marginBottom: '3rem',
-      }}>
-        They already <span style={{
-          fontSize: '3rem',
-          fontWeight: '800',
-          color: '#002ad4',
-          marginBottom: '1rem',
-          textShadow: '0 0 20px #002ad4',
-          animation: 'blink 1.5s infinite'
-        }}>Love</span> us.
-      </h2>
-      <h2 style={{
         fontSize: '1.3rem',
         color: '#002ad4',
         textAlign: 'left',
@@ -58,7 +59,7 @@ const SocialProofComponent = () => {
         paddingLeft: '8rem'
       }}> <span style={{ fontWeight: '800' }}>1k+</span>  Brands</h2>
       <div style={{
-        width: '80%',
+        width: '90%',
         overflow: 'hidden',
         padding: '2rem 0',
         margin: '1rem 0'
@@ -66,8 +67,8 @@ const SocialProofComponent = () => {
         <div style={{
           display: 'flex',
           alignItems: 'center',
-          gap: isMobile ? '3rem' : '7rem',
-          animation: 'scrollLeft 30s linear infinite', // Animation to scroll left
+          gap: isMobile ? '7rem' : '13rem',
+          animation: 'scrollLeft 25s linear infinite', // Animation to scroll left
           height: '5rem',
           overflow: 'visible',
           whiteSpace: 'nowrap', // Prevents wrapping
@@ -98,7 +99,7 @@ const SocialProofComponent = () => {
         paddingLeft: '8rem'
       }}> <span style={{ fontWeight: '800' }}>20k+</span>  Boards</h2>
       <div style={{
-        width: '80%',
+        width: '90%',
         overflow: 'hidden',
         padding: '2rem 0',
         margin: '1rem 0'
@@ -106,21 +107,21 @@ const SocialProofComponent = () => {
         <div style={{
           display: 'flex',
           alignItems: 'center',
-          gap: isMobile ? '3rem' : '7rem',
-          animation: 'scrollRight 30s linear infinite', // Animation to scroll right
+          gap: isMobile ? '7rem' : '15rem',
+          animation: 'scrollRight 25s linear infinite', // Animation to scroll right
           height: '5rem',
           overflow: 'visible',
           whiteSpace: 'nowrap', // Prevents wrapping
         }}>
-          {brands.map((Brand, index) => (
+          {media.map((Brand, index) => (
             <div
               key={index}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
+              onMouseEnter={() => setHoveredMediaIndex(index)}
+              onMouseLeave={() => setHoveredMediaIndex(null)}
               style={{
                 color: 'white',
                 transition: 'color 0.3s ease, transform 0.3s ease',
-                transform: getScale(index, hoveredIndex, isMobile),
+                transform: getScale(index, hoveredMediaIndex, isMobile),
                 display: 'inline-block', // Ensures icons stay on a single line
               }}
             >
@@ -129,6 +130,21 @@ const SocialProofComponent = () => {
           ))}
         </div>
       </div>
+
+      <h2 style={{
+        fontSize: '1.5rem',
+        color: '#ccc',
+        fontStyle: 'italic'
+      }}>
+        They are already in <span style={{
+          fontSize: '2rem',
+          fontWeight: '800',
+          color: '#002ad4',
+          textShadow: '0 0 20px #002ad4',
+          animation: 'blink 1.5s infinite',
+          fontStyle: 'normal'
+        }}>Love</span> with us, What's stopping you?
+      </h2>
 
       <style>
         {`
