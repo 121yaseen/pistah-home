@@ -43,11 +43,10 @@ const HeaderComponent = () => {
         <PistahIcon />
       </div>
 
-      {/* Right Button: Contact Us */}
-      <button
+      <div
         style={{
           position: "relative",
-          right: isMobile ? "-10%" : "50px",
+          right: "50px", 
           top: "9px",
           padding: "10px 20px",
           backgroundColor: "transparent",
@@ -58,19 +57,55 @@ const HeaderComponent = () => {
           cursor: "pointer",
           transition: "all 0.2s ease",
           textDecoration: "none",
-        }}
-        onClick={() => setShowContactPopup(true)}
-        onMouseEnter={(e) => {
-          const target = e.target as HTMLElement;
-          target.style.color = "#0b57d0";
-        }}
-        onMouseLeave={(e) => {
-          const target = e.target as HTMLElement;
-          target.style.color = "white";
+          display: "flex",
+          gap: "1rem",
+          flexDirection: "row",
+          flexWrap: "nowrap",
+          whiteSpace: "nowrap"
         }}
       >
-        Message Us
-      </button>
+        <button 
+          onClick={() => window.location.href = '/demo'}
+          onMouseEnter={(e) => {
+            const target = e.target as HTMLElement;
+            target.style.backgroundColor = "#0044A5";
+          }}
+          onMouseLeave={(e) => {
+            const target = e.target as HTMLElement;
+            target.style.backgroundColor = "#0b57d0";
+          }}
+          style={{
+            borderRadius: "4px",
+            padding: "10px 20px",
+            backgroundColor: "#0b57d0",
+            color: "white",
+            cursor: "pointer",
+            transition: "all 0.2s ease",
+          }}
+        >
+          Book a Demo
+        </button>
+
+        <button 
+          onClick={() => setShowContactPopup(true)}
+          onMouseEnter={(e) => {
+            const target = e.target as HTMLElement;
+            target.style.color = "#0b57d0";
+          }}
+          onMouseLeave={(e) => {
+            const target = e.target as HTMLElement;
+            target.style.color = "white";
+          }}
+          style={{
+            backgroundColor: "transparent",
+            border: "none",
+            color: "white",
+            cursor: "pointer"
+          }}
+        >
+          Message Us
+        </button>
+      </div>
 
       {showContactPopup && (
         <ContactPageComponent onClose={() => setShowContactPopup(false)} />

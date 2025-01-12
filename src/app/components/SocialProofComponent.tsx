@@ -153,13 +153,13 @@ const SocialProofComponent = () => {
               transform: translateX(0%); /* Start at the rightmost position */
             }
             100% {
-              transform: translateX(-50%); /* Move to the left */
+              transform: translateX(${isMobile ? '-250%' : '-50%'}); /* Move to the left */
             }
           }
 
           @keyframes scrollRight {
             0% {
-              transform: translateX(-50%); /* Start at the leftmost position */
+              transform: translateX(${isMobile ? '-250%' : '-50%'}); /* Start at the leftmost position */
             }
             100% {
               transform: translateX(0%); /* Move to the right */

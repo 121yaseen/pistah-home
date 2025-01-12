@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaCheck, FaTimes } from "react-icons/fa";
 
 interface ContactPageProps {
   onClose: () => void;
@@ -116,7 +117,7 @@ const ContactPageComponent: React.FC<ContactPageProps> = ({ onClose }) => {
       return (
         <div style={styles.statusContainer}>
           <div style={styles.successCircle}>
-            <span style={styles.successIcon}>&#x2714;</span>
+            <span style={styles.successIcon}><FaCheck /></span>
           </div>
           <span style={{ color: "green" }}>Sent</span>
         </div>
@@ -127,7 +128,7 @@ const ContactPageComponent: React.FC<ContactPageProps> = ({ onClose }) => {
       return (
         <div style={styles.statusContainer}>
           <div style={styles.failureCircle}>
-            <span style={styles.failureIcon}>X</span>
+            <span style={styles.failureIcon}><FaTimes /></span>
           </div>
           <span style={{ color: "red" }}>Failed</span>
         </div>
@@ -200,7 +201,7 @@ const ContactPageComponent: React.FC<ContactPageProps> = ({ onClose }) => {
               type="submit"
               style={{
                 ...styles.button,
-                backgroundColor: buttonHover ? "#001464" : "#0b57d0",
+                backgroundColor: buttonHover ? "#0044A5" : "#0b57d0",
                 cursor: submissionStatus === "sending" ? "not-allowed" : "pointer",
               }}
               onMouseEnter={() => setButtonHover(true)}
@@ -291,14 +292,13 @@ const styles = {
     alignItems: "center",
   },
   button: {
-    padding: "12px 32px",
+    padding: "10px 20px",
     fontWeight: "bold",
     color: "#fff",
     border: "none",
     cursor: "pointer",
-    transition: "background-color 0.2s ease-in-out",
+    transition: "background-color 0.1s ease-in-out",
     fontSize: "16px",
-    borderRadius: "4px",
     marginLeft: "10px",
   },
   error: {
@@ -333,7 +333,7 @@ const styles = {
   },
   successIcon: {
     color: "#fff",
-    fontSize: "14px",
+    fontSize: "12px",
   },
   failureCircle: {
     border: "3px solid red",
