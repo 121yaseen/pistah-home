@@ -143,7 +143,7 @@ const SocialProofComponent = () => {
           textShadow: '0 0 20px #002ad4',
           animation: 'blink 1.5s infinite',
           fontStyle: 'normal'
-        }}>Love</span> with us, What's stopping you?
+        }}>Love</span> with us, What&apos;s stopping you?
       </h2>
 
       <style>
