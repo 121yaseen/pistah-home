@@ -1,5 +1,3 @@
-"use client";
-
 import HeaderComponent from "./components/HeaderComponent";
 import HomeScreenComponent from "./components/HomeScreenComponent";
 
