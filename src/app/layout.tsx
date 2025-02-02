@@ -4,6 +4,9 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Pistah",
   description: "Digital Out of Home Advertising",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
