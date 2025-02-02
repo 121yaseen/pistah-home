@@ -1,5 +1,5 @@
 "use client";
-import PistahIcon from "../icons/pistahIcon";
+import Image from "next/image";
 import ContactPageComponent from "./ContactPageComponent";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -40,13 +40,13 @@ const HeaderComponent = () => {
           transition: "transform 0.2s ease",
         }}
       >
-        <PistahIcon />
+        <Image src={"/pistah.jpeg"} alt={""} width={"140"} height={"100"} />
       </div>
 
       <div
         style={{
           position: "relative",
-          right: "50px", 
+          right: "50px",
           top: "9px",
           padding: "10px 20px",
           backgroundColor: "transparent",
@@ -61,11 +61,11 @@ const HeaderComponent = () => {
           gap: "1rem",
           flexDirection: "row",
           flexWrap: "nowrap",
-          whiteSpace: "nowrap"
+          whiteSpace: "nowrap",
         }}
       >
-        <button 
-          onClick={() => window.location.href = '/demo'}
+        <button
+          onClick={() => (window.location.href = "/demo")}
           onMouseEnter={(e) => {
             const target = e.target as HTMLElement;
             target.style.backgroundColor = "#0044A5";
@@ -86,7 +86,7 @@ const HeaderComponent = () => {
           Book a Demo
         </button>
 
-        <button 
+        <button
           onClick={() => setShowContactPopup(true)}
           onMouseEnter={(e) => {
             const target = e.target as HTMLElement;
@@ -100,7 +100,7 @@ const HeaderComponent = () => {
             backgroundColor: "transparent",
             border: "none",
             color: "white",
-            cursor: "pointer"
+            cursor: "pointer",
           }}
         >
           Message Us
