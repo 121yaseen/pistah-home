@@ -81,7 +81,7 @@ const HeaderComponent = () => {
             <div
               style={{
                 position: "fixed",
-                top: 10,
+                top: 0,
                 left: 0,
                 width: "100%",
                 height: "100%",
@@ -94,9 +94,9 @@ const HeaderComponent = () => {
               {/* Close Icon at Top Right */}
               <FiX
                 onClick={() => setIsMenuOpen(false)}
-                size={24}
+                size={29}
                 color="white"
-                style={{ cursor: "pointer", alignSelf: "flex-end" }}
+                style={{ cursor: "pointer", marginLeft: "20px", marginTop: "15px" }}
               />
               {/* Menu Options Centered */}
               <div
@@ -120,7 +120,7 @@ const HeaderComponent = () => {
                     border: "none",
                     color: "white",
                     cursor: "pointer",
-                    fontSize: "18px",
+                    fontSize: "24px",
                     fontWeight: "bold"
                   }}
                 >
@@ -137,7 +137,7 @@ const HeaderComponent = () => {
                     border: "none",
                     color: "white",
                     cursor: "pointer",
-                    fontSize: "18px",
+                    fontSize: "24px",
                     fontWeight: "bold"
                   }}
                 >
@@ -146,8 +146,6 @@ const HeaderComponent = () => {
               </div>
             </div>
           )}
-
-
         </div>
       )}
 
