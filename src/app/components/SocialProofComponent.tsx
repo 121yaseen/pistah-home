@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import SwiggyIcon from "../icons/brandIcons/swiggy";
 import LuluIcon from "../icons/brandIcons/lulu";
 import RoyalEnfieldIcon from "../icons/brandIcons/royalenfield";
@@ -12,20 +12,14 @@ import CaasieIcon from "../icons/mediaIcons/caasie";
 import VioohIcon from "../icons/mediaIcons/viooh";
 import BroadSignIcon from "../icons/mediaIcons/broadsign";
 import VistarIcon from "../icons/mediaIcons/vistar";
+import { useDevice } from "../context/DeviceContext";
 
 const SocialProofComponent = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [hoveredMediaIndex, setHoveredMediaIndex] = useState<number | null>(
     null
   );
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 912);
-    handleResize(); // Initialize on mount
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  const { isMobile } = useDevice();
 
   const getScale = (
     index: number,

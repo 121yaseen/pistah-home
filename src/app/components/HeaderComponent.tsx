@@ -1,22 +1,16 @@
 "use client";
 import Image from "next/image";
 import ContactPageComponent from "./ContactPageComponent";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { FiX } from "react-icons/fi";
+import { useDevice } from "../context/DeviceContext";
 
 const HeaderComponent = () => {
   const router = useRouter();
-  const [isMobile, setIsMobile] = useState(false);
+  const { isMobile } = useDevice();
   const [showContactPopup, setShowContactPopup] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 912);
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   return (
     <div
