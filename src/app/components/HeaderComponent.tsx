@@ -1,22 +1,16 @@
 "use client";
 import Image from "next/image";
 import ContactPageComponent from "./ContactPageComponent";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { FiX } from "react-icons/fi";
+import { useDevice } from "../context/DeviceContext";
 
 const HeaderComponent = () => {
   const router = useRouter();
-  const [isMobile, setIsMobile] = useState(false);
+  const { isMobile } = useDevice();
   const [showContactPopup, setShowContactPopup] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 912);
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   return (
     <div
@@ -81,7 +75,7 @@ const HeaderComponent = () => {
             <div
               style={{
                 position: "fixed",
-                top: 10,
+                top: 0,
                 left: 0,
                 width: "100%",
                 height: "100%",
@@ -94,9 +88,9 @@ const HeaderComponent = () => {
               {/* Close Icon at Top Right */}
               <FiX
                 onClick={() => setIsMenuOpen(false)}
-                size={24}
+                size={29}
                 color="white"
-                style={{ cursor: "pointer", alignSelf: "flex-end" }}
+                style={{ cursor: "pointer", marginLeft: "20px", marginTop: "15px" }}
               />
               {/* Menu Options Centered */}
               <div
@@ -120,7 +114,7 @@ const HeaderComponent = () => {
                     border: "none",
                     color: "white",
                     cursor: "pointer",
-                    fontSize: "18px",
+                    fontSize: "24px",
                     fontWeight: "bold"
                   }}
                 >
@@ -137,7 +131,7 @@ const HeaderComponent = () => {
                     border: "none",
                     color: "white",
                     cursor: "pointer",
-                    fontSize: "18px",
+                    fontSize: "24px",
                     fontWeight: "bold"
                   }}
                 >
@@ -146,8 +140,6 @@ const HeaderComponent = () => {
               </div>
             </div>
           )}
-
-
         </div>
       )}
 

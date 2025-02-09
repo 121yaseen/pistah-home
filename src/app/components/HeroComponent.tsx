@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useDevice } from "../context/DeviceContext";
 
 const HeroComponent = () => {
   const handleBrandButtonClick = () => {
@@ -11,21 +12,7 @@ const HeroComponent = () => {
     window.location.href = "https://inventory.pistah.bluebucket.in/";
   };
 
-  const [isMobile, setIsMobile] = useState(false);
-  useEffect(() => {
-    // Update the `isMobile` state based on the window width
-    const updateIsMobile = () => {
-      setIsMobile(window.innerWidth <= 912);
-    };
-
-    updateIsMobile();
-
-    window.addEventListener("resize", updateIsMobile);
-
-    return () => {
-      window.removeEventListener("resize", updateIsMobile);
-    };
-  }, []);
+  const { isMobile } = useDevice();
 
   return (
     <div

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { DeviceProvider } from "./context/DeviceContext";
 
 export const metadata: Metadata = {
   title: "Pistah",
@@ -16,7 +17,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body suppressHydrationWarning>{children}</body>
+      <body suppressHydrationWarning>
+        <DeviceProvider>
+          {children}
+        </DeviceProvider>
+      </body>
     </html>
   );
 }

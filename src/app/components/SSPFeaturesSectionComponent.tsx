@@ -1,34 +1,16 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import InventoryIcon from "../icons/InventoryIcon";
+import { useDevice } from "../context/DeviceContext";
 
 const SSPFeaturesSectionComponent = () => {
   const [inView, setInView] = useState(false);
-  const [isMobile, setIsMobile] = useState(false); // Initialize as false
+  const { isMobile } = useDevice();
   const sectionRef = useRef(null);
 
   const handleMediaButtonClick = () => {
     window.location.href = "https://inventory.pistah.bluebucket.in/";
   };
-
-  // Check if the screen is mobile-sized only in the browser (client-side)
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 912);
-    };
-
-    // Set initial state when the component is mounted on the client-side
-    if (typeof window !== "undefined") {
-      setIsMobile(window.innerWidth <= 912);
-      window.addEventListener("resize", handleResize);
-    }
-
-    return () => {
-      if (typeof window !== "undefined") {
-        window.removeEventListener("resize", handleResize);
-      }
-    };
-  }, []); // Empty dependency array ensures this runs only once after mount
 
   // Intersection Observer for animations
   useEffect(() => {
