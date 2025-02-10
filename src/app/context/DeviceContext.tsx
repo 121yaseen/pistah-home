@@ -39,7 +39,7 @@ export const DeviceProvider = ({ children }: { children: React.ReactNode }) => {
           background: "black",
         }}
       >
-        <Image src={"/pistahIcon.svg"} alt={""} width={"600"} height={"100"} />
+        <Image src={"/pistahIcon.svg"} alt={""} width={600} height={100} />
       </div>
     );
   }
