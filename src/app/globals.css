@@ -12,12 +12,12 @@
 }
 
 body {
-  background-color: black;
-  font-family: 'Montserrat', sans-serif;
+  background-color: #005BF7;
+  font-family: 'Optimistic Display Medium', Helvetica, Arial, sans-serif;
 }
 
 .logo {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Optimistic Display Medium', Helvetica, Arial, sans-serif;
   font-weight: 700;
   font-size: 35rem;
   color: #001464;

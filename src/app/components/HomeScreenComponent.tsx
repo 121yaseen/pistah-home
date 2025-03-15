@@ -17,9 +17,9 @@ const HomeScreenComponent = () => {
       <section className="h-screen snap-start">
         <SSPFeaturesSectionComponent />
       </section>
-      <section className="h-screen snap-start">
+      {/* <section className="h-screen snap-start">
         <SocialProofComponent />
-      </section>
+      </section> */}
 
       {/* Footer */}
       <section className="snap-start">
