@@ -6,7 +6,11 @@ import { useRouter } from "next/navigation";
 import { FiX } from "react-icons/fi";
 import { useDevice } from "../context/DeviceContext";
 
-const HeaderComponent = () => {
+interface HeaderComponentProps {
+  isVisible: boolean;
+}
+
+const HeaderComponent: React.FC<HeaderComponentProps> = ({ isVisible }) => {
   const router = useRouter();
   const { isMobile } = useDevice();
   const [showContactPopup, setShowContactPopup] = useState(false);
@@ -26,6 +30,8 @@ const HeaderComponent = () => {
         alignItems: "center",
         padding: "0 60px",
         zIndex: 1000,
+        transform: isVisible ? 'translateY(0)' : 'translateY(-100%)',
+        transition: 'transform 0.3s ease-in-out',
       }}
     >
       {/* Mobile hamburger menu */}
@@ -77,8 +83,8 @@ const HeaderComponent = () => {
                 position: "fixed",
                 top: 0,
                 left: 0,
-                width: "100%",
-                height: "100%",
+                width: "100vw",
+                height: "100vh",
                 backgroundColor: "white",
                 display: "flex",
                 flexDirection: "column",

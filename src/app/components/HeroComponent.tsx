@@ -33,7 +33,7 @@ const HeroComponent = () => {
           backgroundPosition: "center",
           transform: "translate(-50%, -50%)",
           zIndex: -1,
-          animation: "zoomFade 20s infinite ease-in-out",
+          animation: "zoomFade 12s infinite ease-in-out",
         }}
       ></div>
 
@@ -107,9 +107,9 @@ const HeroComponent = () => {
 
           @keyframes zoomFade {
             0% { transform: translate(-50%, -50%) scale(3); opacity: 1; }
-            25% { transform: translate(-50%, -50%) scale(3.2); opacity: 0.8; }
+            20% { transform: translate(-50%, -50%) scale(3.2); opacity: 0.9; }
             50% { transform: translate(-50%, -50%) scale(3); opacity: 1; }
-            75% { transform: translate(-50%, -50%) scale(2.8); opacity: 0.8; }
+            75% { transform: translate(-50%, -50%) scale(2.7); opacity: 0.9; }
             100% { transform: translate(-50%, -50%) scale(3); opacity: 1; }
           }
         `}</style>
