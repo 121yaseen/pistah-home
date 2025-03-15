@@ -2,7 +2,6 @@ import HeroComponent from "./HeroComponent";
 import DSPFeaturesSectionComponent from "./DSPFeaturesSectionComponent";
 import SSPFeaturesSectionComponent from "./SSPFeaturesSectionComponent";
 import FooterComponent from "./FooterComponent";
-import SocialProofComponent from "./SocialProofComponent";
 
 const HomeScreenComponent = () => {
   return (
@@ -17,9 +16,9 @@ const HomeScreenComponent = () => {
       <section className="h-screen snap-start">
         <SSPFeaturesSectionComponent />
       </section>
-      <section className="h-screen snap-start">
+      {/* <section className="h-screen snap-start">
         <SocialProofComponent />
-      </section>
+      </section> */}
 
       {/* Footer */}
       <section className="snap-start">

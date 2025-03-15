@@ -19,8 +19,8 @@ const HeaderComponent = () => {
         top: 0,
         left: 0,
         width: "100%",
-        height: "100px",
-        backgroundColor: "transparent",
+        height: "80px",
+        backgroundColor: "white",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
@@ -49,7 +49,7 @@ const HeaderComponent = () => {
               style={{
                 width: "25px",
                 height: "2px",
-                backgroundColor: "white",
+                backgroundColor: "#000844",
                 transition: "all 0.3s ease",
               }}
             />
@@ -57,7 +57,7 @@ const HeaderComponent = () => {
               style={{
                 width: "25px",
                 height: "2px",
-                backgroundColor: "white",
+                backgroundColor: "#000844",
                 transition: "all 0.3s ease",
               }}
             />
@@ -65,7 +65,7 @@ const HeaderComponent = () => {
               style={{
                 width: "25px",
                 height: "2px",
-                backgroundColor: "white",
+                backgroundColor: "#000844",
                 transition: "all 0.3s ease",
               }}
             />
@@ -79,7 +79,7 @@ const HeaderComponent = () => {
                 left: 0,
                 width: "100%",
                 height: "100%",
-                backgroundColor: "black",
+                backgroundColor: "white",
                 display: "flex",
                 flexDirection: "column",
                 padding: "20px",
@@ -89,8 +89,8 @@ const HeaderComponent = () => {
               <FiX
                 onClick={() => setIsMenuOpen(false)}
                 size={29}
-                color="white"
-                style={{ cursor: "pointer", marginLeft: "20px", marginTop: "15px" }}
+                color="#000844"
+                style={{ cursor: "pointer", marginLeft: "19px", marginTop: "6px" }}
               />
               {/* Menu Options Centered */}
               <div
@@ -105,34 +105,48 @@ const HeaderComponent = () => {
               >
                 <button
                   onClick={() => {
-                    window.location.href = "/demo";
-                    setIsMenuOpen(false);
+                    setShowContactPopup(true);
                   }}
                   style={{
                     padding: "12px 24px",
                     backgroundColor: "transparent",
                     border: "none",
-                    color: "white",
+                    color: "#000844",
                     cursor: "pointer",
                     fontSize: "24px",
                     fontWeight: "bold"
                   }}
                 >
-                  Book a Demo
+                  Brands
                 </button>
                 <button
                   onClick={() => {
                     setShowContactPopup(true);
-                    setIsMenuOpen(false);
                   }}
                   style={{
                     padding: "12px 24px",
                     backgroundColor: "transparent",
                     border: "none",
-                    color: "white",
+                    color: "#000844",
                     cursor: "pointer",
                     fontSize: "24px",
                     fontWeight: "bold"
+                  }}
+                >
+                  People
+                </button>
+                <button
+                  onClick={() => {
+                    setShowContactPopup(true);
+                  }}
+                  style={{
+                    padding: "12px 24px",
+                    backgroundColor: "transparent",
+                    border: "none",
+                    color: "#000844",
+                    cursor: "pointer",
+                    fontSize: "24px",
+                    fontWeight: "normal"
                   }}
                 >
                   Message Us
@@ -181,28 +195,6 @@ const HeaderComponent = () => {
           }}
         >
           <button
-            onClick={() => (window.location.href = "/demo")}
-            onMouseEnter={(e) => {
-              const target = e.target as HTMLElement;
-              target.style.backgroundColor = "#0044A5";
-            }}
-            onMouseLeave={(e) => {
-              const target = e.target as HTMLElement;
-              target.style.backgroundColor = "#0b57d0";
-            }}
-            style={{
-              borderRadius: "4px",
-              padding: "9px 20px",
-              backgroundColor: "#0b57d0",
-              color: "white",
-              cursor: "pointer",
-              transition: "all 0.2s ease",
-            }}
-          >
-            Book a Demo
-          </button>
-
-          <button
             onClick={() => setShowContactPopup(true)}
             onMouseEnter={(e) => {
               const target = e.target as HTMLElement;
@@ -210,12 +202,12 @@ const HeaderComponent = () => {
             }}
             onMouseLeave={(e) => {
               const target = e.target as HTMLElement;
-              target.style.color = "white";
+              target.style.color = "#002ad4";
             }}
             style={{
               backgroundColor: "transparent",
               border: "none",
-              color: "white",
+              color: "#002ad4",
               cursor: "pointer",
             }}
           >
