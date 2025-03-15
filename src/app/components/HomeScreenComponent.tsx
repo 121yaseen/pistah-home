@@ -2,7 +2,6 @@ import HeroComponent from "./HeroComponent";
 import DSPFeaturesSectionComponent from "./DSPFeaturesSectionComponent";
 import SSPFeaturesSectionComponent from "./SSPFeaturesSectionComponent";
 import FooterComponent from "./FooterComponent";
-import SocialProofComponent from "./SocialProofComponent";
 
 const HomeScreenComponent = () => {
   return (
