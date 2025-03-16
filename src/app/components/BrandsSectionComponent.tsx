@@ -24,10 +24,9 @@ const BrandsSectionComponent = () => {
     <div
       ref={sectionRef}
       className={`w-full min-h-screen relative bg-black text-white flex flex-col items-center justify-center 
-        overflow-hidden transition-all duration-[1000ms] 
-        ${inView ? "opacity-100" : "opacity-0"} overflow-x-hidden `}
+        overflow-hidden transition-all duration-[1000ms] ${inView ? "opacity-100" : "opacity-0"
+        } overflow-x-hidden`}
     >
-      {/* SVG Icon at Top */}
       <div
         className={`transition-transform duration-[1000ms] ${inView ? "animate-zoomIn" : ""
           }`}
@@ -45,10 +44,10 @@ const BrandsSectionComponent = () => {
       <div
         className={`text-center transition-transform duration-[1000ms] text-white ${inView ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
           }`}
-        style={{ paddingLeft: "2rem", paddingRight: "2rem", transform: "translate(0, -4px)"}}
+        style={{ paddingLeft: "2rem", paddingRight: "2rem", paddingBottom: "2rem" }}
       >
         <h2 className="text-4xl font-bold mb-4">Bring the bar up</h2>
-        <p className="text-white mb-6 text-md">
+        <p className="text-white mb-6 text-sm">
           Swipe right for your perfect influencer match - boost your brand’s reach and shine. Join us now!
         </p>
         <button
@@ -62,15 +61,15 @@ const BrandsSectionComponent = () => {
       <style jsx>{`
         @keyframes zoomIn {
           0% {
-            transform: scale(0.8);
+            transform: scale(0.7);
             opacity: 0.5;
           }
           40% {
-            transform: scale(1.15);
+            transform: scale(1.1);
             opacity: 1;
           }
           100% {
-            transform: scale(1);
+            transform: scale(0.9);
             opacity: 1;
           }
         }
