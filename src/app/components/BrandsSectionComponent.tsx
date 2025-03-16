@@ -23,8 +23,9 @@ const BrandsSectionComponent = () => {
   return (
     <div
       ref={sectionRef}
+      style={{ transform: "translate(0, 2px)" }}
       className={`w-full h-full relative bg-black text-white flex flex-col items-center justify-center 
-        overflow-hidden transition-all duration-[1010ms] 
+        overflow-hidden transition-all duration-[1000ms] 
         ${inView ? "opacity-100" : "opacity-0"} overflow-x-hidden `}
     >
       {/* SVG Icon at Top */}
@@ -45,7 +46,7 @@ const BrandsSectionComponent = () => {
       <div
         className={`text-center transition-transform duration-[1000ms] text-white ${inView ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
           }`}
-        style={{ paddingLeft: "2rem", paddingRight: "2rem" }}
+        style={{ paddingLeft: "2rem", paddingRight: "2rem", transform: "translate(0, -4px)"}}
       >
         <h2 className="text-4xl font-bold mb-4">Bring the bar up</h2>
         <p className="text-white mb-6 text-md">
@@ -66,7 +67,7 @@ const BrandsSectionComponent = () => {
             opacity: 0.5;
           }
           40% {
-            transform: scale(1.2);
+            transform: scale(1.15);
             opacity: 1;
           }
           100% {
