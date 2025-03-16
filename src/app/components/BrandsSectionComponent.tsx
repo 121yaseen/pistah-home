@@ -23,8 +23,7 @@ const BrandsSectionComponent = () => {
   return (
     <div
       ref={sectionRef}
-      style={{ transform: "translate(0, 2px)" }}
-      className={`w-full h-full relative bg-black text-white flex flex-col items-center justify-center 
+      className={`w-full min-h-screen relative bg-black text-white flex flex-col items-center justify-center 
         overflow-hidden transition-all duration-[1000ms] 
         ${inView ? "opacity-100" : "opacity-0"} overflow-x-hidden `}
     >
