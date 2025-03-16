@@ -1,6 +1,5 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import InventoryIcon from "../icons/InventoryIcon";
 import { useDevice } from "../context/DeviceContext";
 
 const SSPFeaturesSectionComponent = () => {
@@ -51,7 +50,7 @@ const SSPFeaturesSectionComponent = () => {
           }`}
           style={{ transformOrigin: "center" }}
         >
-          <InventoryIcon />
+          {/* <InventoryIcon /> */}
         </div>
       </div>
 

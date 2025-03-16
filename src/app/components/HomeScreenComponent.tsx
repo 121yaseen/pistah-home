@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react';
 import HeroComponent from "./HeroComponent";
-import DSPFeaturesSectionComponent from "./DSPFeaturesSectionComponent";
+import BrandsSectionComponent from "./BrandsSectionComponent";
 import SSPFeaturesSectionComponent from "./SSPFeaturesSectionComponent";
 import FooterComponent from "./FooterComponent";
 
@@ -41,7 +41,7 @@ const HomeScreenComponent: React.FC<HomeScreenComponentProps> = ({ onScrollDirec
         <HeroComponent />
       </section>
       <section className="h-screen snap-start">
-        <DSPFeaturesSectionComponent />
+        <BrandsSectionComponent />
       </section>
       <section className="h-screen snap-start">
         <SSPFeaturesSectionComponent />
