@@ -35,6 +35,12 @@ const HomeScreenComponent: React.FC<HomeScreenComponentProps> = ({ onScrollDirec
     return () => container.removeEventListener('scroll', handleScroll);
   }, [onScrollDirection]);
 
+  useEffect(() => {
+    if (containerRef.current) {
+      containerRef.current.scrollTop = 0;
+    }
+  }, []);
+
   return (
     <div ref={containerRef} className="h-screen overflow-y-scroll snap-y snap-mandatory relative">
       <section className="h-screen snap-start">
