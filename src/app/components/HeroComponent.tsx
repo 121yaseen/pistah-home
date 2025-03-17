@@ -48,7 +48,7 @@ const HeroComponent = () => {
         <h1
           style={{
             color: "white",
-            fontSize: "45px",
+            fontSize: "40px",
             fontWeight: "bold",
             margin: 0,
             textShadow: "0 0 3px rgb(243 244 249)"
@@ -58,7 +58,7 @@ const HeroComponent = () => {
           <span
             style={{
               color: "white",
-              textShadow: "0 0 25px rgb(243 244 249)",
+              textShadow: "0 0 22px rgb(243 244 249)",
               animation: "blink 2s infinite",
             }}
           >
@@ -67,10 +67,9 @@ const HeroComponent = () => {
           make the next move.
         </h1>
         <p
+          className="text-sm"
           style={{
             color: "white",
-            fontSize: "16px",
-            fontWeight: "normal",
             margin: "10px 0 20px 0",
           }}
         >
