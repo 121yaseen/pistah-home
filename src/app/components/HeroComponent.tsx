@@ -1,13 +1,19 @@
-"use client";
-
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ContactPageComponent from "./ContactPageComponent";
 
 const HeroComponent = () => {
   const [showContactPopup, setShowContactPopup] = useState(false);
+  const heroRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (heroRef.current) {
+      heroRef.current.scrollTop = 0;
+    }
+  }, []);
 
   return (
     <div
+      ref={heroRef}
       style={{
         display: "flex",
         flexDirection: "column",
@@ -98,20 +104,20 @@ const HeroComponent = () => {
       </div>
       {/* Style for animations */}
       <style>{`
-          @keyframes blink {
-            0% { opacity: 1; }
-            50% { opacity: 0.9; }
-            100% { opacity: 1; }
-          }
+        @keyframes blink {
+          0% { opacity: 1; }
+          50% { opacity: 0.9; }
+          100% { opacity: 1; }
+        }
 
-          @keyframes zoomFade {
-            0% { transform: translate(-50%, -50%) scale(3); opacity: 1; }
-            25% { transform: translate(-50%, -50%) scale(3.2); opacity: 0.9; }
-            50% { transform: translate(-50%, -50%) scale(3); opacity: 1; }
-            75% { transform: translate(-50%, -50%) scale(2.7); opacity: 0.9; }
-            100% { transform: translate(-50%, -50%) scale(3); opacity: 1; }
-          }
-        `}</style>
+        @keyframes zoomFade {
+          0% { transform: translate(-50%, -50%) scale(3); opacity: 1; }
+          25% { transform: translate(-50%, -50%) scale(3.2); opacity: 0.9; }
+          50% { transform: translate(-50%, -50%) scale(3); opacity: 1; }
+          75% { transform: translate(-50%, -50%) scale(2.7); opacity: 0.9; }
+          100% { transform: translate(-50%, -50%) scale(3); opacity: 1; }
+        }
+      `}</style>
 
       {showContactPopup && (
         <ContactPageComponent onClose={() => setShowContactPopup(false)} />
