@@ -51,10 +51,10 @@ const BrandsSectionComponent = () => {
           style={{ paddingLeft: "2rem", paddingRight: "2rem" }}
         >
           <h2
-            className="text-5xl mb-4 text-[#005BF7]"
+            className="text-6xl mb-4 text-[#005BF7]"
             style={{ fontFamily: "League Gothic, sans-serif" }}
           >
-            BRING THE BAR UP
+            SET THE BAR HIGH
           </h2>
           <p className="text-white mb-6 text-sm">
             Swipe right for your perfect influencer match - boost your brand’s reach
