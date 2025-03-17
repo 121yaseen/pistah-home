@@ -1,4 +1,4 @@
-import { useRef, useEffect, useLayoutEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import HeroComponent from "./HeroComponent";
 import BrandsSectionComponent from "./BrandsSectionComponent";
 import SSPFeaturesSectionComponent from "./SSPFeaturesSectionComponent";
