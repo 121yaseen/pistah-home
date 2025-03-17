@@ -27,19 +27,23 @@ const BrandsSectionComponent = () => {
         overflow-hidden transition-all duration-[1000ms] ${inView ? "opacity-100" : "opacity-0"
         } overflow-x-hidden`}
     >
-      <div
-        className={`transition-transform duration-[1000ms] ${inView ? "animate-zoomIn" : ""
-          }`}
-      >
-        <Image
-          src="/assets/brands.svg"
-          alt="Brands Icon"
-          width={400}
-          height={400}
-          objectFit="contain"
-        />
+      {/* Image Container with an additional wrapper for vertical offset */}
+      <div style={{ transform: "translateY(-20px)" }}>
+        <div
+          className={`transition-transform duration-[1000ms] ${inView ? "animate-zoomIn" : ""
+            }`}
+        >
+          <Image
+            src="/assets/brands.svg"
+            alt="Brands Icon"
+            width={400}
+            height={400}
+            objectFit="contain"
+          />
+        </div>
       </div>
 
+      {/* Text Content Animating from Bottom */}
       <div style={{ transform: "translateY(-20px)" }}>
         <div
           className={`text-center transition-transform duration-[1000ms] ${inView ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
