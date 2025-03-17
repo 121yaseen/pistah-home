@@ -1,19 +1,11 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import ContactPageComponent from "./ContactPageComponent";
 
 const HeroComponent = () => {
   const [showContactPopup, setShowContactPopup] = useState(false);
-  const heroRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (heroRef.current) {
-      heroRef.current.scrollTop = 0;
-    }
-  }, []);
 
   return (
     <div
-      ref={heroRef}
       style={{
         display: "flex",
         flexDirection: "column",
