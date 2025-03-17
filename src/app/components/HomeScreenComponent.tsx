@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useLayoutEffect } from 'react';
 import HeroComponent from "./HeroComponent";
 import BrandsSectionComponent from "./BrandsSectionComponent";
 import SSPFeaturesSectionComponent from "./SSPFeaturesSectionComponent";
@@ -35,7 +35,8 @@ const HomeScreenComponent: React.FC<HomeScreenComponentProps> = ({ onScrollDirec
     return () => container.removeEventListener('scroll', handleScroll);
   }, [onScrollDirection]);
 
-  useEffect(() => {
+  // Replace useEffect with useLayoutEffect for synchronous scroll reset
+  useLayoutEffect(() => {
     if (containerRef.current) {
       containerRef.current.scrollTop = 0;
     }

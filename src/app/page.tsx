@@ -5,7 +5,10 @@ import HomeScreenComponent from "./components/HomeScreenComponent";
 
 export default function Home() {
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (typeof window !== "undefined") {
+      // Ensure window scroll is at the top
+      window.scrollTo(0, 0);
+    }
   }, []);
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
 

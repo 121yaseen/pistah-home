@@ -73,7 +73,7 @@ const HeroComponent = () => {
             margin: "10px 0 20px 0",
           }}
         >
-          Join the waitlist - be the first to match!
+          Join the waitlist - be the first to match1!
         </p>
       </div>
       <div
