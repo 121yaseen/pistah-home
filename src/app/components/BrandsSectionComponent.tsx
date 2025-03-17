@@ -40,22 +40,29 @@ const BrandsSectionComponent = () => {
         />
       </div>
 
-      {/* Text Content Animating from Bottom */}
-      <div
-        className={`text-center transition-transform duration-[1000ms] text-white ${inView ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
-          }`}
-        style={{ paddingLeft: "2rem", paddingRight: "2rem", paddingBottom: "2rem" }}
-      >
-        <h2 className="text-4xl font-bold mb-4">Bring the bar up</h2>
-        <p className="text-white mb-6 text-sm">
-          Swipe right for your perfect influencer match - boost your brand’s reach and shine. Join us now!
-        </p>
-        <button
-          onClick={handleBrandButtonClick}
-          className="px-8 py-3 rounded-full font-bold bg-[#0b57d0] text-white hover:bg-[#0044A5] transition-colors duration-200"
+      <div style={{ transform: "translateY(-20px)" }}>
+        <div
+          className={`text-center transition-transform duration-[1000ms] ${inView ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
+            }`}
+          style={{ paddingLeft: "2rem", paddingRight: "2rem" }}
         >
-          Brands
-        </button>
+          <h2
+            className="text-5xl mb-4 text-[#005BF7]"
+            style={{ fontFamily: "League Gothic, sans-serif" }}
+          >
+            BRING THE BAR UP
+          </h2>
+          <p className="text-white mb-6 text-sm">
+            Swipe right for your perfect influencer match - boost your brand’s reach
+            and shine. Join us now!
+          </p>
+          <button
+            onClick={handleBrandButtonClick}
+            className="px-8 py-3 rounded-full font-semibold bg-[#0b57d0] text-white hover:bg-[#0044A5] transition-colors duration-200"
+          >
+            Brands
+          </button>
+        </div>
       </div>
 
       <style jsx>{`
@@ -65,12 +72,12 @@ const BrandsSectionComponent = () => {
             opacity: 0.5;
           }
           40% {
-            transform: scale(1.1);
-            opacity: 1;
+            transform: scale(1);
+            opacity: 0.6;
           }
           100% {
             transform: scale(0.9);
-            opacity: 1;
+            opacity: 0.95;
           }
         }
         .animate-zoomIn {

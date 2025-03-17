@@ -1,28 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
-
-:root {
-}
 
 @media (prefers-color-scheme: dark) {
-  :root {
-  }
 }
 
 body {
   background-color: #005BF7;
-  font-family: 'Optimistic Display Medium', Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.logo {
-  font-family: 'Optimistic Display Medium', Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  font-size: 35rem;
-  color: #001464;
-  
-  text-shadow: 20px 20px 0 #FFFFFF, 40px 40px 0 #FF0000;
+@font-face {
+  font-family: 'League Gothic';
+  src: url('/fonts/league_gothic/LeagueGothic-Regular') format('woff2'),
+       url('/fonts/league_gothic/LeagueGothic-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @keyframes spin {
