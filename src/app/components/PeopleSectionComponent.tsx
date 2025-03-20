@@ -30,11 +30,11 @@ const PeopleSectionComponent = () => {
       {/* Image Container with an additional wrapper for vertical offset */}
       <div style={{ transform: "translateY(-20px)" }}>
         <div
-          className={`transition-transform duration-[1000ms] ${inView ? "animate-zoomIn" : ""
+          className={`transition-transform duration-[1000ms] ${inView ? "animate-zoomInPeople" : ""
             }`}
         >
           <Image
-            src="/assets/brands.svg"
+            src="/assets/people.svg"
             alt="Brands Icon"
             width={400}
             height={400}
@@ -70,22 +70,22 @@ const PeopleSectionComponent = () => {
       </div>
 
       <style jsx>{`
-        @keyframes zoomIn {
+        @keyframes zoomInPeople {
           0% {
-            transform: scale(0.7);
-            opacity: 0.5;
-          }
-          40% {
-            transform: scale(1);
+            transform: scale(0.8);
             opacity: 0.6;
           }
+          40% {
+            transform: scale(1.1);
+            opacity: 0.8;
+          }
           100% {
-            transform: scale(0.9);
-            opacity: 0.95;
+            transform: scale(0.98);
+            opacity: 1;
           }
         }
-        .animate-zoomIn {
-          animation: zoomIn 5s forwards;
+        .animate-zoomInPeople {
+          animation: zoomInPeople 5s forwards;
         }
       `}</style>
     </div>
