@@ -1,8 +1,8 @@
 import { useRef, useEffect } from 'react';
 import HeroComponent from "./HeroComponent";
 import BrandsSectionComponent from "./BrandsSectionComponent";
-import SSPFeaturesSectionComponent from "./SSPFeaturesSectionComponent";
 import FooterComponent from "./FooterComponent";
+import PeopleSectionComponent from './PeopleSectionComponent';
 
 interface HomeScreenComponentProps {
   onScrollDirection: (direction: 'up' | 'down') => void;
@@ -44,7 +44,7 @@ const HomeScreenComponent: React.FC<HomeScreenComponentProps> = ({ onScrollDirec
         <BrandsSectionComponent />
       </section>
       <section className="h-screen snap-start">
-        <SSPFeaturesSectionComponent />
+        <PeopleSectionComponent />
       </section>
       <section className="snap-start">
         <FooterComponent />
