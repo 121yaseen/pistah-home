@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 
-const BrandsSectionComponent = () => {
+const PeopleSectionComponent = () => {
   const [inView, setInView] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -64,7 +64,7 @@ const BrandsSectionComponent = () => {
             onClick={handleBrandButtonClick}
             className="px-8 py-3 rounded-full font-semibold bg-[#005BF7] text-white hover:bg-[#0044A5] transition-colors duration-200"
           >
-            Brands
+            People
           </button>
         </div>
       </div>
@@ -92,4 +92,4 @@ const BrandsSectionComponent = () => {
   );
 };
 
-export default BrandsSectionComponent;
+export default PeopleSectionComponent;
