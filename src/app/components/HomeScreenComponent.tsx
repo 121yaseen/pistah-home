@@ -36,7 +36,7 @@ const HomeScreenComponent: React.FC<HomeScreenComponentProps> = ({ onScrollDirec
   }, [onScrollDirection]);
 
   return (
-    <div ref={containerRef} className="h-screen overflow-y-scroll snap-y snap-mandatory relative">
+    <div ref={containerRef} className="h-screen overflow-y-scroll snap-y snap-mandatory relative no-scrollbar">
       <section className="h-screen snap-start">
         <HeroComponent />
       </section>

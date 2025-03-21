@@ -30,7 +30,7 @@ const HeroComponent = () => {
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           transform: "translate(-50%, -50%)",
-          zIndex: -1,
+          zIndex: 0,
           animation: "zoomFade 15s infinite ease-in-out",
         }}
       ></div>
@@ -41,6 +41,7 @@ const HeroComponent = () => {
           flexDirection: "column",
           justifyContent: "center",
           width: "100%",
+          zIndex: 1,
         }}
       >
         <h1

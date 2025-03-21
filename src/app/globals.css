@@ -4,8 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@media (prefers-color-scheme: dark) {
-}
+@media (prefers-color-scheme: dark) {}
 
 body {
   background-color: #005BF7;
@@ -15,7 +14,7 @@ body {
 @font-face {
   font-family: 'League Gothic';
   src: url('/fonts/league_gothic/LeagueGothic-Regular') format('woff2'),
-       url('/fonts/league_gothic/LeagueGothic-Regular.woff') format('woff');
+    url('/fonts/league_gothic/LeagueGothic-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,7 +23,32 @@ body {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
+}
+
+/* Add desktop-specific styles here */
+.desktop-background {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f3f3f3;
+}
+
+.desktop-mobile-container {
+  position: relative;
+  max-width: 350px;
+  border: 8px #413F3F solid;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.644);
+  background-color: #005BF7;
+  border-radius: 48px;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
 }
