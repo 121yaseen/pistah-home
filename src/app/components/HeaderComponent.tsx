@@ -28,7 +28,7 @@ const HeaderComponent: React.FC<HeaderComponentProps> = ({ isVisible }) => {
           justifyContent: "space-between",
           alignItems: "center",
           padding: "0 60px",
-          zIndex: 2,
+          zIndex: 3,
           transform: isVisible ? "translateY(0)" : "translateY(-100%)",
           transition: "transform 0.3s ease-in-out",
         }}
@@ -38,6 +38,7 @@ const HeaderComponent: React.FC<HeaderComponentProps> = ({ isVisible }) => {
           style={{
             position: "absolute",
             left: "40px",
+            transition: "transform 0.3s ease-in-out",
           }}
         >
           <div
@@ -55,6 +56,7 @@ const HeaderComponent: React.FC<HeaderComponentProps> = ({ isVisible }) => {
                 height: "2px",
                 backgroundColor: "#000844",
                 transition: "all 0.3s ease",
+                transform: isMenuOpen ? "rotate(45deg) translate(5px, 5px)" : "none",
               }}
             />
             <div
@@ -63,6 +65,7 @@ const HeaderComponent: React.FC<HeaderComponentProps> = ({ isVisible }) => {
                 height: "2px",
                 backgroundColor: "#000844",
                 transition: "all 0.3s ease",
+                opacity: isMenuOpen ? 0 : 1,
               }}
             />
             <div
@@ -71,6 +74,7 @@ const HeaderComponent: React.FC<HeaderComponentProps> = ({ isVisible }) => {
                 height: "2px",
                 backgroundColor: "#000844",
                 transition: "all 0.3s ease",
+                transform: isMenuOpen ? "rotate(-45deg) translate(5px, -5px)" : "none",
               }}
             />
           </div>
@@ -108,16 +112,9 @@ const HeaderComponent: React.FC<HeaderComponentProps> = ({ isVisible }) => {
             display: "flex",
             flexDirection: "column",
             padding: "20px",
-            zIndex: 3,
+            zIndex: 2,
           }}
         >
-          {/* Close Icon at Top Left (relative to the container) */}
-          <FiX
-            onClick={() => setIsMenuOpen(false)}
-            size={29}
-            color="#000844"
-            style={{ cursor: "pointer", marginLeft: "19px", marginTop: "6px" }}
-          />
           {/* Menu Options Centered */}
           <div
             style={{
