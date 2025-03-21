@@ -2,18 +2,14 @@
 
 import { useState } from "react";
 import ContactPageComponent from "./ContactPageComponent";
-import { useDevice } from "../context/DeviceContext";
 
 const FooterComponent = () => {
-  const { isMobile } = useDevice();
   const [showContactPopup, setShowContactPopup] = useState(false);
 
   return (
     <footer className="w-full bg-[#005BF7]">
       <div
-        className={`flex ${isMobile ? "justify-center py-4" : "justify-end"
-          } px-16`}
-      >
+        className="flex justify-center py-4 px-16">
         <button
           onClick={() => setShowContactPopup(true)}
           className="font-bold px-6 py-2 bg-white text-[#005BF7] rounded-full transition-colors duration-200 mt-9"

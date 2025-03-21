@@ -1,4 +1,6 @@
+"use client";
 import React, { useState } from "react";
+import { createPortal } from "react-dom";
 import { FaCheck, FaTimes } from "react-icons/fa";
 
 interface ContactPageProps {
@@ -138,7 +140,7 @@ const ContactPageComponent: React.FC<ContactPageProps> = ({ onClose }) => {
     return null;
   };
 
-  return (
+  return createPortal(
     <div style={styles.overlay}>
       <div style={styles.modal}>
         <button style={styles.closeButton} onClick={onClose}>
@@ -212,7 +214,8 @@ const ContactPageComponent: React.FC<ContactPageProps> = ({ onClose }) => {
           </div>
         </form>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 
@@ -227,7 +230,7 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    zIndex: 1000,
+    zIndex: 4,
   },
   modal: {
     backgroundColor: "#fff",
