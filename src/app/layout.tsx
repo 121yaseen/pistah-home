@@ -3,8 +3,8 @@ import "./globals.css";
 import { DeviceProvider } from "./context/DeviceContext";
 
 export const metadata: Metadata = {
-  title: "Pistah - Digital Out of Home Advertising Solution",
-  description: "Programmatic Digital Out of Home Advertising Solution",
+  title: "Pistah | Brands - Influencers match making solution",
+  description: "A Match making platform for brands and influencers to have better reach",
   icons: {
     icon: "/favicon.svg",
   },

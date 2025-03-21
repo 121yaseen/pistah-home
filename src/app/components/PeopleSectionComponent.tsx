@@ -1,14 +1,12 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import ContactPageComponent from "./ContactPageComponent";
 
 const PeopleSectionComponent = () => {
+  const [showContactPopup, setShowContactPopup] = useState(false);
   const [inView, setInView] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
-
-  const handleBrandButtonClick = () => {
-    window.location.href = "https://portal.pistah.bluebucket.in/";
-  };
 
   // Intersection Observer for animations
   useEffect(() => {
@@ -24,7 +22,7 @@ const PeopleSectionComponent = () => {
     <div
       ref={sectionRef}
       className={`w-full min-h-screen relative bg-black text-white flex flex-col items-center justify-center 
-        overflow-hidden transition-all duration-[1000ms] ${inView ? "opacity-100" : "opacity-0"
+        overflow-hidden transition-all duration-[900ms] ${inView ? "opacity-100" : "opacity-0"
         } overflow-x-hidden`}
     >
       {/* Image Container with an additional wrapper for vertical offset */}
@@ -51,17 +49,16 @@ const PeopleSectionComponent = () => {
           style={{ paddingLeft: "2rem", paddingRight: "2rem" }}
         >
           <h2
-            className="text-6xl mb-4 text-[#005BF7]"
+            className="text-5xl mb-4 text-[#005BF7]"
             style={{ fontFamily: "League Gothic, sans-serif" }}
           >
-            SET THE BAR HIGH
+            BREATHE LIFE INTO THEIR VISION
           </h2>
           <p className="text-white mb-6 text-sm">
-            Swipe right for your perfect influencer match - boost your brand’s reach
-            and shine. Join us now!
+            Connect with brands you love and bring your collaborations to life. Join us now!
           </p>
           <button
-            onClick={handleBrandButtonClick}
+            onClick={() => { setShowContactPopup(true); }}
             className="px-8 py-3 rounded-full font-semibold bg-[#005BF7] text-white hover:bg-[#0044A5] transition-colors duration-200"
           >
             People
@@ -72,7 +69,7 @@ const PeopleSectionComponent = () => {
       <style jsx>{`
         @keyframes zoomInPeople {
           0% {
-            transform: scale(0.8);
+            transform: scale(0.76);
             opacity: 0.6;
           }
           40% {
@@ -88,6 +85,10 @@ const PeopleSectionComponent = () => {
           animation: zoomInPeople 5s forwards;
         }
       `}</style>
+
+      {showContactPopup && (
+        <ContactPageComponent onClose={() => setShowContactPopup(false)} />
+      )}
     </div>
   );
 };

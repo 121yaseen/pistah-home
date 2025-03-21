@@ -245,6 +245,7 @@ const styles = {
     border: "none",
     fontSize: "24px",
     cursor: "pointer",
+    color: "#000"
   },
   form: {
     color: "#001464",
