@@ -40,7 +40,6 @@ body {
 
 .desktop-mobile-container {
   position: relative;
-  width: 100%;
   max-width: 420px;
   background-color: #005BF7;
   border-top-left-radius: 25px;
@@ -48,4 +47,8 @@ body {
   border-bottom-right-radius: 25px;
   border-bottom-left-radius: 25px;
   overflow: hidden;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
 }
