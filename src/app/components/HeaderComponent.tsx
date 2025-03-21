@@ -3,7 +3,6 @@ import Image from "next/image";
 import ContactPageComponent from "./ContactPageComponent";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { FiX } from "react-icons/fi";
 
 interface HeaderComponentProps {
   isVisible: boolean;
