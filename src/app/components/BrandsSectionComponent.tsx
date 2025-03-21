@@ -1,14 +1,12 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import ContactPageComponent from "./ContactPageComponent";
 
 const BrandsSectionComponent = () => {
+  const [showContactPopup, setShowContactPopup] = useState(false);
   const [inView, setInView] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
-
-  const handleBrandButtonClick = () => {
-    window.location.href = "https://portal.pistah.bluebucket.in/";
-  };
 
   // Intersection Observer for animations
   useEffect(() => {
@@ -61,7 +59,7 @@ const BrandsSectionComponent = () => {
             and shine. Join us now!
           </p>
           <button
-            onClick={handleBrandButtonClick}
+            onClick={() => { setShowContactPopup(true); }}
             className="px-8 py-3 rounded-full font-semibold bg-[#005BF7] text-white hover:bg-[#0044A5] transition-colors duration-200"
           >
             Brands
@@ -88,6 +86,10 @@ const BrandsSectionComponent = () => {
           animation: zoomIn 5s forwards;
         }
       `}</style>
+
+      {showContactPopup && (
+        <ContactPageComponent onClose={() => setShowContactPopup(false)} />
+      )}
     </div>
   );
 };
