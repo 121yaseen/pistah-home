@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import BrandsMessage from "./messages/BrandsMessage";
+import MessagePopup from "./messages/MessagePopup";
 
 const BrandsSectionComponent = () => {
   const [showContactPopup, setShowContactPopup] = useState(false);
@@ -88,7 +88,7 @@ const BrandsSectionComponent = () => {
       `}</style>
 
       {showContactPopup && (
-        <BrandsMessage onClose={() => setShowContactPopup(false)} />
+        <MessagePopup messageType="brand" onClose={() => setShowContactPopup(false)} />
       )}
     </div>
   );

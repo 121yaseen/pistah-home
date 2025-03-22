@@ -8,18 +8,18 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === "POST") {
-    const { firstName, lastName, email, content } = req.body;
+    const { brandname, socialmedia, email, content, messageType } = req.body;
     try {
       await prisma.contact.create({
         data: {
-          name: firstName + " " + lastName,
+          name: brandname ?? socialmedia ?? messageType,
           email,
           message: content,
         },
       });
 
       // Send out email to admin
-      sendEmail(email, firstName + " " + lastName, content);
+      sendEmail(brandname, socialmedia, email, content, messageType);
       res.status(201).json({ message: "Contact created successfully" });
     } catch (error) {
       console.log(error);
@@ -30,14 +30,14 @@ export default async function handler(
   }
 }
 
-const sendEmail = async (email: string, name: string, message: string) => {
+const sendEmail = async (brandname: string, socialmedia: string, email: string, content: string, messageType: string) => {
   // Send email using sendgrid
   sgMail.setApiKey(process.env.SENDGRID_API_KEY ?? "");
 
   const msg = {
     to: process.env.ADMIN_EMAIL ?? "",
     from: process.env.SENDGRID_SENDER_EMAIL ?? "",
-    subject: "New message from " + name,
+    subject: "Message from " + email,
     html: `
       <!DOCTYPE html>
       <html lang="en">
@@ -64,14 +64,16 @@ const sendEmail = async (email: string, name: string, message: string) => {
             <h1>New Contact Message</h1>
           </div>
           <div class="email-body">
-            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Source Type:</strong> ${messageType}</p>
             <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Brand Name:</strong> ${brandname}</p>
+            <p><strong>Social Media:</strong> ${socialmedia}</p>
             <p><strong>Message:</strong></p>
-            <p>${message}</p>
+            <p>${content}</p>
           </div>
           <div class="email-footer">
             <p>This email was sent from your website's contact form.</p>
-            <p><a href="https://pistah.bluebucket.in/">Visit Website</a></p>
+            <p><a href="https://pistah.view/">Visit Website</a></p>
           </div>
         </div>
       </body>

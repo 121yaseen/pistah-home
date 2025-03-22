@@ -3,25 +3,26 @@ import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { FaCheck, FaTimes } from "react-icons/fa";
 
-interface ContactPageProps {
+interface MessagePopupProps {
   onClose: () => void;
+  messageType: "brand" | "people";
 }
 
-const BrandsMessage: React.FC<ContactPageProps> = ({ onClose }) => {
+const MessagePopup: React.FC<MessagePopupProps> = ({ onClose, messageType }) => {
+  // Add a "brandname" field only for brand messages.
+  const initialFormData = messageType === "brand"
+    ? { brandname: "", socialmedia: "", email: "", content: "", messageType: "Brand" }
+    : { socialmedia: "", email: "", content: "", messageType: "People" };
+
   const [buttonHover, setButtonHover] = useState<boolean>(false);
   const [submissionStatus, setSubmissionStatus] = useState<"idle" | "sending" | "success" | "failure">("idle");
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    content: "",
-  });
-  const [errors, setErrors] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    content: "",
-  });
+  const [formData, setFormData] = useState(initialFormData);
+  
+  // Set up error state; include brandname error only if needed.
+  const initialErrors = messageType === "brand"
+    ? { brandname: "", socialmedia: "", email: "", content: "" }
+    : { socialmedia: "", email: "", content: "" };
+  const [errors, setErrors] = useState(initialErrors);
 
   // States for animations
   const [isVisibleAnim, setIsVisibleAnim] = useState(false);
@@ -29,7 +30,6 @@ const BrandsMessage: React.FC<ContactPageProps> = ({ onClose }) => {
 
   // Trigger the opening animation on mount.
   useEffect(() => {
-    // Slight delay to allow the animation to trigger.
     setTimeout(() => setIsVisibleAnim(true), 10);
   }, []);
 
@@ -50,22 +50,28 @@ const BrandsMessage: React.FC<ContactPageProps> = ({ onClose }) => {
     setSubmissionStatus("sending");
 
     let formIsValid = true;
+    // Create a copy of errors to update validations.
     const tempErrors = { ...errors };
 
-    if (!formData.firstName) {
-      tempErrors.firstName = "First name is required";
-      formIsValid = false;
-    } else {
-      tempErrors.firstName = "";
+    // For a brand message, validate the "brandname" field.
+    if (messageType === "brand") {
+      if (!formData.brandname) {
+        tempErrors.brandname = "Brand name is required";
+        formIsValid = false;
+      } else {
+        tempErrors.brandname = "";
+      }
     }
 
-    if (!formData.lastName) {
-      tempErrors.lastName = "Last name is required";
+    // Validate social media input.
+    if (!formData.socialmedia) {
+      tempErrors.socialmedia = messageType === "brand" ? "Profile or website is required" : "Profile is required";
       formIsValid = false;
     } else {
-      tempErrors.lastName = "";
+      tempErrors.socialmedia = "";
     }
 
+    // Validate email.
     if (!formData.email) {
       tempErrors.email = "Email address is required";
       formIsValid = false;
@@ -76,8 +82,9 @@ const BrandsMessage: React.FC<ContactPageProps> = ({ onClose }) => {
       tempErrors.email = "";
     }
 
+    // Validate content.
     if (!formData.content) {
-      tempErrors.content = "Message is required";
+      tempErrors.content = messageType === "brand" ? "Tell us more about your brand" : "Tell us more about your profile";
       formIsValid = false;
     } else {
       tempErrors.content = "";
@@ -88,20 +95,13 @@ const BrandsMessage: React.FC<ContactPageProps> = ({ onClose }) => {
     if (formIsValid) {
       fetch("/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       })
         .then((response) => {
           if (response.ok) {
             setSubmissionStatus("success");
-            setFormData({
-              firstName: "",
-              lastName: "",
-              email: "",
-              content: "",
-            });
+            setFormData(initialFormData);
           } else {
             setSubmissionStatus("failure");
           }
@@ -120,7 +120,6 @@ const BrandsMessage: React.FC<ContactPageProps> = ({ onClose }) => {
       return (
         <div style={styles.statusContainer}>
           <div style={styles.loadingCircle}></div>
-          <span style={{ color: "#005BF7" }}>Sending...</span>
         </div>
       );
     }
@@ -153,7 +152,6 @@ const BrandsMessage: React.FC<ContactPageProps> = ({ onClose }) => {
   // Instead of calling onClose directly, trigger the closing animation.
   const handleClose = () => {
     setIsClosing(true);
-    // Wait for the animation to complete before calling onClose.
     setTimeout(() => onClose(), 300);
   };
 
@@ -176,35 +174,33 @@ const BrandsMessage: React.FC<ContactPageProps> = ({ onClose }) => {
           transition: "transform 300ms ease",
         }}
       >
-        <button style={styles.closeButton} onClick={handleClose}>
-          &times;
-        </button>
+        <button style={styles.closeButton} onClick={handleClose}>&times;</button>
         <form onSubmit={handleSubmit} style={styles.form}>
-          <h1 style={styles.heading}>We are all ears</h1>
-          <div style={styles.inputRow}>
-            <div style={styles.halfInputContainer}>
+          <h1 style={styles.heading}>Grab Your Early Access!</h1>
+          
+          {/* For brand messages, render the brandname input */}
+          {messageType === "brand" && (
+            <div style={styles.inputContainer}>
               <input
-                type="text"
-                name="firstName"
-                value={formData.firstName}
+                name="brandname"
+                value={formData.brandname}
                 onChange={handleChange}
-                style={styles.input}
-                placeholder="First name"
+                style={styles.emailInput}
+                placeholder="Brand name"
               />
-              {errors.firstName && <p style={styles.error}>{errors.firstName}</p>}
+              {errors.brandname && <p style={styles.error}>{errors.brandname}</p>}
             </div>
+          )}
 
-            <div style={styles.halfInputContainer}>
-              <input
-                type="text"
-                name="lastName"
-                value={formData.lastName}
-                onChange={handleChange}
-                style={styles.input}
-                placeholder="Last name"
-              />
-              {errors.lastName && <p style={styles.error}>{errors.lastName}</p>}
-            </div>
+          <div style={styles.inputContainer}>
+            <input
+              name="socialmedia"
+              value={formData.socialmedia}
+              onChange={handleChange}
+              style={styles.emailInput}
+              placeholder={messageType === "brand" ? "Public profile or website" : "Share your profile"}
+            />
+            {errors.socialmedia && <p style={styles.error}>{errors.socialmedia}</p>}
           </div>
 
           <div style={styles.inputContainer}>
@@ -214,7 +210,7 @@ const BrandsMessage: React.FC<ContactPageProps> = ({ onClose }) => {
               value={formData.email}
               onChange={handleChange}
               style={styles.emailInput}
-              placeholder="Email"
+              placeholder="Your email"
             />
             {errors.email && <p style={styles.error}>{errors.email}</p>}
           </div>
@@ -225,7 +221,7 @@ const BrandsMessage: React.FC<ContactPageProps> = ({ onClose }) => {
               value={formData.content}
               onChange={handleChange}
               style={styles.textarea}
-              placeholder="Message for us"
+              placeholder={messageType === "brand" ? "Tell us about your brand" : "Tell us about your profile. Share more profiles (if any)"}
             />
             {errors.content && <p style={styles.error}>{errors.content}</p>}
           </div>
@@ -267,10 +263,10 @@ const styles = {
   },
   modal: {
     backgroundColor: "#fff",
-    padding: "30px",
+    padding: "25px",
     borderRadius: "8px",
     width: "90%",
-    maxWidth: "760px",
+    maxWidth: "700px",
     position: "relative" as const,
   },
   closeButton: {
@@ -281,7 +277,7 @@ const styles = {
     border: "none",
     fontSize: "24px",
     cursor: "pointer",
-    color: "#000"
+    color: "#000",
   },
   form: {
     color: "#000844",
@@ -293,22 +289,6 @@ const styles = {
   },
   inputContainer: {
     marginBottom: "20px",
-  },
-  inputRow: {
-    display: "flex",
-    flexWrap: "wrap" as const,
-    justifyContent: "space-between",
-    gap: "10px",
-    marginBottom: "20px",
-  },
-  halfInputContainer: {
-    flex: "1 1 calc(50% - 10px)",
-  },
-  input: {
-    width: "100%",
-    padding: "10px",
-    border: "1px solid #ccc",
-    borderRadius: "4px",
   },
   emailInput: {
     width: "100%",
@@ -346,7 +326,6 @@ const styles = {
   statusContainer: {
     display: "flex",
     alignItems: "center",
-    marginRight: "10px",
   },
   loadingCircle: {
     border: "3px solid #ccc",
@@ -389,4 +368,4 @@ const styles = {
   },
 };
 
-export default BrandsMessage;
+export default MessagePopup;
