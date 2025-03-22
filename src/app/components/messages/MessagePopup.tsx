@@ -47,6 +47,8 @@ const MessagePopup: React.FC<MessagePopupProps> = ({ onClose, messageType }) => 
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (submissionStatus === "sending") return; 
+    
     setSubmissionStatus("sending");
 
     let formIsValid = true;
