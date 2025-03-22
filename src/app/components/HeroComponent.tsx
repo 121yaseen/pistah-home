@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import ContactPageComponent from "./ContactPageComponent";
+import BrandsMessage from "./messages/BrandsMessage";
+import PeopleMessage from "./messages/PeopleMessage";
 
 const HeroComponent = () => {
-  const [showContactPopup, setShowContactPopup] = useState(false);
+  const [showBrandMessagePopup, setShowBrandMessagePopup] = useState(false);
+  const [showPeopleMessagePopup, setShowPeopleMessagePopup] = useState(false);
 
   return (
     <div
@@ -83,14 +85,14 @@ const HeroComponent = () => {
         }}
       >
         <button
-          onClick={() => setShowContactPopup(true)}
-          className="px-8 py-3 rounded-full font-bold bg-white text-[#005BF7] transition-colors duration-200"
+          onClick={() => setShowBrandMessagePopup(true)}
+          className="px-8 py-3 rounded-full font-bold bg-white text-[#005BF7] transition-colors duration-200 hover:bg-[#ffffffe2]"
         >
           Brands
         </button>
         <button
-          onClick={() => setShowContactPopup(true)}
-          className="px-8 py-3 rounded-full font-bold bg-white text-[#005BF7] transition-colors duration-200"
+          onClick={() => setShowPeopleMessagePopup(true)}
+          className="px-8 py-3 rounded-full font-bold bg-white text-[#005BF7] transition-colors duration-200 hover:bg-[#ffffffe2]"
         >
           People
         </button>
@@ -112,8 +114,11 @@ const HeroComponent = () => {
         }
       `}</style>
 
-      {showContactPopup && (
-        <ContactPageComponent onClose={() => setShowContactPopup(false)} />
+      {showBrandMessagePopup && (
+        <BrandsMessage onClose={() => setShowBrandMessagePopup(false)} />
+      )}
+      {showPeopleMessagePopup && (
+        <PeopleMessage onClose={() => setShowPeopleMessagePopup(false)} />
       )}
     </div>
   );

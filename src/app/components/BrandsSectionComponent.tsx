@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import ContactPageComponent from "./ContactPageComponent";
+import BrandsMessage from "./messages/BrandsMessage";
 
 const BrandsSectionComponent = () => {
   const [showContactPopup, setShowContactPopup] = useState(false);
@@ -60,7 +60,7 @@ const BrandsSectionComponent = () => {
           </p>
           <button
             onClick={() => { setShowContactPopup(true); }}
-            className="px-8 py-3 rounded-full font-semibold bg-[#005BF7] text-white hover:bg-[#0044A5] transition-colors duration-200"
+            className="px-8 py-3 rounded-full font-semibold bg-[#005BF7] text-white hover:bg-[#005bf7df] transition-colors duration-200"
           >
             Brands
           </button>
@@ -88,7 +88,7 @@ const BrandsSectionComponent = () => {
       `}</style>
 
       {showContactPopup && (
-        <ContactPageComponent onClose={() => setShowContactPopup(false)} />
+        <BrandsMessage onClose={() => setShowContactPopup(false)} />
       )}
     </div>
   );

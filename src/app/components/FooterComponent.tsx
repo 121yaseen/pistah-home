@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import ContactPageComponent from "./ContactPageComponent";
+import ContactPageComponent from "./messages/ContactPageComponent";
 
 const FooterComponent = () => {
   const [showContactPopup, setShowContactPopup] = useState(false);
@@ -12,7 +12,7 @@ const FooterComponent = () => {
         className="flex justify-center py-4 px-16">
         <button
           onClick={() => setShowContactPopup(true)}
-          className="font-bold px-6 py-2 bg-white text-[#005BF7] rounded-full transition-colors duration-200 mt-9"
+          className="font-bold px-6 py-2 bg-white text-[#005BF7] rounded-full transition-colors duration-200 mt-9 hover:bg-[#ffffffe2]"
         >
           Message Us
         </button>

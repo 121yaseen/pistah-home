@@ -1,8 +1,10 @@
 "use client";
 import Image from "next/image";
-import ContactPageComponent from "./ContactPageComponent";
+import ContactPageComponent from "./messages/ContactPageComponent";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import BrandsMessage from "./messages/BrandsMessage";
+import PeopleMessage from "./messages/PeopleMessage";
 
 interface HeaderComponentProps {
   isVisible: boolean;
@@ -10,6 +12,8 @@ interface HeaderComponentProps {
 
 const HeaderComponent: React.FC<HeaderComponentProps> = ({ isVisible }) => {
   const router = useRouter();
+  const [showBrandMessagePopup, setShowBrandMessagePopup] = useState(false);
+  const [showPeopleMessagePopup, setShowPeopleMessagePopup] = useState(false);
   const [showContactPopup, setShowContactPopup] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -93,6 +97,12 @@ const HeaderComponent: React.FC<HeaderComponentProps> = ({ isVisible }) => {
           <Image src={"/pistah.svg"} alt={""} width={"120"} height={"100"} />
         </div>
 
+        {showBrandMessagePopup && (
+          <BrandsMessage onClose={() => setShowBrandMessagePopup(false)} />
+        )}
+        {showPeopleMessagePopup && (
+          <PeopleMessage onClose={() => setShowPeopleMessagePopup(false)} />
+        )}
         {showContactPopup && (
           <ContactPageComponent onClose={() => setShowContactPopup(false)} />
         )}
@@ -127,7 +137,7 @@ const HeaderComponent: React.FC<HeaderComponentProps> = ({ isVisible }) => {
           >
             <button
               onClick={() => {
-                setShowContactPopup(true);
+                setShowBrandMessagePopup(true);
               }}
               style={{
                 padding: "12px 24px",
@@ -143,7 +153,7 @@ const HeaderComponent: React.FC<HeaderComponentProps> = ({ isVisible }) => {
             </button>
             <button
               onClick={() => {
-                setShowContactPopup(true);
+                setShowPeopleMessagePopup(true);
               }}
               style={{
                 padding: "12px 24px",
