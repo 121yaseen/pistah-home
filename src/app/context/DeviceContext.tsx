@@ -36,7 +36,7 @@ export const DeviceProvider = ({ children }: { children: React.ReactNode }) => {
           alignItems: "center",
           justifyContent: "center",
           height: "100vh",
-          background: "black",
+          background: "white",
         }}
       >
         <Image src={"/pistahIcon.svg"} alt={""} width={600} height={100} />

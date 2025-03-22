@@ -71,10 +71,10 @@ const HeroComponent = () => {
             color: "white",
             margin: "10px 0 20px 0",
             lineHeight: "1.25rem",
-            fontSize: "0.81rem"
+            fontSize: "0.97rem"
           }}
         >
-          Join as an early bird - be the first to match!
+          Join early - be the first to match!
         </p>
       </div>
       <div
