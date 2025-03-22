@@ -11,14 +11,14 @@ const BrandsMessage: React.FC<ContactPageProps> = ({ onClose }) => {
   const [buttonHover, setButtonHover] = useState<boolean>(false);
   const [submissionStatus, setSubmissionStatus] = useState<"idle" | "sending" | "success" | "failure">("idle");
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+    brandname: "",
+    socialmedia: "",
     email: "",
     content: "",
   });
   const [errors, setErrors] = useState({
-    firstName: "",
-    lastName: "",
+    brandname: "",
+    socialmedia: "",
     email: "",
     content: "",
   });
@@ -52,18 +52,18 @@ const BrandsMessage: React.FC<ContactPageProps> = ({ onClose }) => {
     let formIsValid = true;
     const tempErrors = { ...errors };
 
-    if (!formData.firstName) {
-      tempErrors.firstName = "First name is required";
+    if (!formData.brandname) {
+      tempErrors.brandname = "Brand name is required";
       formIsValid = false;
     } else {
-      tempErrors.firstName = "";
+      tempErrors.brandname = "";
     }
 
-    if (!formData.lastName) {
-      tempErrors.lastName = "Last name is required";
+    if (!formData.socialmedia) {
+      tempErrors.socialmedia = "Profile or webiste is required";
       formIsValid = false;
     } else {
-      tempErrors.lastName = "";
+      tempErrors.socialmedia = "";
     }
 
     if (!formData.email) {
@@ -77,7 +77,7 @@ const BrandsMessage: React.FC<ContactPageProps> = ({ onClose }) => {
     }
 
     if (!formData.content) {
-      tempErrors.content = "Message is required";
+      tempErrors.content = "Tell us more about your brand";
       formIsValid = false;
     } else {
       tempErrors.content = "";
@@ -97,10 +97,10 @@ const BrandsMessage: React.FC<ContactPageProps> = ({ onClose }) => {
           if (response.ok) {
             setSubmissionStatus("success");
             setFormData({
-              firstName: "",
-              lastName: "",
               email: "",
               content: "",
+              socialmedia: "",
+              brandname: ""
             });
           } else {
             setSubmissionStatus("failure");
@@ -181,30 +181,26 @@ const BrandsMessage: React.FC<ContactPageProps> = ({ onClose }) => {
         </button>
         <form onSubmit={handleSubmit} style={styles.form}>
           <h1 style={styles.heading}>We are all ears</h1>
-          <div style={styles.inputRow}>
-            <div style={styles.halfInputContainer}>
-              <input
-                type="text"
-                name="firstName"
-                value={formData.firstName}
-                onChange={handleChange}
-                style={styles.input}
-                placeholder="First name"
-              />
-              {errors.firstName && <p style={styles.error}>{errors.firstName}</p>}
-            </div>
+          <div style={styles.inputContainer}>
+            <input
+              name="brandname"
+              value={formData.brandname}
+              onChange={handleChange}
+              style={styles.emailInput}
+              placeholder="Brand name"
+            />
+            {errors.brandname && <p style={styles.error}>{errors.brandname}</p>}
+          </div>
 
-            <div style={styles.halfInputContainer}>
-              <input
-                type="text"
-                name="lastName"
-                value={formData.lastName}
-                onChange={handleChange}
-                style={styles.input}
-                placeholder="Last name"
-              />
-              {errors.lastName && <p style={styles.error}>{errors.lastName}</p>}
-            </div>
+          <div style={styles.inputContainer}>
+            <input
+              name="socialmedia"
+              value={formData.socialmedia}
+              onChange={handleChange}
+              style={styles.emailInput}
+              placeholder="Public profile or website"
+            />
+            {errors.socialmedia && <p style={styles.error}>{errors.socialmedia}</p>}
           </div>
 
           <div style={styles.inputContainer}>
@@ -214,7 +210,7 @@ const BrandsMessage: React.FC<ContactPageProps> = ({ onClose }) => {
               value={formData.email}
               onChange={handleChange}
               style={styles.emailInput}
-              placeholder="Email"
+              placeholder="Your email"
             />
             {errors.email && <p style={styles.error}>{errors.email}</p>}
           </div>
@@ -225,7 +221,7 @@ const BrandsMessage: React.FC<ContactPageProps> = ({ onClose }) => {
               value={formData.content}
               onChange={handleChange}
               style={styles.textarea}
-              placeholder="Message for us"
+              placeholder="Tell us about your brand"
             />
             {errors.content && <p style={styles.error}>{errors.content}</p>}
           </div>
@@ -267,10 +263,10 @@ const styles = {
   },
   modal: {
     backgroundColor: "#fff",
-    padding: "30px",
+    padding: "25px",
     borderRadius: "8px",
     width: "90%",
-    maxWidth: "760px",
+    maxWidth: "700px",
     position: "relative" as const,
   },
   closeButton: {
@@ -281,7 +277,7 @@ const styles = {
     border: "none",
     fontSize: "24px",
     cursor: "pointer",
-    color: "#000"
+    color: "#000",
   },
   form: {
     color: "#000844",
@@ -293,22 +289,6 @@ const styles = {
   },
   inputContainer: {
     marginBottom: "20px",
-  },
-  inputRow: {
-    display: "flex",
-    flexWrap: "wrap" as const,
-    justifyContent: "space-between",
-    gap: "10px",
-    marginBottom: "20px",
-  },
-  halfInputContainer: {
-    flex: "1 1 calc(50% - 10px)",
-  },
-  input: {
-    width: "100%",
-    padding: "10px",
-    border: "1px solid #ccc",
-    borderRadius: "4px",
   },
   emailInput: {
     width: "100%",

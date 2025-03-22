@@ -179,7 +179,7 @@ const ContactPageComponent: React.FC<ContactPageProps> = ({ onClose }) => {
               value={formData.content}
               onChange={handleChange}
               style={styles.textarea}
-              placeholder="Message for us"
+              placeholder="What's on your mind"
             />
             {errors.content && <p style={styles.error}>{errors.content}</p>}
           </div>
