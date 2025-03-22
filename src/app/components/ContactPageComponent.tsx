@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { FaCheck, FaTimes } from "react-icons/fa";
 
@@ -22,6 +22,16 @@ const ContactPageComponent: React.FC<ContactPageProps> = ({ onClose }) => {
     email: "",
     content: "",
   });
+
+  // States for animations
+  const [isVisibleAnim, setIsVisibleAnim] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
+
+  // Trigger the opening animation on mount.
+  useEffect(() => {
+    // Slight delay to allow the animation to trigger.
+    setTimeout(() => setIsVisibleAnim(true), 10);
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -140,10 +150,33 @@ const ContactPageComponent: React.FC<ContactPageProps> = ({ onClose }) => {
     return null;
   };
 
+  // Instead of calling onClose directly, trigger the closing animation.
+  const handleClose = () => {
+    setIsClosing(true);
+    // Wait for the animation to complete before calling onClose.
+    setTimeout(() => onClose(), 300);
+  };
+
   return createPortal(
-    <div style={styles.overlay}>
-      <div style={styles.modal}>
-        <button style={styles.closeButton} onClick={onClose}>
+    <div
+      style={{
+        ...styles.overlay,
+        opacity: isVisibleAnim && !isClosing ? 1 : 0,
+        transition: "opacity 300ms ease",
+      }}
+    >
+      <div
+        style={{
+          ...styles.modal,
+          transform: isVisibleAnim
+            ? isClosing
+              ? "translateY(-20px)"
+              : "translateY(0)"
+            : "translateY(20px)",
+          transition: "transform 300ms ease",
+        }}
+      >
+        <button style={styles.closeButton} onClick={handleClose}>
           &times;
         </button>
         <form onSubmit={handleSubmit} style={styles.form}>

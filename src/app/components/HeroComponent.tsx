@@ -84,13 +84,13 @@ const HeroComponent = () => {
       >
         <button
           onClick={() => setShowContactPopup(true)}
-          className="px-8 py-3 rounded-full font-bold bg-white text-[#005BF7] transition-colors duration-200"
+          className="px-8 py-3 rounded-full font-bold bg-white text-[#005BF7] transition-colors duration-200 hover:bg-[#ffffffe2]"
         >
           Brands
         </button>
         <button
           onClick={() => setShowContactPopup(true)}
-          className="px-8 py-3 rounded-full font-bold bg-white text-[#005BF7] transition-colors duration-200"
+          className="px-8 py-3 rounded-full font-bold bg-white text-[#005BF7] transition-colors duration-200 hover:bg-[#ffffffe2]"
         >
           People
         </button>
