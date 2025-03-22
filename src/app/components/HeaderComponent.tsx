@@ -3,8 +3,7 @@ import Image from "next/image";
 import ContactPageComponent from "./messages/ContactPageComponent";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import BrandsMessage from "./messages/BrandsMessage";
-import PeopleMessage from "./messages/PeopleMessage";
+import MessagePopup from "./messages/MessagePopup";
 
 interface HeaderComponentProps {
   isVisible: boolean;
@@ -98,10 +97,10 @@ const HeaderComponent: React.FC<HeaderComponentProps> = ({ isVisible }) => {
         </div>
 
         {showBrandMessagePopup && (
-          <BrandsMessage onClose={() => setShowBrandMessagePopup(false)} />
+          <MessagePopup messageType="brand" onClose={() => setShowBrandMessagePopup(false)} />
         )}
         {showPeopleMessagePopup && (
-          <PeopleMessage onClose={() => setShowPeopleMessagePopup(false)} />
+          <MessagePopup messageType="people" onClose={() => setShowPeopleMessagePopup(false)} />
         )}
         {showContactPopup && (
           <ContactPageComponent onClose={() => setShowContactPopup(false)} />

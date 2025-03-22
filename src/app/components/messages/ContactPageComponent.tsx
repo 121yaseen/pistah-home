@@ -13,6 +13,7 @@ const ContactPageComponent: React.FC<ContactPageProps> = ({ onClose }) => {
   const [formData, setFormData] = useState({
     email: "",
     content: "",
+    messageType: "Message"
   });
   const [errors, setErrors] = useState({
     email: "",
@@ -81,6 +82,7 @@ const ContactPageComponent: React.FC<ContactPageProps> = ({ onClose }) => {
             setFormData({
               email: "",
               content: "",
+              messageType: "Message"
             });
           } else {
             setSubmissionStatus("failure");
@@ -100,7 +102,6 @@ const ContactPageComponent: React.FC<ContactPageProps> = ({ onClose }) => {
       return (
         <div style={styles.statusContainer}>
           <div style={styles.loadingCircle}></div>
-          <span style={{ color: "#005BF7" }}>Sending...</span>
         </div>
       );
     }
@@ -284,7 +285,6 @@ const styles = {
   statusContainer: {
     display: "flex",
     alignItems: "center",
-    marginRight: "10px",
   },
   loadingCircle: {
     border: "3px solid #ccc",

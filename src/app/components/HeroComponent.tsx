@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import BrandsMessage from "./messages/BrandsMessage";
-import PeopleMessage from "./messages/PeopleMessage";
+import MessagePopup from "./messages/MessagePopup";
 
 const HeroComponent = () => {
   const [showBrandMessagePopup, setShowBrandMessagePopup] = useState(false);
@@ -68,13 +67,14 @@ const HeroComponent = () => {
           make the next move.
         </h1>
         <p
-          className="text-sm"
           style={{
             color: "white",
             margin: "10px 0 20px 0",
+            lineHeight: "1.25rem",
+            fontSize: "0.81rem"
           }}
         >
-          Join the waitlist - be the first to match!
+          Join as an early bird - be the first to match!
         </p>
       </div>
       <div
@@ -115,10 +115,10 @@ const HeroComponent = () => {
       `}</style>
 
       {showBrandMessagePopup && (
-        <BrandsMessage onClose={() => setShowBrandMessagePopup(false)} />
+        <MessagePopup messageType="brand" onClose={() => setShowBrandMessagePopup(false)} />
       )}
       {showPeopleMessagePopup && (
-        <PeopleMessage onClose={() => setShowPeopleMessagePopup(false)} />
+        <MessagePopup messageType="people" onClose={() => setShowPeopleMessagePopup(false)} />
       )}
     </div>
   );
