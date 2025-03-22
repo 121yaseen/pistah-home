@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import ContactPageComponent from "./ContactPageComponent";
+import ContactPageComponent from "./messages/ContactPageComponent";
 
 const FooterComponent = () => {
   const [showContactPopup, setShowContactPopup] = useState(false);

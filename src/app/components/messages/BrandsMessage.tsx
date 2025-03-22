@@ -7,7 +7,7 @@ interface ContactPageProps {
   onClose: () => void;
 }
 
-const ContactPageComponent: React.FC<ContactPageProps> = ({ onClose }) => {
+const BrandsMessage: React.FC<ContactPageProps> = ({ onClose }) => {
   const [buttonHover, setButtonHover] = useState<boolean>(false);
   const [submissionStatus, setSubmissionStatus] = useState<"idle" | "sending" | "success" | "failure">("idle");
   const [formData, setFormData] = useState({
@@ -389,4 +389,4 @@ const styles = {
   },
 };
 
-export default ContactPageComponent;
+export default BrandsMessage;

@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import ContactPageComponent from "./ContactPageComponent";
+import PeopleMessage from "./messages/PeopleMessage";
 
 const PeopleSectionComponent = () => {
   const [showContactPopup, setShowContactPopup] = useState(false);
@@ -87,7 +87,7 @@ const PeopleSectionComponent = () => {
       `}</style>
 
       {showContactPopup && (
-        <ContactPageComponent onClose={() => setShowContactPopup(false)} />
+        <PeopleMessage onClose={() => setShowContactPopup(false)} />
       )}
     </div>
   );
