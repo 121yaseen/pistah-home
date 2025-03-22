@@ -120,7 +120,7 @@ const ContactPageComponent: React.FC<ContactPageProps> = ({ onClose }) => {
       return (
         <div style={styles.statusContainer}>
           <div style={styles.loadingCircle}></div>
-          <span style={{ color: "#1e90ff" }}>Sending...</span>
+          <span style={{ color: "#005BF7" }}>Sending...</span>
         </div>
       );
     }
@@ -189,7 +189,7 @@ const ContactPageComponent: React.FC<ContactPageProps> = ({ onClose }) => {
                 value={formData.firstName}
                 onChange={handleChange}
                 style={styles.input}
-                placeholder="Your first name"
+                placeholder="First name"
               />
               {errors.firstName && <p style={styles.error}>{errors.firstName}</p>}
             </div>
@@ -201,7 +201,7 @@ const ContactPageComponent: React.FC<ContactPageProps> = ({ onClose }) => {
                 value={formData.lastName}
                 onChange={handleChange}
                 style={styles.input}
-                placeholder="Your last name"
+                placeholder="Last name"
               />
               {errors.lastName && <p style={styles.error}>{errors.lastName}</p>}
             </div>
@@ -214,7 +214,7 @@ const ContactPageComponent: React.FC<ContactPageProps> = ({ onClose }) => {
               value={formData.email}
               onChange={handleChange}
               style={styles.emailInput}
-              placeholder="Your email address"
+              placeholder="Email"
             />
             {errors.email && <p style={styles.error}>{errors.email}</p>}
           </div>
@@ -225,7 +225,7 @@ const ContactPageComponent: React.FC<ContactPageProps> = ({ onClose }) => {
               value={formData.content}
               onChange={handleChange}
               style={styles.textarea}
-              placeholder="Your message for us"
+              placeholder="Message for us"
             />
             {errors.content && <p style={styles.error}>{errors.content}</p>}
           </div>
@@ -236,7 +236,7 @@ const ContactPageComponent: React.FC<ContactPageProps> = ({ onClose }) => {
               type="submit"
               style={{
                 ...styles.button,
-                backgroundColor: buttonHover ? "#0044A5" : "#0b57d0",
+                backgroundColor: buttonHover ? "#0150d8" : "#005BF7",
                 cursor: submissionStatus === "sending" ? "not-allowed" : "pointer",
               }}
               onMouseEnter={() => setButtonHover(true)}
@@ -284,7 +284,7 @@ const styles = {
     color: "#000"
   },
   form: {
-    color: "#001464",
+    color: "#000844",
   },
   heading: {
     marginBottom: "20px",
@@ -321,7 +321,7 @@ const styles = {
     padding: "10px",
     border: "1px solid #ccc",
     borderRadius: "4px",
-    minHeight: "100px",
+    minHeight: "155px",
   },
   buttonWrapper: {
     display: "flex",
@@ -350,7 +350,7 @@ const styles = {
   },
   loadingCircle: {
     border: "3px solid #ccc",
-    borderTop: "3px solid #1e90ff",
+    borderTop: "3px solid #005BF7",
     borderRadius: "50%",
     width: "20px",
     height: "20px",
