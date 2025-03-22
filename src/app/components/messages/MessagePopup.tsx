@@ -183,7 +183,7 @@ const MessagePopup: React.FC<MessagePopupProps> = ({ onClose, messageType }) => 
             <div style={styles.inputContainer}>
               <input
                 name="brandname"
-                value={(formData as any).brandname}
+                value={formData.brandname}
                 onChange={handleChange}
                 style={styles.emailInput}
                 placeholder="Brand name"
