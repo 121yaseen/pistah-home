@@ -18,6 +18,7 @@ export default function ResponsiveWrapper({ children }: ResponsiveWrapperProps) 
   return (
     <div className="desktop-background">
       <div className="desktop-mobile-container">
+        <div className="knob" />
         {children}
       </div>
     </div>

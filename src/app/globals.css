@@ -40,13 +40,25 @@ body {
 
 .desktop-mobile-container {
   position: relative;
-  max-width: 350px;
-  border: 8px #413F3F solid;
+  border: 7px #3e3e3e solid;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.644);
   background-color: #005BF7;
-  border-radius: 48px;
+  border-radius: 48pt;
   overflow: hidden;
+  width: 23vw;
   height: 100vh;
+}
+
+.knob {
+  position: absolute;
+  top: 5px;           /* Adjust vertical position as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5vw;       /* Adjust width as needed */
+  height: 2.6vh;        /* Adjust height as needed */
+  border-radius: 16pt;
+  background-color: #232323; /* Color can be adjusted */
+  z-index: 10;
 }
 
 .no-scrollbar {
