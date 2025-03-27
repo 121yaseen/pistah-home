@@ -1,66 +1,92 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700&display=swap');
+@import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+:root {
+  --background: #ffffff;
+}
 
-@media (prefers-color-scheme: dark) {}
-
-body {
-  background-color: #005BF7;
-  font-family: 'Montserrat', sans-serif;
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
 }
 
 @font-face {
-  font-family: 'League Gothic';
-  src: url('/fonts/league_gothic/LeagueGothic-Regular') format('woff2'),
-    url('/fonts/league_gothic/LeagueGothic-Regular.woff') format('woff');
+  font-family: 'Bricolage';
+  src: url('/fonts/Bricolage-Regular.woff2') format('woff2'),
+    url('/fonts/Bricolage-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
-@keyframes spin {
+.font-bricolage {
+  font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+.font-heading {
+  font-family: 'Bricolage', sans-serif;
+  font-weight: 700;
+}
+
+.text-maroon {
+  color: #4d1c1c;
+}
+
+.bg-cream {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 248 229/var(--tw-bg-opacity));
+}
+
+/* Animation classes */
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
   0% {
-    transform: rotate(0deg);
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
   }
 
   100% {
-    transform: rotate(360deg);
+    transform: translateY(0px);
   }
 }
 
-/* Add desktop-specific styles here */
-.desktop-background {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f3f3f3;
+.fade-in {
+  animation: fadeIn 0.8s ease-in forwards;
+  opacity: 0;
 }
 
-.desktop-mobile-container {
-  position: relative;
-  border: 7px #3e3e3e solid;
-  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.644);
-  background-color: #005BF7;
-  border-radius: 48pt;
-  overflow: hidden;
-  width: 23vw;
-  height: 100vh;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.knob {
-  position: absolute;
-  top: 5px;           /* Adjust vertical position as needed */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 5vw;       /* Adjust width as needed */
-  height: 2.6vh;        /* Adjust height as needed */
-  border-radius: 16pt;
-  background-color: #232323; /* Color can be adjusted */
-  z-index: 10;
+.hover-scale {
+  transition: transform 0.3s ease;
 }
 
-.no-scrollbar {
-  scrollbar-width: none;
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.bottom-shadow {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.text-black {
+  color: #000;
 }
