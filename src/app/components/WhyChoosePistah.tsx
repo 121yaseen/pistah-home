@@ -67,8 +67,8 @@ const WhyChoosePistah: React.FC = () => {
                 Comprehensive Growth Platform
               </h3>
               <p className="text-gray-600 text-[14px] sm:text-[16px]">
-                Pistah accelerates your journey, whether you're growing as an
-                influencer or expanding your brand.
+                Pistah accelerates your journey, whether you&apos;re growing as
+                an influencer or expanding your brand.
               </p>
             </div>
             <div className="bg-[#FFFCF5] p-6 rounded-[24px] border border-[#FEF0C7] text-left flex flex-col hover-scale">
@@ -133,8 +133,8 @@ const WhyChoosePistah: React.FC = () => {
               className="inline-block w-[80%] mx-auto relative xl:top-[30%] lg:top-[42%] top-[45%] text-[12px] md:text-base z-10 text-white 2xl:hidden"
               style={{ fontFamily: "EBGaramond" }}
             >
-              "Join a community that thrives on creativity, connection, and
-              growth."
+              &quot;Join a community that thrives on creativity, connection, and
+              growth.&quot;
             </span>
           </div>
           <div
