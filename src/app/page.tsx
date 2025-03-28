@@ -34,8 +34,8 @@ export default function Home() {
       </Head>
       <main>
         <div id="home">
-          <div className="bg-white font-custom bottom-shadow">
-            <div className="w-[87%] mx-auto">
+          <div className="bg-white font-custom">
+            <div className="w-[83%] mx-auto">
               <header className="flex justify-between items-center py-[32px]">
                 <div>
                   <a href="#" className="w-[65%] inline-block hover-scale">
@@ -49,21 +49,21 @@ export default function Home() {
                     />
                   </a>
                 </div>
-                <nav className="space-x-8 text-[#364152] font-bold lg:text-[16px] md:text-[14px] font-custom hidden lg:block ml-[25px]">
+                <nav className="space-x-8 text-[#005BF7] font-semibold lg:text-[16px] md:text-[14px] font-custom hidden lg:block ml-[25px]">
                   <a
-                    className="hover:text-black transition-colors duration-300"
+                    className="inline-block hover-scale"
                     href="#home"
                   >
                     Home
                   </a>
                   <a
-                    className="hover:text-black transition-colors duration-300"
+                    className="inline-block hover-scale"
                     href="#what-we-offer"
                   >
                     Services
                   </a>
                   <a
-                    className="hover:text-black transition-colors duration-300"
+                    className="inline-block hover-scale"
                     href="#"
                   >
                     Process
@@ -73,19 +73,19 @@ export default function Home() {
               <section className="md:flex block gap-10 lg:h-[85vh] lg:pt-10 pb-[100px] lg:items-center">
                 <div className="flex flex-col justify-center text-center md:text-left md:w-[55%] lg:w-[50%] fade-in">
                   <h1
-                    className="xl:text-[50px] text-[36px] md:text-[52px] sm:text-[52px] lg:text-[64px] tracking-wider font-heading text-[#005BF7]"
+                    className="xl:text-[50px] text-[36px] md:text-[52px] sm:text-[52px] lg:text-[64px] font-heading text-[#005BF7]"
                     style={{ lineHeight: 1.1 }}
                   >
                     Elevate Your Digital Presence
                   </h1>
-                  <p className="font-custom text-[14px] lg:text-[18px] md:text-[16px] text-gray-700 mb-4 md:mb-6">
+                  <p className="font-custom text-[12px] lg:text-[16px] md:text-[14px] text-gray-600 mb-4 md:mb-6 mt-2">
                     Inspiring creators and brands to elevate their impact
                     through fresh insights, expert mentorship, and creative
                     strategies.
                   </p>
                   <a
                     href="#"
-                    className="font-custom font-bold inline-block w-[50%] mx-auto md:mx-0 text-center bg-[#005BF7] text-white py-2 px-2 lg:py-3 lg:px-3 rounded-lg hover-scale"
+                    className="font-custom font-bold whitespace-nowrap mt-2 inline-block w-[50%] mx-auto md:mx-0 text-center bg-[#005BF7] text-white py-2 px-2 lg:py-3 lg:px-3 rounded-lg hover-scale"
                   >
                     Join Our Waitlist
                   </a>
