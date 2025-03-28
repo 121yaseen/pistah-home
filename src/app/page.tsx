@@ -34,8 +34,8 @@ export default function Home() {
       </Head>
       <main>
         <div id="home">
-          <div className="bg-cream font-custom bottom-shadow">
-            <div className="w-[90%] mx-auto 2xl:mx-auto 2xl:w-[70%]">
+          <div className="bg-white font-custom bottom-shadow">
+            <div className="w-[87%] mx-auto">
               <header className="flex justify-between items-center py-[32px]">
                 <div>
                   <a href="#" className="w-[65%] inline-block hover-scale">
@@ -73,7 +73,7 @@ export default function Home() {
               <section className="md:flex block gap-10 lg:h-[85vh] lg:pt-10 pb-[100px] lg:items-center">
                 <div className="flex flex-col justify-center text-center md:text-left md:w-[55%] lg:w-[50%] fade-in">
                   <h1
-                    className="xl:text-[50px] text-[36px] md:text-[52px] sm:text-[52px] lg:text-[64px] tracking-wider font-heading text-maroon"
+                    className="xl:text-[50px] text-[36px] md:text-[52px] sm:text-[52px] lg:text-[64px] tracking-wider font-heading text-[#005BF7]"
                     style={{ lineHeight: 1.1 }}
                   >
                     Elevate Your Digital Presence
@@ -85,7 +85,7 @@ export default function Home() {
                   </p>
                   <a
                     href="#"
-                    className="font-custom font-bold inline-block w-[50%] mx-auto md:mx-0 text-center bg-black text-white py-2 px-2 lg:py-3 lg:px-3 rounded-lg hover:bg-gray-900 transition-colors duration-300 hover-scale"
+                    className="font-custom font-bold inline-block w-[50%] mx-auto md:mx-0 text-center bg-[#005BF7] text-white py-2 px-2 lg:py-3 lg:px-3 rounded-lg hover-scale"
                   >
                     Join Our Waitlist
                   </a>
@@ -96,8 +96,8 @@ export default function Home() {
                       alt="Spotlight Illustration"
                       width={500}
                       height={500}
-                      className="floating md:w-[100%]"
-                      src="https://s3.ap-south-1.amazonaws.com/talrop.com-react-assets-bucket/assets/whoyer/22-10-2024/spotlight-lottie--01.svg"
+                      className="zoominout md:w-[100%]"
+                      src="./assets/hero-background.svg"
                     />
                   </span>
                 </div>
