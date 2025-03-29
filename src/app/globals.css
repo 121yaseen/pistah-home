@@ -5,6 +5,10 @@
   --background: #ffffff;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 /* Remove old @font-face for Bricolage if you're loading it locally only for headings,
    or keep it if you have a specific local version you prefer for headings */
 @font-face {
