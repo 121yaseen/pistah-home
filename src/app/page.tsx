@@ -109,7 +109,7 @@ export default function Home() {
       </main>
       <div className="mx-auto py-[80px] font-custom overflow-hidden">
         <section className="lg:mx-auto lg:w-[75%] 2xl:w-[65%] fade-in">
-          <h3 className="md:text-[24px] text-[20px] lg:text-[32px] font-bold text-center mb-2 sm:mb-4">
+          <h3 className="md:text-[24px] text-[20px] lg:text-[32px] font-bold text-center mb-2 sm:mb-4 text-[#005BF7]">
             Who can be part of Pistah?
           </h3>
           <p className="text-center text-gray-500 mb-6 lg:text-[18px] md:text-[16px] text-[14px] w-[90%] mx-auto 2xl:text-[18px]"></p>
@@ -143,7 +143,7 @@ export default function Home() {
                 </div>
               </div>
               <div
-                className="transition-all duration-500 mt-[20px] sm:mt-[0] flex-shrink-0 md:h-[230px] 2xl:h-[250px] sm:w-[55%] w-[100%] md:w-[65%] lg:w-[70%] bg-[#FEF0C7] text-black p-4 rounded-lg md:flex justify-between hover-scale"
+                className="transition-all duration-500 mt-[20px] sm:mt-[0] flex-shrink-0 md:h-[230px] 2xl:h-[250px] sm:w-[55%] w-[100%] md:w-[65%] lg:w-[70%] bg-[#005BF7] text-black p-4 rounded-lg md:flex justify-between hover-scale"
                 style={{
                   opacity: 1,
                   willChange: "opacity, transform",
@@ -172,14 +172,14 @@ export default function Home() {
                   <img
                     alt="Aspiring Creators Illustration"
                     className="object-cover floating"
-                    src="https://s3.ap-south-1.amazonaws.com/talrop.com-react-assets-bucket/assets/whoyer/19-10-2024/aspiring-creator.svg"
+                    src="./assets/people.svg"
                   />
                 </div>
               </div>
             </div>
             <div className="flex flex-col-reverse sm:flex-row sm:gap-[10px]">
               <div
-                className="transition-all mt-[20px] sm:mt-[0] duration-500 flex-shrink-0 md:h-[230px] 2xl:h-[250px] w-[100%] sm:w-[55%] md:w-[65%] lg:w-[70%] bg-[#FEF0C7] text-black p-4 rounded-lg md:flex justify-between hover-scale"
+                className="transition-all mt-[20px] sm:mt-[0] duration-500 flex-shrink-0 md:h-[230px] 2xl:h-[250px] w-[100%] sm:w-[55%] md:w-[65%] lg:w-[70%] bg-[#005BF7] text-black p-4 rounded-lg md:flex justify-between hover-scale"
                 style={{
                   opacity: 1,
                   willChange: "opacity, transform",
