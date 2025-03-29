@@ -57,7 +57,7 @@ const MobileCardStack = () => {
       scrollTrigger: {
         trigger: containerRef.current,
         start: "top top",
-        end: "+=1200", // reduced scroll distance
+        end: "+=1800",
         scrub: true,
         pin: true,
       },
