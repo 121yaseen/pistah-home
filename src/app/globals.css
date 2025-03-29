@@ -1,17 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 @import "tailwindcss";
 
 :root {
   --background: #ffffff;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html, body {
+  overflow-x: hidden;
 }
 
+/* Remove old @font-face for Bricolage if you're loading it locally only for headings,
+   or keep it if you have a specific local version you prefer for headings */
 @font-face {
   font-family: 'Bricolage';
   src: url('/fonts/Bricolage-Regular.woff2') format('woff2'),
@@ -21,13 +20,13 @@
   font-display: swap;
 }
 
-.font-bricolage {
-  font-family: 'Bricolage Grotesque', sans-serif;
+.font-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
 }
 
-.font-heading {
-  font-family: 'Bricolage', sans-serif;
-  font-weight: 700;
+.font-custom {
+  font-family: 'Montserrat', sans-serif;
 }
 
 .text-maroon {
@@ -36,10 +35,10 @@
 
 .bg-cream {
   --tw-bg-opacity: 1;
-  background-color: rgb(255 248 229/var(--tw-bg-opacity));
+  background-color: rgb(255 248 229 / var(--tw-bg-opacity));
 }
 
-/* Animation classes */
+/* Animation classes (unchanged) */
 .floating {
   animation: float 6s ease-in-out infinite;
 }
@@ -75,16 +74,30 @@
   }
 }
 
+.zoominout {
+  animation: zoominout 12s ease-in-out infinite;
+}
+
+@keyframes zoominout {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
 .hover-scale {
   transition: transform 0.3s ease;
 }
 
 .hover-scale:hover {
   transform: scale(1.05);
-}
-
-.bottom-shadow {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 .text-black {
