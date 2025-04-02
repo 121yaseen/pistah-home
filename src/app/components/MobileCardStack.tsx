@@ -67,7 +67,7 @@ const MobileCardStack = () => {
     cardElements.forEach((card, index) => {
       if (index !== cardElements.length - 1) {
         tl.fromTo(card, { x: "0%", opacity: 1 }, { x: "0%", opacity: 1, duration: 1 })
-          .to(card, { x: "150%", opacity: 0, duration: 1 });
+          .to(card, { x: "200%", opacity: 0.6, duration: 1 });
       } else {
         // The last card remains at its starting position with full opacity.
         tl.fromTo(card, { x: "0%", opacity: 1 }, { x: "0%", opacity: 1, duration: 1 });
