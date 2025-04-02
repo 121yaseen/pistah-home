@@ -110,7 +110,7 @@ export default function Home() {
       </main>
       <MobileCardStack />
       <WhatWeOffer />
-      <MacbookVideoSection />
+      {/* <MacbookVideoSection /> */}
       <HowItWorks />
       <WhyChoosePistah />
       <FooterSection />

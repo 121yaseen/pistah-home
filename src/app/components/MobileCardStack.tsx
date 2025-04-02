@@ -10,8 +10,8 @@ const MobileCardStack = () => {
   const cards = [
     {
       id: 1,
-      bgColor: "bg-black",
-      textColor: "text-white",
+      bgColor: "bg-white",
+      textColor: "text-black",
       icon: "https://s3.ap-south-1.amazonaws.com/talrop.com-react-assets-bucket/assets/whoyer/19-10-2024/influencer-icon.svg",
       title: "INFLUENCERS",
       description:
@@ -29,8 +29,8 @@ const MobileCardStack = () => {
     },
     {
       id: 3,
-      bgColor: "bg-black",
-      textColor: "text-white",
+      bgColor: "bg-white",
+      textColor: "text-black",
       icon: "https://s3.ap-south-1.amazonaws.com/talrop.com-react-assets-bucket/assets/whoyer/19-10-2024/brand-icon-02.svg",
       title: "BRANDS",
       description:
@@ -50,7 +50,6 @@ const MobileCardStack = () => {
   ];
 
   useEffect(() => {
-    // Reverse the order so that the top-most card animates first
     const cardElements = (gsap.utils.toArray(".card") as HTMLElement[]).reverse();
 
     // Entrance (stacking)
@@ -65,13 +64,13 @@ const MobileCardStack = () => {
     cardElements.forEach((card, index) => {
       entranceTl.fromTo(
         card,
-        { x: "100%", y: "-150%", opacity: 0 },
-        { x: "0%", y: "0%", opacity: 1, duration: 1.2, ease: "power2.out" },
+        { x: "150%", y: "-150%", opacity: 0 },
+        { x: "0%", y: "0%", opacity: 1, duration: 0.8, ease: "power2.out" },
         index * 0.2 // stagger each card's entrance
       );
     });
 
-    // Scroll-Based Horizontal Animation: moves each non-fixed card to the right as before.
+    // Scroll-Based Horizontal Animation
     const scrollTl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
@@ -79,6 +78,10 @@ const MobileCardStack = () => {
         end: "+=1800",
         scrub: true,
         pin: true,
+        toggleActions: "play none none reset", // Ensures it resets when re-entering
+        onEnterBack: () => {
+          scrollTl.progress(0); // Reset animation when re-entering from bottom
+        },
       },
     });
 
@@ -88,10 +91,13 @@ const MobileCardStack = () => {
           .fromTo(card, { x: "0%", opacity: 1 }, { x: "0%", opacity: 1, duration: 1 })
           .to(card, { x: "200%", opacity: 0.6, duration: 1 });
       } else {
-        // The fixed card remains in place.
         scrollTl.fromTo(card, { x: "0%", opacity: 1 }, { x: "0%", opacity: 1, duration: 1 });
       }
     });
+
+    return () => {
+      scrollTl.kill(); // Clean up the animation on component unmount
+    };
   }, []);
 
   return (
