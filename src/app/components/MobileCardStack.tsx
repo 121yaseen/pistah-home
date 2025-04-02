@@ -53,7 +53,26 @@ const MobileCardStack = () => {
     // Reverse the order so that the top-most card animates first
     const cardElements = (gsap.utils.toArray(".card") as HTMLElement[]).reverse();
 
-    const tl = gsap.timeline({
+    // Entrance (stacking)
+    const entranceTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top 70%",
+        toggleActions: "play none none reverse",
+      },
+    });
+
+    cardElements.forEach((card, index) => {
+      entranceTl.fromTo(
+        card,
+        { x: "100%", y: "-150%", opacity: 0 },
+        { x: "0%", y: "0%", opacity: 1, duration: 1.2, ease: "power2.out" },
+        index * 0.2 // stagger each card's entrance
+      );
+    });
+
+    // Scroll-Based Horizontal Animation: moves each non-fixed card to the right as before.
+    const scrollTl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
         start: "top top",
@@ -63,14 +82,14 @@ const MobileCardStack = () => {
       },
     });
 
-    // Animate each card horizontally relative to its centered position.
     cardElements.forEach((card, index) => {
       if (index !== cardElements.length - 1) {
-        tl.fromTo(card, { x: "0%", opacity: 1 }, { x: "0%", opacity: 1, duration: 1 })
+        scrollTl
+          .fromTo(card, { x: "0%", opacity: 1 }, { x: "0%", opacity: 1, duration: 1 })
           .to(card, { x: "200%", opacity: 0.6, duration: 1 });
       } else {
-        // The last card remains at its starting position with full opacity.
-        tl.fromTo(card, { x: "0%", opacity: 1 }, { x: "0%", opacity: 1, duration: 1 });
+        // The fixed card remains in place.
+        scrollTl.fromTo(card, { x: "0%", opacity: 1 }, { x: "0%", opacity: 1, duration: 1 });
       }
     });
   }, []);
@@ -107,9 +126,7 @@ const MobileCardStack = () => {
                 />
                 <h2 className="text-xl font-bold">{card.title}</h2>
               </div>
-              <p className="text-sm mb-4 h-16 overflow-hidden">
-                {card.description}
-              </p>
+              <p className="text-sm mb-4 h-16 overflow-hidden">{card.description}</p>
               {card.illustration && (
                 <div className="flex justify-center">
                   <img

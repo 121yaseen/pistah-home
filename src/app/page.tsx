@@ -71,7 +71,7 @@ export default function Home() {
                   </a>
                 </nav>
               </header>
-              <section className="md:flex block gap-10 lg:h-[85vh] lg:pt-10 pb-[100px] lg:items-center">
+              <section className="md:flex block gap-10 h-[95vh] pb-[100px] lg:items-center">
                 <div className="flex flex-col justify-center text-center md:text-left md:w-[55%] lg:w-[50%] fade-in">
                   <h1
                     className="xl:text-[50px] text-[36px] md:text-[52px] sm:text-[52px] lg:text-[64px] font-heading text-[#005BF7]"
