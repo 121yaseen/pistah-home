@@ -86,7 +86,7 @@ export default function Home() {
                   </p>
                   <a
                     href="#"
-                    className="font-custom font-bold whitespace-nowrap mt-2 inline-block w-[50%] mx-auto md:mx-0 text-center bg-[#005BF7] text-white py-2 px-2 lg:py-3 lg:px-3 rounded-lg hover-scale"
+                    className="font-custom font-bold whitespace-nowrap mt-2 inline-flex items-center justify-center bg-[#005BF7] text-white py-2 px-6 lg:py-3 lg:px-8 rounded-lg hover-scale mx-auto md:mx-0 w-fit lg:max-w-[220px] text-center"
                   >
                     Join Our Waitlist
                   </a>
