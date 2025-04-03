@@ -1,7 +1,6 @@
 import Head from "next/head";
 import WhatWeOffer from "./components/WhatWeOffer";
 import HowItWorks from "./components/HowItWorks";
-import MacbookVideoSection from "./components/MacbookVideoSection";
 import WhyChoosePistah from "./components/WhyChoosePistah";
 import FooterSection from "./components/Footer";
 import MobileCardStack from "./components/MobileCardStack";
@@ -71,7 +70,7 @@ export default function Home() {
                   </a>
                 </nav>
               </header>
-              <section className="md:flex block gap-10 lg:h-[85vh] lg:pt-10 pb-[100px] lg:items-center">
+              <section className="md:flex block gap-10 h-[95vh] pb-[100px] lg:items-center">
                 <div className="flex flex-col justify-center text-center md:text-left md:w-[55%] lg:w-[50%] fade-in">
                   <h1
                     className="xl:text-[50px] text-[36px] md:text-[52px] sm:text-[52px] lg:text-[64px] font-heading text-[#005BF7]"
@@ -86,7 +85,7 @@ export default function Home() {
                   </p>
                   <a
                     href="#"
-                    className="font-custom font-bold whitespace-nowrap mt-2 inline-block w-[50%] mx-auto md:mx-0 text-center bg-[#005BF7] text-white py-2 px-2 lg:py-3 lg:px-3 rounded-lg hover-scale"
+                    className="font-custom font-bold whitespace-nowrap mt-2 inline-flex items-center justify-center bg-[#005BF7] text-white py-2 px-6 lg:py-3 lg:px-8 rounded-lg hover-scale mx-auto md:mx-0 w-fit lg:max-w-[220px] text-center"
                   >
                     Join Our Waitlist
                   </a>
@@ -110,7 +109,7 @@ export default function Home() {
       </main>
       <MobileCardStack />
       <WhatWeOffer />
-      <MacbookVideoSection />
+      {/* <MacbookVideoSection /> */}
       <HowItWorks />
       <WhyChoosePistah />
       <FooterSection />

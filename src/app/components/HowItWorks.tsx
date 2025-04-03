@@ -39,10 +39,10 @@ const HowItWorks: React.FC = () => {
           isVisible ? "opacity-100" : "opacity-0"
         }`}
       >
-        <h3 className="text-[20px] lg:text-[32px] md:text-[24px] font-bold font-custom mb-4 text-maroon">
+        <h3 className="text-[20px] lg:text-[32px] md:text-[24px] font-bold font-custom mb-4 text-[#005BF7]">
           How It Works
         </h3>
-        <p className="text-gray-500 text-[14px] md:text-[16px] lg:text-[18px] font-custom mb-8 md:w-[70%] mx-auto">
+        <p className="text-black text-[14px] md:text-[16px] lg:text-[18px] font-custom mb-8 md:w-[70%] mx-auto">
           Pistah simplifies the process of connecting, collaborating,
           optimising, and growing—enabling both brands and influencers to thrive
           in the digital space.
@@ -61,7 +61,7 @@ const HowItWorks: React.FC = () => {
               className="absolute top-0 right-0 w-[100px]"
               src="https://s3.ap-south-1.amazonaws.com/talrop.com-react-assets-bucket/assets/whoyer/19-10-2024/style-icon1.svg"
             />
-            <span className="bg-white inline-block rounded-full h-[30px] w-[30px] flex justify-center items-center font-bold text-center">
+            <span className="bg-white inline-block rounded-full h-[30px] w-[30px] justify-center items-center font-bold text-center">
               1
             </span>
             <h6 className="font-bold my-[10px] xl:text-18px text-16px [@media(min-width:1440px)]:text-[22px]">
@@ -91,19 +91,19 @@ const HowItWorks: React.FC = () => {
               src="https://s3.ap-south-1.amazonaws.com/talrop.com-react-assets-bucket/assets/whoyer/24-10-2024/semi-arrow.svg"
             />
           </span>
-          <span className="md:hidden hidden sm:block visible-icon block absolute xl:top-[30px] top-[33%] sm:top-[52%] lg:left-[23%] left-[0px] sm:left-[42%] [@media(min-width:1440px)]:left-[24%] w-[80px]">
+          <span className="md:hidden hidden sm:block visible-icon absolute xl:top-[30px] top-[33%] sm:top-[52%] lg:left-[23%] left-[0px] sm:left-[42%] [@media(min-width:1440px)]:left-[24%] w-[80px]">
             <img
               alt="dashed-line"
               src="https://s3.ap-south-1.amazonaws.com/talrop.com-react-assets-bucket/assets/whoyer/24-10-2024/spin-arrow.svg"
             />
           </span>
-          <span className="md:hidden hidden sm:block visible-icon block absolute xl:top-[30px] top-[33%] sm:top-[52%] lg:left-[23%] left-[0px] sm:left-[80%] [@media(min-width:1440px)]:left-[24%] w-[80px]">
+          <span className="md:hidden hidden sm:block visible-icon absolute xl:top-[30px] top-[33%] sm:top-[52%] lg:left-[23%] left-[0px] sm:left-[80%] [@media(min-width:1440px)]:left-[24%] w-[80px]">
             <img alt="dashed-line" src="images/line-vector4.png" />
           </span>
-          <span className="sm:hidden hidden sm:block absolute xl:top-[30px] top-[55%] lg:left-[23%] left-[0px] sm:left-[42%] [@media(min-width:1440px)]:left-[24%] w-[80px]">
+          <span className="sm:hidden hidden absolute xl:top-[30px] top-[55%] lg:left-[23%] left-[0px] sm:left-[42%] [@media(min-width:1440px)]:left-[24%] w-[80px]">
             <img alt="dashed-line" src="images/Vector 34.svg" />
           </span>
-          <span className="sm:hidden hidden sm:block absolute xl:top-[30px] top-[77%] lg:left-[23%] left-[0px] sm:left-[42%] [@media(min-width:1440px)]:left-[24%] w-[80px]">
+          <span className="sm:hidden hidden absolute xl:top-[30px] top-[77%] lg:left-[23%] left-[0px] sm:left-[42%] [@media(min-width:1440px)]:left-[24%] w-[80px]">
             <img alt="dashed-line" src="images/Vector 34.svg" />
           </span>
           <span className="hidden sm:block md:hidden visible-icon absolute xl:top-[30px] top-[102%] lg:left-[23%] left-[0px] sm:left-[42%] [@media(min-width:1440px)]:left-[24%] w-[80px]">
@@ -125,7 +125,7 @@ const HowItWorks: React.FC = () => {
               className="absolute top-0 right-0 w-[130px]"
               src="https://s3.ap-south-1.amazonaws.com/talrop.com-react-assets-bucket/assets/whoyer/19-10-2024/style-icon2.svg"
             />
-            <span className="bg-white inline-block rounded-full h-[30px] w-[30px] flex justify-center font-bold items-center text-center">
+            <span className="bg-white rounded-full h-[30px] w-[30px] flex justify-center font-bold items-center text-center">
               2
             </span>
             <h6 className="font-bold my-[10px] xl:text-18px text-16px [@media(min-width:1440px)]:text-[22px]">
@@ -162,7 +162,7 @@ const HowItWorks: React.FC = () => {
               className="absolute top-0 right-0 w-[60px]"
               src="https://s3.ap-south-1.amazonaws.com/talrop.com-react-assets-bucket/assets/whoyer/19-10-2024/style-icon3.svg"
             />
-            <span className="bg-white inline-block rounded-full h-[30px] w-[30px] flex justify-center font-bold items-center text-center">
+            <span className="bg-white rounded-full h-[30px] w-[30px] flex justify-center font-bold items-center text-center">
               3
             </span>
             <h6 className="font-bold my-[10px] xl:text-18px text-16px [@media(min-width:1440px)]:text-[22px]">
@@ -199,7 +199,7 @@ const HowItWorks: React.FC = () => {
               className="absolute top-0 right-0 w-[150px]"
               src="https://s3.ap-south-1.amazonaws.com/talrop.com-react-assets-bucket/assets/whoyer/19-10-2024/style-icon4.svg"
             />
-            <span className="bg-white inline-block rounded-full h-[30px] w-[30px] flex justify-center items-center font-bold text-center">
+            <span className="bg-white rounded-full h-[30px] w-[30px] flex justify-center items-center font-bold text-center">
               4
             </span>
             <h6 className="font-bold my-[10px] xl:text-18px text-16px [@media(min-width:1440px)]:text-[22px]">
