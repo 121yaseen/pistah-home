@@ -1,7 +1,6 @@
 import Head from "next/head";
 import WhatWeOffer from "./components/WhatWeOffer";
 import HowItWorks from "./components/HowItWorks";
-import MacbookVideoSection from "./components/MacbookVideoSection";
 import WhyChoosePistah from "./components/WhyChoosePistah";
 import FooterSection from "./components/Footer";
 import MobileCardStack from "./components/MobileCardStack";
