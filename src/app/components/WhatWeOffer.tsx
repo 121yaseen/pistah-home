@@ -40,11 +40,11 @@ const WhatWeOffer: React.FC = () => {
         <div className="w-[90%] mx-auto [@media(min-width:1600px)]:w-[80%]">
           <div
             className={`mx-auto text-center lg:w-[90%] md:w-[100%] transition-all duration-700 ${isVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-10"
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-10"
               }`}
           >
-            <h3 className="text-[20px] lg:text-[32px] md:text-[24px] font-custom font-bold mb-2 text-[#005BF7]">
+            <h3 className="text-[26px] lg:text-[32px] md:text-[26px] font-custom font-bold mb-2 text-[#005BF7]">
               What Pistah Offers
             </h3>
             <p className="text-black text-[14px] md:text-[16px] lg:text-[18px] font-custom mb-8 md:w-[90%] mx-auto">
@@ -53,79 +53,79 @@ const WhatWeOffer: React.FC = () => {
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               <div
-                className={`bg-white shadow-md p-6 rounded-2xl hover:shadow-lg text-left transition-all duration-500 hover-scale border border-gray-200 ${isVisible
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-10"
+                className={`bg-white shadow-md p-2 rounded-2xl hover:shadow-lg text-left transition-all duration-500 hover-scale border border-gray-200 ${isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
                   }`}
                 style={{ transitionDelay: "100ms" }}
               >
-                <span className="inline-block w-[12%] mb-4">
+                <span className="inline-block  mb-4">
                   <img
                     alt="Service Icon"
-                    src="/images/icons/advanced-analytics.svg"
+                    src="/images/icons/database.svg"
                   />
                 </span>
-                <h3 className="text-[20px] font-semibold font-custom mb-2 text-[#005BF7]">
-                  Advanced Analytics
+                <h3 className="text-[20px] font-semibold px-4 font-custom mb-2 text-[#005BF7]">
+                  Find Influencers to Grow Sales
                 </h3>
-                <p className="text-black text-[16px]">
+                <p className="text-black text-[16px] px-4 mb-4">
                   Get insights to improve content, increase audience engagement
                   and sharpen your strategy.
                 </p>
               </div>
               <div
-                className={`bg-white shadow-md p-6 rounded-2xl hover:shadow-lg text-left transition-all duration-500 hover-scale border border-gray-200 ${isVisible
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-10"
+                className={`bg-white shadow-md p-2 rounded-2xl hover:shadow-lg text-left transition-all duration-500 hover-scale border border-gray-200 ${isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
                   }`}
                 style={{ transitionDelay: "200ms" }}
               >
-                <span className="inline-block w-[12%] mb-4">
+                <span className="inline-block mb-4">
                   <img
                     alt="Service Icon"
-                    src="/images/icons/influencer-portfolio.svg"
+                    src="/images/icons/emailsent.svg"
                   />
                 </span>
-                <h3 className="text-[20px] font-semibold font-custom mb-2 text-[#005BF7]">
+                <h3 className="text-[20px] font-semibold font-custom mb-2 text-[#005BF7] px-4">
                   Portfolio Creation
                 </h3>
-                <p className="text-black text-[16px]">
+                <p className="text-black text-[16px] px-4 mb-4">
                   Create a website that is personalised and professional,
                   showcasing achievements and establishing partnerships.
                 </p>
               </div>
               <div
-                className={`bg-white shadow-md p-6 rounded-2xl hover:shadow-lg text-left transition-all duration-500 hover-scale border border-gray-200 ${isVisible
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-10"
+                className={`bg-white shadow-md p-2 rounded-2xl hover:shadow-lg text-left transition-all duration-500 hover-scale border border-gray-200 ${isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
                   }`}
                 style={{ transitionDelay: "300ms" }}
               >
-                <span className="inline-block w-[12%] mb-4">
+                <span className="inline-block mb-4">
                   <img
                     alt="Service Icon"
-                    src="/images/icons/creator-academy.svg"
+                    src="/images/icons/chat.svg"
                   />
                 </span>
-                <h3 className="text-[20px] font-semibold font-custom mb-2 text-[#005BF7]">
-                  Creator Academy
+                <h3 className="text-[20px] font-semibold font-custom mb-2 text-[#005BF7] px-4">
+                  Instant Contact & Collaboration
                 </h3>
-                <p className="text-black text-[16px]">
+                <p className="text-black text-[16px] px-4 mb-4">
                   Gain access to expert-led courses that help you develop
                   content creation skills and grow your digital influence.
                 </p>
               </div>
               <div
                 className={`bg-white shadow-md p-6 rounded-2xl hover:shadow-lg text-left transition-all duration-500 hover-scale border border-gray-200 ${isVisible
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-10"
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
                   }`}
                 style={{ transitionDelay: "400ms" }}
               >
                 <span className="inline-block w-[12%] mb-4">
                   <img
                     alt="Service Icon"
-                    src="/images/icons/personal-stylist.svg"
+                    src="/images/icons/chat.svg"
                   />
                 </span>
                 <h3 className="text-[20px] font-semibold font-custom mb-2 text-[#005BF7]">
@@ -138,8 +138,8 @@ const WhatWeOffer: React.FC = () => {
               </div>
               <div
                 className={`bg-white shadow-md p-6 rounded-2xl hover:shadow-lg text-left transition-all duration-500 hover-scale border border-gray-200 ${isVisible
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-10"
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
                   }`}
                 style={{ transitionDelay: "500ms" }}
               >
