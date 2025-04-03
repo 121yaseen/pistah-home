@@ -12,40 +12,43 @@ const MobileCardStack = () => {
       id: 1,
       bgColor: "bg-white",
       textColor: "text-black",
-      icon: "https://s3.ap-south-1.amazonaws.com/talrop.com-react-assets-bucket/assets/whoyer/19-10-2024/influencer-icon.svg",
       title: "INFLUENCERS",
       description:
         "Maximise exposure, strengthen personal brands and secure high-value collaborations.",
-    },
-    {
-      id: 2,
-      bgColor: "bg-white",
-      textColor: "text-black",
-      icon: "https://s3.ap-south-1.amazonaws.com/talrop.com-react-assets-bucket/assets/whoyer/19-10-2024/aspiring-creator-icon.svg",
-      title: "ASPIRING CREATORS",
-      description:
-        "Access learning, mentorship and tools to launch a successful content creation career.",
-      illustration: "/assets/people.svg",
+      illustration: "/assets/influencer.svg",
+      width: "w-5/6"
     },
     {
       id: 3,
-      bgColor: "bg-white",
-      textColor: "text-black",
-      icon: "https://s3.ap-south-1.amazonaws.com/talrop.com-react-assets-bucket/assets/whoyer/19-10-2024/brand-icon-02.svg",
+      bgColor: "bg-black",
+      textColor: "text-white",
       title: "BRANDS",
       description:
         "Collaborate to amplify brand presence, expand audience reach and achieve meaningful growth.",
       illustration:
-        "https://s3.ap-south-1.amazonaws.com/talrop.com-react-assets-bucket/assets/whoyer/19-10-2024/brand.svg",
+        "/assets/brands.svg",
+      width: "w-max"
+    },
+    {
+      id: 2,
+      bgColor: "bg-black",
+      textColor: "text-white",
+      title: "ASPIRING CREATORS",
+      description:
+        "Access learning, mentorship and tools to launch a successful content creation career.",
+      illustration: "/assets/people.svg",
+      width: "w-max"
     },
     {
       id: 4,
       bgColor: "bg-white",
       textColor: "text-black",
-      icon: "https://s3.ap-south-1.amazonaws.com/talrop.com-react-assets-bucket/assets/whoyer/19-10-2024/individual-icon.svg",
       title: "EVERYDAY INDIVIDUALS",
       description:
         "Get personalised styling advice to enhance your digital appearance and personal branding.",
+      illustration:
+        "/assets/individual.svg",
+      width: "w-5/6"
     },
   ];
 
@@ -125,20 +128,15 @@ const MobileCardStack = () => {
               }}
             >
               <div className="flex items-center mb-4">
-                <img
-                  src={card.icon}
-                  alt={`${card.title} Icon`}
-                  className="w-10 h-10 mr-3"
-                />
-                <h2 className="text-xl font-bold">{card.title}</h2>
+                <h2 className="text-xl md:text-2xl font-bold">{card.title}</h2>
               </div>
-              <p className="text-sm mb-4 h-16 overflow-hidden">{card.description}</p>
+              <p className="text-sm mb-4 h-16 md:h-12 overflow-hidden">{card.description}</p>
               {card.illustration && (
                 <div className="flex justify-center">
                   <img
                     src={card.illustration}
                     alt={`${card.title} Illustration`}
-                    className="w-3/4 object-cover"
+                    className={`${card.width} object-cover`}
                   />
                 </div>
               )}
