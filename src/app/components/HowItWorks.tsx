@@ -49,7 +49,7 @@ const HowItWorks: React.FC = () => {
         </p>
         <ul className="relative flex flex-col md:flex sm:grid sm:grid-cols-2 md:flex-row font-custom md:gap-[25px] sm:gap-[10px] items-end justify-between gap-[0]">
           <li
-            className={`relative rounded-[12px] bg-[#FEDF89] text-left w-[100%] md:w-[30%] sm:mt-[70px] pt-[100px] pb-[24px] px-[24px] md:mt-[0px] overflow-hidden hover-scale transition-all duration-500 ${
+            className={`relative rounded-[12px] bg-[#005BF7] text-left w-[100%] md:w-[30%] sm:mt-[70px] pt-[100px] pb-[24px] px-[24px] md:mt-[0px] overflow-hidden hover-scale transition-all duration-500 ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-10"
@@ -61,13 +61,13 @@ const HowItWorks: React.FC = () => {
               className="absolute top-0 right-0 w-[100px]"
               src="https://s3.ap-south-1.amazonaws.com/talrop.com-react-assets-bucket/assets/whoyer/19-10-2024/style-icon1.svg"
             />
-            <span className="bg-white inline-block rounded-full h-[30px] w-[30px] justify-center items-center font-bold text-center">
+            <span className="bg-white rounded-full h-[30px] w-[30px] flex justify-center font-bold items-center text-center">
               1
             </span>
-            <h6 className="font-bold my-[10px] xl:text-18px text-16px [@media(min-width:1440px)]:text-[22px]">
+            <h6 className="text-white font-bold my-[10px] xl:text-18px text-16px [@media(min-width:1440px)]:text-[22px]">
               Connect
             </h6>
-            <p className="text-sm [@media(min-width:1440px)]:text-[18px]">
+            <p className="text-white text-sm [@media(min-width:1440px)]:text-[18px]">
               Find and connect with ideal brands or influencers.
             </p>
           </li>
@@ -77,43 +77,28 @@ const HowItWorks: React.FC = () => {
             }`}
             style={{ transitionDelay: "150ms" }}
           >
-            <img alt="dashed-line" src="images/line-vector1.png" />
+            <img alt="dashed-line" src="assets/howitworks/line-vector1.svg" />
           </span>
           <span className="relative right-[50%] sm:hidden">
             <img
               alt=""
-              src="https://s3.ap-south-1.amazonaws.com/talrop.com-react-assets-bucket/assets/whoyer/24-10-2024/Vector 39.svg"
+              src="assets/howitworks/vector-39.svg"
             />
           </span>
           <span className="md:hidden hidden sm:block visible-icon absolute xl:top-[30px] top-[3%] lg:left-[23%] left-[0px] sm:left-[42%] [@media(min-width:1440px)]:left-[24%] w-[80px]">
             <img
               alt="dashed-line"
-              src="https://s3.ap-south-1.amazonaws.com/talrop.com-react-assets-bucket/assets/whoyer/24-10-2024/semi-arrow.svg"
+              src="assets/howitworks/semi-arrow.svg"
             />
-          </span>
-          <span className="md:hidden hidden sm:block visible-icon absolute xl:top-[30px] top-[33%] sm:top-[52%] lg:left-[23%] left-[0px] sm:left-[42%] [@media(min-width:1440px)]:left-[24%] w-[80px]">
-            <img
-              alt="dashed-line"
-              src="https://s3.ap-south-1.amazonaws.com/talrop.com-react-assets-bucket/assets/whoyer/24-10-2024/spin-arrow.svg"
-            />
-          </span>
-          <span className="md:hidden hidden sm:block visible-icon absolute xl:top-[30px] top-[33%] sm:top-[52%] lg:left-[23%] left-[0px] sm:left-[80%] [@media(min-width:1440px)]:left-[24%] w-[80px]">
-            <img alt="dashed-line" src="images/line-vector4.png" />
           </span>
           <span className="sm:hidden hidden absolute xl:top-[30px] top-[55%] lg:left-[23%] left-[0px] sm:left-[42%] [@media(min-width:1440px)]:left-[24%] w-[80px]">
-            <img alt="dashed-line" src="images/Vector 34.svg" />
+            <img alt="dashed-line" src="assets/howitworks/Vector 34.svg" />
           </span>
           <span className="sm:hidden hidden absolute xl:top-[30px] top-[77%] lg:left-[23%] left-[0px] sm:left-[42%] [@media(min-width:1440px)]:left-[24%] w-[80px]">
-            <img alt="dashed-line" src="images/Vector 34.svg" />
-          </span>
-          <span className="hidden sm:block md:hidden visible-icon absolute xl:top-[30px] top-[102%] lg:left-[23%] left-[0px] sm:left-[42%] [@media(min-width:1440px)]:left-[24%] w-[80px]">
-            <img
-              alt="dashed-line"
-              src="https://s3.ap-south-1.amazonaws.com/talrop.com-react-assets-bucket/assets/whoyer/24-10-2024/Vector+40.svg"
-            />
+            <img alt="dashed-line" src="assets/howitworks/Vector 34.svg" />
           </span>
           <li
-            className={`relative rounded-[12px] bg-[#FEDF89] text-left w-[100%] md:w-[30%] sm:mt-[70px] sm:pt-[100px] sm:pb-[24px] md:py-[24px] py-[24px] px-[24px] md:mt-[0px] hover-scale transition-all duration-500 ${
+            className={`relative rounded-[12px] bg-[#005BF7] text-left w-[100%] md:w-[30%] sm:mt-[70px] sm:pt-[100px] sm:pb-[24px] md:py-[24px] py-[24px] px-[24px] md:mt-[0px] hover-scale transition-all duration-500 ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-10"
@@ -128,17 +113,17 @@ const HowItWorks: React.FC = () => {
             <span className="bg-white rounded-full h-[30px] w-[30px] flex justify-center font-bold items-center text-center">
               2
             </span>
-            <h6 className="font-bold my-[10px] xl:text-18px text-16px [@media(min-width:1440px)]:text-[22px]">
+            <h6 className="text-white font-bold my-[10px] xl:text-18px text-16px [@media(min-width:1440px)]:text-[22px]">
               Collaborate
             </h6>
-            <p className="text-sm [@media(min-width:1440px)]:text-[18px]">
+            <p className="text-white text-sm [@media(min-width:1440px)]:text-[18px]">
               Collaborate seamlessly with influencers or brands effortlessly.
             </p>
           </li>
           <span className="relative right-[50%] sm:hidden">
             <img
               alt=""
-              src="https://s3.ap-south-1.amazonaws.com/talrop.com-react-assets-bucket/assets/whoyer/24-10-2024/Vector 37.svg"
+              src="assets/howitworks/vector-37.svg"
             />
           </span>
           <span
@@ -147,10 +132,10 @@ const HowItWorks: React.FC = () => {
             }`}
             style={{ transitionDelay: "300ms" }}
           >
-            <img src="images/line-vector2.png" alt="" />
+            <img src="assets/howitworks/line-vector2.svg" alt="" />
           </span>
           <li
-            className={`relative rounded-[12px] bg-[#FEDF89] text-left w-[100%] sm:pt-[100px] sm:pb-[24px] md:w-[30%] md:py-[24px] py-[24px] px-[24px] sm:mt-[70px] md:mt-[0px] overflow-hidden hover-scale transition-all duration-500 ${
+            className={`relative rounded-[12px] bg-[#005BF7] text-left w-[100%] sm:pt-[100px] sm:pb-[24px] md:w-[30%] md:py-[24px] py-[24px] px-[24px] sm:mt-[70px] md:mt-[0px] overflow-hidden hover-scale transition-all duration-500 ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-10"
@@ -165,17 +150,17 @@ const HowItWorks: React.FC = () => {
             <span className="bg-white rounded-full h-[30px] w-[30px] flex justify-center font-bold items-center text-center">
               3
             </span>
-            <h6 className="font-bold my-[10px] xl:text-18px text-16px [@media(min-width:1440px)]:text-[22px]">
+            <h6 className="text-white font-bold my-[10px] xl:text-18px text-16px [@media(min-width:1440px)]:text-[22px]">
               Optimise
             </h6>
-            <p className="text-sm [@media(min-width:1440px)]:text-[18px]">
+            <p className="text-white text-sm [@media(min-width:1440px)]:text-[18px]">
               Optimise your content and strategy with AI insights.
             </p>
           </li>
           <span className="relative right-[50%] sm:hidden">
             <img
               alt=""
-              src="https://s3.ap-south-1.amazonaws.com/talrop.com-react-assets-bucket/assets/whoyer/24-10-2024/Vector 38.svg"
+              src="assets/howitworks/vector-38.svg"
             />
           </span>
           <span
@@ -184,10 +169,10 @@ const HowItWorks: React.FC = () => {
             }`}
             style={{ transitionDelay: "500ms" }}
           >
-            <img alt="dashed-line" src="images/line-vector3.png" />
+            <img alt="dashed-line" src="assets/howitworks/line-vector3.svg" />
           </span>
           <li
-            className={`relative rounded-[12px] bg-[#FEDF89] text-left w-[100%] md:w-[30%] pt-[100px] pb-[24px] px-[24px] md:mt-[0px] sm:mt-[70px] hover-scale transition-all duration-500 ${
+            className={`relative rounded-[12px] bg-[#005BF7] text-left w-[100%] md:w-[30%] pt-[100px] pb-[24px] px-[24px] md:mt-[0px] sm:mt-[70px] hover-scale transition-all duration-500 ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-10"
@@ -202,27 +187,13 @@ const HowItWorks: React.FC = () => {
             <span className="bg-white rounded-full h-[30px] w-[30px] flex justify-center items-center font-bold text-center">
               4
             </span>
-            <h6 className="font-bold my-[10px] xl:text-18px text-16px [@media(min-width:1440px)]:text-[22px]">
+            <h6 className="text-white font-bold my-[10px] xl:text-18px text-16px [@media(min-width:1440px)]:text-[22px]">
               Grow
             </h6>
-            <p className="text-sm [@media(min-width:1440px)]:text-[18px]">
+            <p className="text-white text-sm [@media(min-width:1440px)]:text-[18px]">
               Grow your brand and influence with Pistah.
             </p>
           </li>
-          <span className="relative sm:hidden">
-            <img
-              alt=""
-              src="https://s3.ap-south-1.amazonaws.com/talrop.com-react-assets-bucket/assets/whoyer/24-10-2024/grow.svg"
-            />
-          </span>
-          <span
-            className={`hidden md:block absolute xl:top-[-80px] top-[-80px] lg:left-[87%] [@media(min-width:1440px)]:left-[90%] w-[100px] md:left-[88%] transition-all duration-700 ${
-              isVisible ? "opacity-100" : "opacity-0"
-            }`}
-            style={{ transitionDelay: "700ms" }}
-          >
-            <img alt="dashed-line" src="images/line-vector4.png" />
-          </span>
         </ul>
       </div>
     </div>

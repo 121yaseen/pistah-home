@@ -31,6 +31,7 @@ export default function Home() {
         />
         <meta name="twitter:card" content="summary_large_image" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="preload" href="/assets/hero-background.svg" as="image" type="image/svg+xml" />
       </Head>
       <main>
         <div id="home">
