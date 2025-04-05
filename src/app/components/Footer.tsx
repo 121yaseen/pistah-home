@@ -34,7 +34,7 @@ const FooterSection: React.FC = () => {
   return (
     <section
       ref={footerRef}
-      className="font-custom bg-[#FEEFC6] overflow-hidden"
+      className="font-custom bg-[#F1F4F7] overflow-hidden"
     >
       <section className="w-[90%] mx-auto [@media(min-width:1600px)]:w-[70%]">
         <div
@@ -83,9 +83,8 @@ const FooterSection: React.FC = () => {
               </li>
             </ul>
           </div>
-          <span className="block w-full border-t border-[#202939] mb-[25px]" />
           <div className="bottom flex flex-col mt-[10px] sm:flex-row gap-[20px] justify-between">
-            <div className="left text-[#202939] text-[16px]">
+            <div className="left text-[16px]">
               <p className="text-[14px] text-[black]">
                 © 2025, pistah.live All rights reserved.
               </p>
