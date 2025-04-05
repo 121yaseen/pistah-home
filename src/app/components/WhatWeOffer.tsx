@@ -69,8 +69,7 @@ const WhatWeOffer: React.FC = () => {
                   Find Influencers to Grow Sales
                 </h3>
                 <p className="text-black text-[16px] px-4 mb-4">
-                  Get insights to improve content, increase audience engagement
-                  and sharpen your strategy.
+                  Filter through 30+ criteria like engagement rate, audience demographics, and niche to discover influencers who actually drive sales.
                 </p>
               </div>
               <div
@@ -87,11 +86,67 @@ const WhatWeOffer: React.FC = () => {
                   />
                 </span>
                 <h3 className="text-[20px] font-semibold font-custom mb-2 text-[#005BF7] px-4">
-                  Portfolio Creation
+                  Automated Outreach
                 </h3>
                 <p className="text-black text-[16px] px-4 mb-4">
-                  Create a website that is personalised and professional,
-                  showcasing achievements and establishing partnerships.
+                  Pistah will handle outreach for influencers you choose. Just fill in the campaign details and we will reach out on your behalf.
+                </p>
+              </div>
+              <div
+                className={`bg-white shadow-md p-2 rounded-2xl hover:shadow-lg text-left transition-all duration-500 hover-scale border border-gray-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                  }`}
+                style={{ transitionDelay: "600ms" }}
+              >
+                <span className="inline-block mb-4">
+                  <img
+                    alt="Service Icon"
+                    src="/images/icons/brandsdb.svg"
+                  />
+                </span>
+                <h3 className="text-[20px] font-semibold font-custom mb-2 text-[#005BF7] px-4">
+                  Connect with Top Brands
+                </h3>
+                <p className="text-black text-[16px] px-4 mb-4">
+                  Pistah connects you with top-tier brands seeking authentic influencer collaborations. Build meaningful partnerships that align with your audience and values.                </p>
+              </div>
+              <div
+                className={`bg-white shadow-md p-2 rounded-2xl hover:shadow-lg text-left transition-all duration-500 hover-scale border border-gray-200 ${isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
+                  }`}
+                style={{ transitionDelay: "400ms" }}
+              >
+                <span className="inline-block mb-4">
+                  <img
+                    alt="Service Icon"
+                    src="/images/icons/influencerdetails.svg"
+                  />
+                </span>
+                <h3 className="text-[20px] font-semibold font-custom mb-2 text-[#005BF7] px-4">
+                  Complete Influencer Details
+                </h3>
+                <p className="text-black text-[16px] px-4 mb-4">
+                  With Pistah, you can gather all influencer content like social media handles, discount codes, payment details, stories, collaboration document, and so on.
+                </p>
+              </div>
+              <div
+                className={`bg-white shadow-md p-2 rounded-2xl hover:shadow-lg text-left transition-all duration-500 hover-scale border border-gray-200 ${isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
+                  }`}
+                style={{ transitionDelay: "500ms" }}
+              >
+                <span className="inline-block mb-4">
+                  <img
+                    alt="Service Icon"
+                    src="/images/icons/social-media-analytics.svg"
+                  />
+                </span>
+                <h3 className="text-[20px] font-semibold font-custom mb-2 text-[#005BF7] px-4">
+                  Track Campaigns with Ease
+                </h3>
+                <p className="text-black text-[16px] px-4 mb-4">
+                  Get real-time insights on CPC, CPE, budget, total engagement, link clicks, and more to know exactly what’s driving results.
                 </p>
               </div>
               <div
@@ -111,71 +166,9 @@ const WhatWeOffer: React.FC = () => {
                   Instant Contact & Collaboration
                 </h3>
                 <p className="text-black text-[16px] px-4 mb-4">
-                  Gain access to expert-led courses that help you develop
-                  content creation skills and grow your digital influence.
+                  Like an influencer? Get their contact details with one click. You can also save their profile for later use in customized lists.
                 </p>
               </div>
-              <div
-                className={`bg-white shadow-md p-2 rounded-2xl hover:shadow-lg text-left transition-all duration-500 hover-scale border border-gray-200 ${isVisible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-10"
-                  }`}
-                style={{ transitionDelay: "400ms" }}
-              >
-                <span className="inline-block mb-4">
-                  <img
-                    alt="Service Icon"
-                    src="/images/icons/brandsdb.svg"
-                  />
-                </span>
-                <h3 className="text-[20px] font-semibold font-custom mb-2 text-[#005BF7] px-4">
-                  Bespoke Campaign Services
-                </h3>
-                <p className="text-black text-[16px] px-4 mb-4">
-                  Tailored marketing strategies and content creation support to
-                  deliver impactful and successful campaigns.
-                </p>
-              </div>
-              <div
-                className={`bg-white shadow-md p-2 rounded-2xl hover:shadow-lg text-left transition-all duration-500 hover-scale border border-gray-200 ${isVisible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-10"
-                  }`}
-                style={{ transitionDelay: "500ms" }}
-              >
-                <span className="inline-block mb-4">
-                  <img
-                    alt="Service Icon"
-                    src="/images/icons/influencerdetails.svg"
-                  />
-                </span>
-                <h3 className="text-[20px] font-semibold font-custom mb-2 text-[#005BF7] px-4">
-                  Collaboration Tools
-                </h3>
-                <p className="text-black text-[16px] px-4 mb-4">
-                  Effortlessly connect with brands and optimise influencer
-                  partnerships for impactful campaigns.
-                </p>
-              </div>
-              <div
-                className={`bg-white shadow-md p-6 rounded-2xl hover:shadow-lg text-left transition-all duration-500 hover-scale border border-gray-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                  }`}
-                style={{ transitionDelay: "600ms" }}
-              >
-                <span className="inline-block w-[12%] mb-4">
-                  <img
-                    alt="Service Icon"
-                    src="/images/icons/social-media-analytics.svg"
-                  />
-                </span>
-                <h3 className="text-[20px] font-semibold font-custom mb-2 text-[#005BF7]">
-                  Social Media Management
-                </h3>
-                <p className="text-black text-[16px]">
-                  Schedule, manage and analyse posts to maximise social media impact.
-                </p>
-              </div>
-
             </div>
           </div>
         </div>
