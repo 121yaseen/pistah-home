@@ -116,43 +116,43 @@ const WhatWeOffer: React.FC = () => {
                 </p>
               </div>
               <div
-                className={`bg-white shadow-md p-6 rounded-2xl hover:shadow-lg text-left transition-all duration-500 hover-scale border border-gray-200 ${isVisible
+                className={`bg-white shadow-md p-2 rounded-2xl hover:shadow-lg text-left transition-all duration-500 hover-scale border border-gray-200 ${isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-10"
                   }`}
                 style={{ transitionDelay: "400ms" }}
               >
-                <span className="inline-block w-[12%] mb-4">
+                <span className="inline-block mb-4">
                   <img
                     alt="Service Icon"
-                    src="/images/icons/chat.svg"
+                    src="/images/icons/brandsdb.svg"
                   />
                 </span>
-                <h3 className="text-[20px] font-semibold font-custom mb-2 text-[#005BF7]">
+                <h3 className="text-[20px] font-semibold font-custom mb-2 text-[#005BF7] px-4">
                   Bespoke Campaign Services
                 </h3>
-                <p className="text-black text-[16px]">
+                <p className="text-black text-[16px] px-4 mb-4">
                   Tailored marketing strategies and content creation support to
                   deliver impactful and successful campaigns.
                 </p>
               </div>
               <div
-                className={`bg-white shadow-md p-6 rounded-2xl hover:shadow-lg text-left transition-all duration-500 hover-scale border border-gray-200 ${isVisible
+                className={`bg-white shadow-md p-2 rounded-2xl hover:shadow-lg text-left transition-all duration-500 hover-scale border border-gray-200 ${isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-10"
                   }`}
                 style={{ transitionDelay: "500ms" }}
               >
-                <span className="inline-block w-[12%] mb-4">
+                <span className="inline-block mb-4">
                   <img
                     alt="Service Icon"
-                    src="/images/icons/portfolio-creation.svg"
+                    src="/images/icons/influencerdetails.svg"
                   />
                 </span>
-                <h3 className="text-[20px] font-semibold font-custom mb-2 text-[#005BF7]">
+                <h3 className="text-[20px] font-semibold font-custom mb-2 text-[#005BF7] px-4">
                   Collaboration Tools
                 </h3>
-                <p className="text-black text-[16px]">
+                <p className="text-black text-[16px] px-4 mb-4">
                   Effortlessly connect with brands and optimise influencer
                   partnerships for impactful campaigns.
                 </p>
