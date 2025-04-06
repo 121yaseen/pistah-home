@@ -55,7 +55,7 @@ const HowItWorks: React.FC = () => {
   ];
 
   return (
-    <div id="how-it-works" className="text-[#005BF7] bg-[white]">
+    <div id="how-it-works" className="text-[#005BF7] bg-[white] h-[85vh]">
       <div
         ref={sectionRef}
         className={`text-center py-[80px] w-[90%] mx-auto [@media(min-width:1600px)]:w-[80%] transition-all duration-700 ${isVisible ? "opacity-100" : "opacity-0"
@@ -73,7 +73,7 @@ const HowItWorks: React.FC = () => {
           {steps.map((step, index) => (
             <div
               key={step.id}
-              className={`w-[250px] h-[250px] rounded-full bg-gradient-to-r from-blue-700 to-blue-500 text-white shadow-[-4px_4px_8px_rgba(0,0,0,0.3)] flex flex-col items-center justify-center text-center px-6 transition-all duration-700 hover:scale-105 ${isVisible
+              className={`w-[250px] h-[250px] rounded-full bg-gradient-to-r from-blue-700 to-blue-500 text-white shadow-[-4px_4px_8px_rgba(0,0,0,0.3)] flex flex-col items-center justify-center text-center px-6 transition-all duration-300 hover:scale-105 ${isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-10"
                 }`}
