@@ -51,23 +51,17 @@ export default function Home() {
                   </a>
                 </div>
                 <nav className="space-x-8 text-[#005BF7] font-semibold lg:text-[16px] md:text-[14px] font-custom hidden lg:block ml-[25px]">
-                  <a
-                    className="inline-block hover-scale"
-                    href="#home"
-                  >
-                    Home
-                  </a>
-                  <a
-                    className="inline-block hover-scale"
-                    href="#what-we-offer"
-                  >
+                  <a className="inline-block hover-scale" href="#what-we-offer">
                     Services
                   </a>
-                  <a
-                    className="inline-block hover-scale"
-                    href="#"
-                  >
+                  <a className="inline-block hover-scale" href="#">
                     Process
+                  </a>
+                  <a
+                    className="inline-block hover-scale bg-gradient-to-r from-blue-500 to-blue-700 text-white py-2 px-6 rounded-lg"
+                    href="https://scrapper.pistah.live"
+                  >
+                    Try For Free
                   </a>
                 </nav>
               </header>
