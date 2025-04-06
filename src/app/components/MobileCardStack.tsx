@@ -20,8 +20,8 @@ const MobileCardStack = () => {
     },
     {
       id: 3,
-      bgColor: "bg-black",
-      textColor: "text-white",
+      bgColor: "bg-white",
+      textColor: "text-black",
       title: "BRANDS",
       description:
         "Collaborate to amplify brand presence, expand audience reach and achieve meaningful growth.",
@@ -31,8 +31,8 @@ const MobileCardStack = () => {
     },
     {
       id: 2,
-      bgColor: "bg-black",
-      textColor: "text-white",
+      bgColor: "bg-white",
+      textColor: "text-black",
       title: "ASPIRING CREATORS",
       description:
         "Access learning, mentorship and tools to launch a successful content creation career.",
