@@ -55,7 +55,7 @@ const HowItWorks: React.FC = () => {
   ];
 
   return (
-    <div id="how-it-works" className="text-[#005BF7] bg-[white] h-[85vh]">
+    <div id="how-it-works" className="text-[#005BF7] bg-[white]">
       <div
         ref={sectionRef}
         className={`text-center py-[80px] w-[90%] mx-auto [@media(min-width:1600px)]:w-[80%] transition-all duration-700 ${isVisible ? "opacity-100" : "opacity-0"
