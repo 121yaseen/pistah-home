@@ -35,7 +35,7 @@ const WhatWeOffer: React.FC = () => {
     <div id="what-we-offer" className="text-black">
       <section
         ref={sectionRef}
-        className="py-[80px] md:py-[120px] bg-white font-custom overflow-hidden"
+        className="py-[80px] md:py-[140px] bg-white font-custom overflow-hidden"
       >
         <div className="w-[90%] mx-auto [@media(min-width:1600px)]:w-[80%]">
           <div

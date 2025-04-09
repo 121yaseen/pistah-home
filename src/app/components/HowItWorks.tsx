@@ -5,7 +5,6 @@ import React, { useEffect, useRef, useState } from "react";
 const HowItWorks: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [activeStep, setActiveStep] = useState(1);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -85,7 +84,7 @@ const HowItWorks: React.FC = () => {
       
       <div
         ref={sectionRef}
-        className={`relative py-[40px] w-[92%] mx-auto [@media(min-width:1600px)]:w-[80%] transition-all duration-700 ${
+        className={`relative pt-[10px] pb-[40px] w-[90%] mx-auto [@media(min-width:1600px)]:w-[80%] transition-all duration-700 ${
           isVisible ? "opacity-100" : "opacity-0"
         }`}
       >
@@ -120,7 +119,6 @@ const HowItWorks: React.FC = () => {
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                 }`}
                 style={{ transitionDelay: `${index * 150}ms` }}
-                onMouseEnter={() => setActiveStep(step.id)}
               >
                 <div className={`group relative h-full bg-white rounded-2xl p-8 
                   shadow-[0_8px_30px_rgb(0,91,247,0.12)] border border-blue-100
