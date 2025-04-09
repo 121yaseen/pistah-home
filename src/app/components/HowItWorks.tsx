@@ -5,6 +5,7 @@ import React, { useEffect, useRef, useState } from "react";
 const HowItWorks: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [activeStep, setActiveStep] = useState(1);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
