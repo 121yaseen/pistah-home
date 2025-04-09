@@ -44,17 +44,8 @@ html, body {
 }
 
 @keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(-20px);
-  }
-
-  100% {
-    transform: translateY(0px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
 .fade-in {
@@ -102,4 +93,21 @@ html, body {
 
 .text-black {
   color: #000;
+}
+
+@keyframes flow {
+  from { background-position: 0 0; }
+  to { background-position: 20px 0; }
+}
+
+.animate-flow {
+  animation: flow 1s linear infinite;
+}
+
+/* Add a grid background pattern */
+.grid-pattern {
+  background-size: 30px 30px;
+  background-image: 
+    linear-gradient(to right, rgba(255,255,255,.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.05) 1px, transparent 1px);
 }
