@@ -35,7 +35,7 @@ const WhatWeOffer: React.FC = () => {
     <div id="what-we-offer" className="text-black">
       <section
         ref={sectionRef}
-        className="py-[80px] bg-white font-custom overflow-hidden"
+        className="py-[80px] md:py-[120px] bg-white font-custom overflow-hidden"
       >
         <div className="w-[90%] mx-auto [@media(min-width:1600px)]:w-[80%]">
           <div
@@ -44,14 +44,14 @@ const WhatWeOffer: React.FC = () => {
               : "opacity-0 translate-y-10"
               }`}
           >
-            <h3 className="text-[26px] lg:text-[32px] md:text-[26px] font-custom font-bold mb-2 text-[#005BF7]">
+            <h3 className="text-[32px] md:text-[40px] lg:text-[48px] font-bold text-[#005BF7] mb-6 leading-tight">
               What Pistah Offers
             </h3>
-            <p className="text-black text-[14px] md:text-[16px] lg:text-[18px] font-custom mb-8 md:w-[90%] mx-auto">
+            <p className="text-gray-600 text-[16px] md:text-[18px] lg:text-[20px] md:w-[60%] mx-auto leading-relaxed">
               Discover powerful tools and resources to enhance creativity, grow
               your brand and optimise digital presence.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 py-8">
               <div
                 className={`bg-white shadow-md p-2 rounded-2xl hover:shadow-lg text-left transition-all duration-500 hover-scale border border-gray-200 ${isVisible
                   ? "opacity-100 translate-y-0"
