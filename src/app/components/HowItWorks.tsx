@@ -145,11 +145,12 @@ const HowItWorks: React.FC = () => {
                     <div className="w-16 h-16 rounded-2xl mb-6 
                       transition-all duration-500 group-hover:scale-110 
                       group-hover:rotate-6">
-                      <div className="w-full h-full border border-blue-200 rounded-2xl 
-                        bg-[#005BF7] text-white
-                        flex items-center justify-center
-                        group-hover:bg-white group-hover:text-[#005BF7]
-                        transition-colors duration-500">
+                      <div
+                        className="w-full h-full border border-blue-200 rounded-2xl
+                        bg-gradient-to-br from-[#005BF7] to-blue-400
+                        text-white flex items-center justify-center
+                        group-hover:bg-none group-hover:text-[#005BF7] transition-colors duration-500"
+                      >
                         {step.icon}
                       </div>
                     </div>
