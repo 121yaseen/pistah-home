@@ -16,7 +16,7 @@ const MobileCardStack = () => {
       description:
         "Maximise exposure, strengthen personal brands and secure high-value collaborations.",
       illustration: "/assets/influencer.svg",
-      width: "w-5/6"
+      width: "w-5/6",
     },
     {
       id: 3,
@@ -25,9 +25,8 @@ const MobileCardStack = () => {
       title: "BRANDS",
       description:
         "Collaborate to amplify brand presence, expand audience reach and achieve meaningful growth.",
-      illustration:
-        "/assets/brands.svg",
-      width: "w-max"
+      illustration: "/assets/brands.svg",
+      width: "w-max",
     },
     {
       id: 2,
@@ -37,7 +36,7 @@ const MobileCardStack = () => {
       description:
         "Access learning, mentorship and tools to launch a successful content creation career.",
       illustration: "/assets/people.svg",
-      width: "w-max"
+      width: "w-max",
     },
     {
       id: 4,
@@ -46,9 +45,8 @@ const MobileCardStack = () => {
       title: "EVERYDAY INDIVIDUALS",
       description:
         "Get personalised styling advice to enhance your digital appearance and personal branding.",
-      illustration:
-        "/assets/individual.svg",
-      width: "w-5/6"
+      illustration: "/assets/individual.svg",
+      width: "w-5/6",
     },
   ];
 
@@ -69,11 +67,11 @@ const MobileCardStack = () => {
         card,
         { x: "150%", y: "-150%", opacity: 0 },
         { x: "0%", y: "0%", opacity: 1, duration: 0.8, ease: "power2.out" },
-        index * 0.2 // stagger each card's entrance
+        index * 0.2
       );
     });
 
-    // Scroll-Based Horizontal Animation
+    // Scroll-Based Vertical Animation
     const scrollTl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
@@ -81,9 +79,9 @@ const MobileCardStack = () => {
         end: "+=1800",
         scrub: true,
         pin: true,
-        toggleActions: "play none none reset", // Ensures it resets when re-entering
+        toggleActions: "play none none reset",
         onEnterBack: () => {
-          scrollTl.progress(0); // Reset animation when re-entering from bottom
+          scrollTl.progress(0);
         },
       },
     });
@@ -91,15 +89,17 @@ const MobileCardStack = () => {
     cardElements.forEach((card, index) => {
       if (index !== cardElements.length - 1) {
         scrollTl
-          .fromTo(card, { x: "0%", opacity: 1 }, { x: "0%", opacity: 1, duration: 1 })
-          .to(card, { x: "200%", opacity: 0.6, duration: 1 });
+          .fromTo(card, { y: "0%", opacity: 1 }, { y: "0%", opacity: 1, duration: 1 })
+          .to(card, { y: "-150%", opacity: 0.6, duration: 1 });
       } else {
-        scrollTl.fromTo(card, { x: "0%", opacity: 1 }, { x: "0%", opacity: 1, duration: 1 });
+        // Last card stays put until the end
+        scrollTl.fromTo(card, { y: "0%", opacity: 1 }, { y: "0%", opacity: 1, duration: 1 });
       }
     });
 
     return () => {
-      scrollTl.kill(); // Clean up the animation on component unmount
+      scrollTl.kill();
+      entranceTl.kill();
     };
   }, []);
 
@@ -130,7 +130,9 @@ const MobileCardStack = () => {
               <div className="flex items-center mb-4">
                 <h2 className="text-xl md:text-2xl font-bold">{card.title}</h2>
               </div>
-              <p className="text-sm mb-4 h-16 md:h-12 overflow-hidden">{card.description}</p>
+              <p className="text-sm mb-4 h-16 md:h-12 overflow-hidden">
+                {card.description}
+              </p>
               {card.illustration && (
                 <div className="flex justify-center">
                   <img
